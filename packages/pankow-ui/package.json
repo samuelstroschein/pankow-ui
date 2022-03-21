@@ -2,8 +2,13 @@
   "name": "pankow-ui",
   "version": "1.0.0",
   "description": "Tailwind CSS components.",
-  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc --build",
+    "dev": "tsc --watch"
   }
 }
