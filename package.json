@@ -5,5 +5,8 @@
   "workspaces": [
     "website/",
     "packages/*"
-  ]
+  ],
+  "devDependencies": {
+    "tailwindcss": "^3.0.23"
+  }
 }
