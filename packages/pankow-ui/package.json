@@ -10,5 +10,12 @@
   "scripts": {
     "build": "tsc --build",
     "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "postcss": "^8.4.12",
+    "tailwindcss": "^3.0.23"
+  },
+  "devDependencies": {
+    "@types/tailwindcss": "^3.0.9"
   }
 }

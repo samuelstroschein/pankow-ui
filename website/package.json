@@ -27,7 +27,8 @@
 		"svelte-check": "^2.2.6",
 		"svelte-preprocess": "^4.10.1",
 		"tslib": "^2.3.1",
-    "pankow-ui": "*"
+		"pankow-ui": "*",
+		"tailwindcss": "^3.0.23"
 	},
 	"type": "module"
 }
