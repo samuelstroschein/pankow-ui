@@ -1,7 +1,7 @@
 import { Config } from "../config";
 import { css } from "../css";
 
-export function range(args: { config: Config }) {
+export function progress(args: { config: Config }) {
   const styled = `
   .progress {
     @apply h-2 rounded-box;
