@@ -1,21 +1,9 @@
 import type { TailwindPluginFn } from "tailwindcss/plugin";
-import postcss from "postcss";
-import fs from "fs";
-import path from "path";
-// @ts-ignore
-import postcssJs from "postcss-js";
-
-const button = fs
-  .readFileSync(path.resolve(__dirname, "./components/button.pcss"))
-  .toString();
-
-const root = postcss.parse(button);
-
-const asJson = postcssJs.objectify(root);
+import { button } from "./components/button";
 
 const plugin: TailwindPluginFn = ({ addComponents }) => {
   console.log("pankow ui is activating...");
-  addComponents(asJson);
+  addComponents(button());
   console.log("pankow ui setup complete");
 };
 

@@ -8,19 +8,14 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup --config",
-    "dev": "rollup --config --watch"
+    "build": "tsc",
+    "dev": "tsc --watch"
   },
   "dependencies": {
     "postcss": "^8.4.12",
     "postcss-js": "^4.0.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^21.0.2",
-    "@rollup/plugin-typescript": "^8.3.1",
-    "rollup-plugin-copy": "^3.4.0",
-    "@types/tailwindcss": "^3.0.9",
-    "rollup": "^2.70.1",
-    "vite": "^2.8.6"
+    "@types/tailwindcss": "^3.0.9"
   }
 }
