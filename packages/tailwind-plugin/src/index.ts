@@ -2,12 +2,25 @@ import plugin from "tailwindcss/plugin";
 import colors from "./colors/index";
 import * as components from "./components/index";
 import * as utilities from "./utilities/index";
+import { injectThemes } from "./colors/functions";
+import themes from "./colors/themes";
+import { css } from "./css";
 
 // tailwind requires commonjs
 // therefore, `module.exports` instead of `export plugin`
 module.exports = plugin(
-  ({ addComponents, addUtilities }) => {
+  ({ addComponents, addUtilities, addBase, config }) => {
     console.log("pankow ui is activating...");
+    // adding base style
+    addBase(
+      css(`
+      :root {
+        background-color: hsla(var(--b1) / var(--tw-bg-opacity, 1));
+        color: hsla(var(--bc) / var(--tw-text-opacity, 1));
+      }
+    `)
+    );
+
     // add components
     for (const name of Object.keys(components)) {
       addComponents(
@@ -25,6 +38,7 @@ module.exports = plugin(
       );
     }
     console.log("pankow ui setup complete");
+    const themeInjextor = injectThemes(addBase, config, themes);
   },
   { theme: { extend: { colors } } }
 );
