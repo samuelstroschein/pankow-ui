@@ -1,2 +1,2 @@
 export { alert } from "./alert";
-export { badge } from "./badge";
+export { toggle } from "./toggle";

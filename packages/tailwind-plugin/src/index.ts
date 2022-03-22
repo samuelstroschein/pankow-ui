@@ -37,8 +37,8 @@ module.exports = plugin(
         })
       );
     }
+    injectThemes(addBase, config, themes);
     console.log("pankow ui setup complete");
-    const themeInjextor = injectThemes(addBase, config, themes);
   },
   { theme: { extend: { colors } } }
 );
