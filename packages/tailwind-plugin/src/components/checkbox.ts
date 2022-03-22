@@ -4,11 +4,11 @@ import { css } from "../css";
 export function checkbox(args: { config: Config }) {
   const styled = `
     .checkbox {
-      --chkbg: var(--bc);
-      --chkfg: var(--b1);
+      --chkbg: var(--base-content);
+      --chkfg: var(--base-100);
       @apply h-6 w-6 cursor-pointer appearance-none border border-base-content border-opacity-20 rounded-btn;
       &:focus-visible {
-        outline: 2px solid hsl(var(--bc));
+        outline: 2px solid hsl(var(--base-content));
         outline-offset: 2px;
       }
       &:checked,
@@ -23,11 +23,11 @@ export function checkbox(args: { config: Config }) {
         background-image: linear-gradient(90deg, transparent 80%, hsl(var(--chkbg)) 80%), linear-gradient(-90deg, transparent 80%, hsl(var(--chkbg)) 80%), linear-gradient(0deg, hsl(var(--chkbg)) 43%, hsl(var(--chkfg)) 43%, hsl(var(--chkfg)) 57%, hsl(var(--chkbg)) 57%);
       }
       &-primary {
-        --chkbg: var(--p);
-        --chkfg: var(--pc);
+        --chkbg: var(--primary);
+        --chkfg: var(--primary-content);
         @apply border-primary hover:border-primary;
         &:focus-visible {
-          outline: 2px solid hsl(var(--p));
+          outline: 2px solid hsl(var(--primary));
         }
         &:checked,
         &[checked="true"] {
@@ -35,11 +35,11 @@ export function checkbox(args: { config: Config }) {
         }
       }
       &-secondary {
-        --chkbg: var(--s);
-        --chkfg: var(--sc);
+        --chkbg: var(--secondary);
+        --chkfg: var(--secondary-content);
         @apply border-secondary hover:border-secondary;
         &:focus-visible {
-          outline: 2px solid hsl(var(--s));
+          outline: 2px solid hsl(var(--secondary));
         }
         &:checked,
         &[checked="true"] {
@@ -47,11 +47,11 @@ export function checkbox(args: { config: Config }) {
         }
       }
       &-accent {
-        --chkbg: var(--a);
-        --chkfg: var(--ac);
+        --chkbg: var(--accent);
+        --chkfg: var(--accent-content);
         @apply border-accent hover:border-accent;
         &:focus-visible {
-          outline: 2px solid hsl(var(--a));
+          outline: 2px solid hsl(var(--accent));
         }
         &:checked,
         &[checked="true"] {
@@ -82,8 +82,8 @@ export function checkbox(args: { config: Config }) {
     
     body[dir="rtl"] {
       .checkbox {
-        --chkbg: var(--bc);
-        --chkfg: var(--b1);
+        --chkbg: var(--base-content);
+        --chkfg: var(--base-100);
         &:checked,
         &[checked="true"] {
           background-image: linear-gradient(45deg, transparent 65%, hsl(var(--chkbg)) 65.99%), linear-gradient(-45deg, transparent 75%, hsl(var(--chkbg)) 75.99%), linear-gradient(45deg, hsl(var(--chkbg)) 40%, transparent 40.99%), linear-gradient(-45deg, hsl(var(--chkbg)) 30%, hsl(var(--chkfg)) 30.99%, hsl(var(--chkfg)) 40%, transparent 40.99%), linear-gradient(45deg, hsl(var(--chkfg)) 50%, hsl(var(--chkbg)) 50.99%);

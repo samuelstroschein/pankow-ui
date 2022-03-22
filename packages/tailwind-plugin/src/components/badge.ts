@@ -42,8 +42,8 @@ export function badge(args: { config: Config }) {
     &-warning {
       @apply border-transparent bg-warning text-warning-content;
     }
-    &-error {
-      @apply border-transparent bg-error text-error-content;
+    &-danger {
+      @apply border-transparent bg-danger text-danger-content;
     }
   }
   

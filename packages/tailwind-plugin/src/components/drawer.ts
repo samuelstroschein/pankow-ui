@@ -31,28 +31,28 @@ export function drawer(args: { config: Config }) {
     }
     &:focus-visible {
       & ~ .drawer-content .drawer-button {
-        outline: 2px solid hsl(var(--nf));
+        outline: 2px solid hsl(var(--neutral-focus));
         outline-offset: 2px;
         &.btn-primary {
-          outline: 2px solid hsl(var(--p));
+          outline: 2px solid hsl(var(--primary));
         }
         &.btn-secondary {
-          outline: 2px solid hsl(var(--s));
+          outline: 2px solid hsl(var(--secondary));
         }
         &.btn-accent {
-          outline: 2px solid hsl(var(--a));
+          outline: 2px solid hsl(var(--accent));
         }
         &.btn-info {
-          outline: 2px solid hsl(var(--in));
+          outline: 2px solid hsl(var(--info));
         }
         &.btn-success {
-          outline: 2px solid hsl(var(--su));
+          outline: 2px solid hsl(var(--success));
         }
         &.btn-warning {
-          outline: 2px solid hsl(var(--wa));
+          outline: 2px solid hsl(var(--warning));
         }
-        &.btn-error {
-          outline: 2px solid hsl(var(--er));
+        &.btn-danger {
+          outline: 2px solid hsl(var(--danger));
         }
         &.glass {
           outline: 2px solid currentColor;

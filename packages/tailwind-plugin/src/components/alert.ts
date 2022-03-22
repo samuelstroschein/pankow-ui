@@ -18,8 +18,8 @@ export function alert(args: { config: Config }) {
       &-warning {
         @apply bg-warning text-warning-content;
       }
-      &-error {
-        @apply bg-error text-error-content;
+      &-danger {
+        @apply bg-danger text-danger-content;
       }
     }
   `;

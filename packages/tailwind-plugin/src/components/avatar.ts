@@ -12,7 +12,7 @@ export function avatar(args: { config: Config }) {
           height: 15%;
           top: 7%;
           right: 7%;
-          box-shadow: 0 0 0 2px hsl(var(--b1));
+          box-shadow: 0 0 0 2px hsl(var(--base-100));
         }
       }
       &.offline {
@@ -23,7 +23,7 @@ export function avatar(args: { config: Config }) {
           height: 15%;
           top: 7%;
           right: 7%;
-          box-shadow: 0 0 0 2px hsl(var(--b1));
+          box-shadow: 0 0 0 2px hsl(var(--base-100));
         }
       }
     }

@@ -6,7 +6,7 @@
 
 <button class="btn btn-primary">regular button</button>
 
-<div class="badge badge-info">hello</div>
+<div class="badge badge-danger">hello</div>
 
 <div class="badge badge-primary">dsadsd</div>
 <div class="toggle">dsadsd</div>

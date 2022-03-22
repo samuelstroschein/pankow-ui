@@ -1,34 +1,34 @@
 export default {
-  primary: "--p",
-  "primary-focus": "--pf",
-  "primary-content": "--pc",
+  primary: "--primary",
+  "primary-focus": "--primary-focus",
+  "primary-content": "--primary-content",
 
-  secondary: "--s",
-  "secondary-focus": "--sf",
-  "secondary-content": "--sc",
+  secondary: "--secondary",
+  "secondary-focus": "--secondary-focus",
+  "secondary-content": "--secondary-content",
 
-  accent: "--a",
-  "accent-focus": "--af",
-  "accent-content": "--ac",
+  accent: "--accent",
+  "accent-focus": "--accent-focus",
+  "accent-content": "--accent-content",
 
-  neutral: "--n",
-  "neutral-focus": "--nf",
-  "neutral-content": "--nc",
+  neutral: "--neutral",
+  "neutral-focus": "--neutral-focus",
+  "neutral-content": "--neutral-content",
 
-  "base-100": "--b1",
-  "base-200": "--b2",
-  "base-300": "--b3",
-  "base-content": "--bc",
+  "base-100": "--base-100",
+  "base-200": "--base-200",
+  "base-300": "--base-300",
+  "base-content": "--base-content",
 
-  info: "--in",
-  "info-content": "--inc",
+  info: "--info",
+  "info-content": "--info-content",
 
-  success: "--su",
-  "success-content": "--suc",
+  success: "--success",
+  "success-content": "--success-content",
 
-  warning: "--wa",
-  "warning-content": "--wac",
+  warning: "--warning",
+  "warning-content": "--warning-content",
 
-  error: "--er",
-  "error-content": "--erc",
+  danger: "--danger",
+  "danger-content": "--danger-content",
 };

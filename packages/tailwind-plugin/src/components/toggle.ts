@@ -2,64 +2,63 @@ import { Config } from "../config";
 import { css } from "../css";
 
 export function toggle(args: { config: Config }) {
-
   const styled = `
   .toggle {
-    --chkbg: hsla(var(--bc) / 0.2);
+    --chkbg: hsla(var(--base-content) / 0.2);
     --handleoffset: 1.5rem;
     @apply h-6 w-12 cursor-pointer appearance-none border border-base-content border-opacity-20 bg-base-content bg-opacity-20 duration-300 ease-in-out rounded-badge;
     transition: background, box-shadow var(--animation-input, 0.2s) ease-in-out;
-    box-shadow: calc(var(--handleoffset) * -1) 0 0 2px hsl(var(--b1)) inset, 0 0 0 2px hsl(var(--b1)) inset;
+    box-shadow: calc(var(--handleoffset) * -1) 0 0 2px hsl(var(--base-100)) inset, 0 0 0 2px hsl(var(--base-100)) inset;
     &:focus-visible {
-      outline: 2px solid hsl(var(--bc));
+      outline: 2px solid hsl(var(--base-content));
       outline-offset: 2px;
     }
     &:checked,
     &[checked="true"] {
-      --chkbg: hsl(var(--bc));
+      --chkbg: hsl(var(--base-content));
       @apply border-opacity-100 bg-opacity-100;
-      box-shadow: var(--handleoffset) 0 0 2px hsl(var(--b1)) inset, 0 0 0 2px hsl(var(--b1)) inset;
+      box-shadow: var(--handleoffset) 0 0 2px hsl(var(--base-100)) inset, 0 0 0 2px hsl(var(--base-100)) inset;
       [dir="rtl"] & {
-        box-shadow: calc(var(--handleoffset) * 1) 0 0 2px hsl(var(--b1)) inset, 0 0 0 2px hsl(var(--b1)) inset;
+        box-shadow: calc(var(--handleoffset) * 1) 0 0 2px hsl(var(--base-100)) inset, 0 0 0 2px hsl(var(--base-100)) inset;
       }
     }
     &:indeterminate {
-      --chkbg: hsl(var(--bc));
+      --chkbg: hsl(var(--base-content));
       @apply border-opacity-100 bg-opacity-100;
-      box-shadow: calc(var(--handleoffset) / 2) 0 0 2px hsl(var(--b1)) inset, calc(var(--handleoffset) / -2) 0 0 2px hsl(var(--b1)) inset, 0 0 0 2px hsl(var(--b1)) inset;
+      box-shadow: calc(var(--handleoffset) / 2) 0 0 2px hsl(var(--base-100)) inset, calc(var(--handleoffset) / -2) 0 0 2px hsl(var(--base-100)) inset, 0 0 0 2px hsl(var(--base-100)) inset;
       [dir="rtl"] & {
-        box-shadow: calc(var(--handleoffset) / 2) 0 0 2px hsl(var(--b1)) inset, calc(var(--handleoffset) / -2) 0 0 2px hsl(var(--b1)) inset, 0 0 0 2px hsl(var(--b1)) inset;
+        box-shadow: calc(var(--handleoffset) / 2) 0 0 2px hsl(var(--base-100)) inset, calc(var(--handleoffset) / -2) 0 0 2px hsl(var(--base-100)) inset, 0 0 0 2px hsl(var(--base-100)) inset;
       }
     }
     &-primary {
       &:focus-visible {
-        outline: 2px solid hsl(var(--p));
+        outline: 2px solid hsl(var(--primary));
       }
       &:checked,
       &[checked="true"] {
-        --chkbg: hsl(var(--p));
+        --chkbg: hsl(var(--primary));
         @apply border-primary;
         @apply border-primary border-opacity-10 bg-primary text-primary-content;
       }
     }
     &-secondary {
       &:focus-visible {
-        outline: 2px solid hsl(var(--s));
+        outline: 2px solid hsl(var(--secondary));
       }
       &:checked,
       &[checked="true"] {
-        --chkbg: hsl(var(--s));
+        --chkbg: hsl(var(--secondary));
         @apply border-secondary;
         @apply border-secondary border-opacity-10 bg-secondary text-secondary-content;
       }
     }
     &-accent {
       &:focus-visible {
-        outline: 2px solid hsl(var(--a));
+        outline: 2px solid hsl(var(--accent));
       }
       &:checked,
       &[checked="true"] {
-        --chkbg: hsl(var(--a));
+        --chkbg: hsl(var(--accent));
         @apply border-accent;
         @apply border-accent border-opacity-10 bg-accent text-accent-content;
       }

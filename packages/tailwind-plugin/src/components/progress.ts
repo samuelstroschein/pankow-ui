@@ -26,8 +26,8 @@ export function progress(args: { config: Config }) {
     &-warning::-moz-progress-bar {
       @apply bg-warning;
     }
-    &-error::-moz-progress-bar {
-      @apply bg-error;
+    &-danger::-moz-progress-bar {
+      @apply bg-danger;
     }
   
     &:indeterminate::after {
@@ -51,8 +51,8 @@ export function progress(args: { config: Config }) {
     &-warning:indeterminate::after {
       @apply bg-warning;
     }
-    &-error:indeterminate::after {
-      @apply bg-error;
+    &-danger:indeterminate::after {
+      @apply bg-danger;
     }
   
     &::-webkit-progress-bar {
@@ -79,8 +79,8 @@ export function progress(args: { config: Config }) {
     &-warning::-webkit-progress-value {
       @apply bg-warning;
     }
-    &-error::-webkit-progress-value {
-      @apply bg-error;
+    &-danger::-webkit-progress-value {
+      @apply bg-danger;
     }
   }
   

@@ -4,7 +4,7 @@ import { css } from "../css";
 export function collapse(args: { config: Config }) {
   const styled = `
     .collapse:focus-visible {
-      outline: 2px solid hsl(var(--nf));
+      outline: 2px solid hsl(var(--neutral-focus));
       outline-offset: 2px;
     }
     .collapse-arrow .collapse-title:after {

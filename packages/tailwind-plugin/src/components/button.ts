@@ -25,7 +25,7 @@ export function button(args: { config: Config }) {
         @apply border-neutral-focus bg-neutral-focus;
       }
       &:focus-visible {
-        outline: 2px solid hsl(var(--nf));
+        outline: 2px solid hsl(var(--neutral-focus));
         outline-offset: 2px;
       }
     }
@@ -37,7 +37,7 @@ export function button(args: { config: Config }) {
         @apply border-primary-focus bg-primary-focus;
       }
       &:focus-visible {
-        outline: 2px solid hsl(var(--p));
+        outline: 2px solid hsl(var(--primary));
       }
     }
     &-secondary {
@@ -47,7 +47,7 @@ export function button(args: { config: Config }) {
         @apply border-secondary-focus bg-secondary-focus;
       }
       &:focus-visible {
-        outline: 2px solid hsl(var(--s));
+        outline: 2px solid hsl(var(--secondary));
       }
     }
     &-accent {
@@ -57,7 +57,7 @@ export function button(args: { config: Config }) {
         @apply border-accent-focus bg-accent-focus;
       }
       &:focus-visible {
-        outline: 2px solid hsl(var(--a));
+        outline: 2px solid hsl(var(--accent));
       }
     }
   
@@ -69,7 +69,7 @@ export function button(args: { config: Config }) {
         @apply border-info bg-info;
       }
       &:focus-visible {
-        outline: 2px solid hsl(var(--in));
+        outline: 2px solid hsl(var(--info));
       }
     }
     &-success {
@@ -79,7 +79,7 @@ export function button(args: { config: Config }) {
         @apply border-success bg-success;
       }
       &:focus-visible {
-        outline: 2px solid hsl(var(--su));
+        outline: 2px solid hsl(var(--success));
       }
     }
     &-warning {
@@ -89,17 +89,17 @@ export function button(args: { config: Config }) {
         @apply border-warning bg-warning;
       }
       &:focus-visible {
-        outline: 2px solid hsl(var(--wa));
+        outline: 2px solid hsl(var(--warning));
       }
     }
-    &-error {
-      @apply border-error bg-error text-error-content;
+    &-danger {
+      @apply border-danger bg-danger text-danger-content;
       &:hover,
       &.btn-active {
-        @apply border-error bg-error;
+        @apply border-danger bg-danger;
       }
       &:focus-visible {
-        outline: 2px solid hsl(var(--er));
+        outline: 2px solid hsl(var(danger));
       }
     }
   
@@ -179,10 +179,10 @@ export function button(args: { config: Config }) {
           @apply border-warning bg-warning text-warning-content;
         }
       }
-      &.btn-error {
-        @apply text-error;
+      &.btn-danger {
+        @apply text-danger;
         &:hover {
-          @apply border-error bg-error text-error-content;
+          @apply border-danger bg-danger text-danger-content;
         }
       }
     }
@@ -215,7 +215,7 @@ export function button(args: { config: Config }) {
     & > .btn-active {
       @apply border-primary bg-primary text-primary-content;
       &:focus-visible {
-        outline: 2px solid hsl(var(--p));
+        outline: 2px solid hsl(var(--primary));
       }
     }
     & > .btn:not(:first-child) {

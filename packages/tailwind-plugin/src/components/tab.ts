@@ -5,9 +5,9 @@ export function tab(args: { config: Config }) {
   const styled = `
   .tab {
     @apply text-opacity-50 hover:text-opacity-100;
-    --tab-color: hsla(var(--bc) / var(--tw-text-opacity, 1));
-    --tab-bg: hsla(var(--b1) / var(--tw-bg-opacity, 1));
-    --tab-border-color: hsla(var(--b3) / var(--tw-bg-opacity, 1));
+    --tab-color: hsla(var(--base-content) / var(--tw-text-opacity, 1));
+    --tab-bg: hsla(var(--base-100) / var(--tw-bg-opacity, 1));
+    --tab-border-color: hsla(var(--base-300) / var(--tw-bg-opacity, 1));
     color: var(--tab-color);
     padding-left: var(--tab-padding, 1rem);
     padding-right: var(--tab-padding, 1rem);

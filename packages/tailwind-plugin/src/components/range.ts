@@ -5,24 +5,24 @@ export function range(args: { config: Config }) {
   const styled = `
   .range {
     -webkit-appearance: none;
-    --range-shdw: var(--bc);
+    --range-shdw: var(--base-content);
     @apply bg-transparent rounded-box overflow-hidden;
     &:focus-visible::-webkit-slider-thumb {
-      --focus-shadow: 0 0 0 6px hsl(var(--b1)) inset, 0 0 0 2rem hsl(var(--range-shdw)) inset;
+      --focus-shadow: 0 0 0 6px hsl(var(--base-100)) inset, 0 0 0 2rem hsl(var(--range-shdw)) inset;
     }
     &:focus-visible::-moz-range-thumb {
-      --focus-shadow: 0 0 0 6px hsl(var(--b1)) inset, 0 0 0 2rem hsl(var(--range-shdw)) inset;
+      --focus-shadow: 0 0 0 6px hsl(var(--base-100)) inset, 0 0 0 2rem hsl(var(--range-shdw)) inset;
     }
     &::-webkit-slider-runnable-track {
       @apply h-2 w-full rounded-box;
-      background-color: hsla(var(--bc) / 0.1);
+      background-color: hsla(var(--base-content) / 0.1);
     }
     &::-moz-range-track {
       @apply h-2 w-full rounded-box;
-      background-color: hsla(var(--bc) / 0.1);
+      background-color: hsla(var(--base-content) / 0.1);
     }
     &::-webkit-slider-thumb {
-      background-color: hsl(var(--b1));
+      background-color: hsl(var(--base-100));
       @apply relative h-6 w-6 border-none transition-all duration-300 ease-in-out rounded-box;
       -webkit-appearance: none;
       top: 50%;
@@ -33,7 +33,7 @@ export function range(args: { config: Config }) {
       box-shadow: 0 0 0 3px hsl(var(--range-shdw)) inset, var(--focus-shadow, 0 0), calc(var(--filler-size) * -1 - var(--filler-offset)) 0 0 var(--filler-size);
     }
     &::-moz-range-thumb {
-      background-color: hsl(var(--b1));
+      background-color: hsl(var(--base-100));
       @apply relative h-6 w-6 border-none transition-all duration-300 ease-in-out rounded-box;
       top: 50%;
       color: hsl(var(--range-shdw));
@@ -42,13 +42,13 @@ export function range(args: { config: Config }) {
       box-shadow: 0 0 0 3px hsl(var(--range-shdw)) inset, var(--focus-shadow, 0 0), calc(var(--filler-size) * -1 - var(--filler-offset)) 0 0 var(--filler-size);
     }
     &-primary {
-      --range-shdw: var(--p);
+      --range-shdw: var(--primary);
     }
     &-secondary {
-      --range-shdw: var(--s);
+      --range-shdw: var(--secondary);
     }
     &-accent {
-      --range-shdw: var(--a);
+      --range-shdw: var(--accent);
     }
   }
   

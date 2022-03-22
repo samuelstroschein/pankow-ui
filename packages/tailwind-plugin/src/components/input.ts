@@ -9,7 +9,7 @@ export function input(args: { config: Config }) {
       @apply border-opacity-20;
     }
     &:focus {
-      outline: 2px solid hsla(var(--bc) / 0.2);
+      outline: 2px solid hsla(var(--base-content) / 0.2);
       outline-offset: 2px;
     }
     &-ghost {
@@ -22,43 +22,43 @@ export function input(args: { config: Config }) {
     &-primary {
       @apply border-primary;
       &:focus {
-        outline: 2px solid hsl(var(--p));
+        outline: 2px solid hsl(var(--primary));
       }
     }
     &-secondary {
       @apply border-secondary;
       &:focus {
-        outline: 2px solid hsl(var(--s));
+        outline: 2px solid hsl(var(--secondary));
       }
     }
     &-accent {
       @apply border-accent;
       &:focus {
-        outline: 2px solid hsl(var(--a));
+        outline: 2px solid hsl(var(--accent));
       }
     }
     &-info {
       @apply border-info;
       &:focus {
-        outline: 2px solid hsl(var(--in));
+        outline: 2px solid hsl(var(--info));
       }
     }
     &-success {
       @apply border-success;
       &:focus {
-        outline: 2px solid hsl(var(--su));
+        outline: 2px solid hsl(var(--success));
       }
     }
     &-warning {
       @apply border-warning;
       &:focus {
-        outline: 2px solid hsl(var(--wa));
+        outline: 2px solid hsl(var(--warning));
       }
     }
-    &-error {
-      @apply border-error;
+    &-danger {
+      @apply border-danger;
       &:focus {
-        outline: 2px solid hsl(var(--er));
+        outline: 2px solid hsl(var(--danger));
       }
     }
     &-disabled,

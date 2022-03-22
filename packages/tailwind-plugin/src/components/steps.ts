@@ -65,11 +65,11 @@ export function steps(args: { config: Config }) {
     .step-warning:after {
       @apply bg-warning text-warning-content;
     }
-    .step-error + .step-error:before {
-      @apply bg-error;
+    .step-danger + .step-danger:before {
+      @apply bg-danger;
     }
-    .step-error:after {
-      @apply bg-error text-error-content;
+    .step-danger:after {
+      @apply bg-danger text-danger-content;
     }
    
   }

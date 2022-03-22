@@ -6,8 +6,8 @@ export function tooltip(args: { config: Config }) {
   .tooltip {
     @apply relative inline-block text-center;
     --tooltip-tail: 3px;
-    --tooltip-color: hsl(var(--n));
-    --tooltip-text-color: hsl(var(--nc));
+    --tooltip-color: hsl(var(--neutral));
+    --tooltip-text-color: hsl(var(--neutral-content));
     --tooltip-tail-offset: calc(100% + 1px - var(--tooltip-tail));
   }
   .tooltip:before,
@@ -80,32 +80,32 @@ export function tooltip(args: { config: Config }) {
   }
   .tooltip {
     &-primary {
-      --tooltip-color: hsl(var(--p));
-      --tooltip-text-color: hsl(var(--pc));
+      --tooltip-color: hsl(var(--primary));
+      --tooltip-text-color: hsl(var(--primary-content));
     }
     &-secondary {
-      --tooltip-color: hsl(var(--s));
-      --tooltip-text-color: hsl(var(--sc));
+      --tooltip-color: hsl(var(--secondary));
+      --tooltip-text-color: hsl(var(--secondary-content));
     }
     &-accent {
-      --tooltip-color: hsl(var(--a));
-      --tooltip-text-color: hsl(var(--ac));
+      --tooltip-color: hsl(var(--accent));
+      --tooltip-text-color: hsl(var(--accent-content));
     }
     &-info {
-      --tooltip-color: hsla(var(--in));
-      --tooltip-text-color: hsl(var(--inc));
+      --tooltip-color: hsla(var(--info));
+      --tooltip-text-color: hsl(var(--info-content));
     }
     &-success {
-      --tooltip-color: hsla(var(--su));
-      --tooltip-text-color: hsl(var(--suc));
+      --tooltip-color: hsla(var(--success));
+      --tooltip-text-color: hsl(var(--success-content));
     }
     &-warning {
-      --tooltip-color: hsla(var(--wa));
-      --tooltip-text-color: hsl(var(--wac));
+      --tooltip-color: hsla(var(--warning));
+      --tooltip-text-color: hsl(var(--warning-content));
     }
-    &-error {
-      --tooltip-color: hsla(var(--er));
-      --tooltip-text-color: hsl(var(--erc));
+    &-danger {
+      --tooltip-color: hsla(var(--danger));
+      --tooltip-text-color: hsl(var(--danger-content));
     }
   }
   

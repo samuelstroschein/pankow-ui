@@ -40,7 +40,7 @@ const convertToHsl = function (input) {
           .hsl()
           .round()
           .array();
-        resultObj["--pf"] =
+        resultObj["--primary-focus"] =
           darkerHslArray[0] +
           " " +
           darkerHslArray[1] +
@@ -56,7 +56,7 @@ const convertToHsl = function (input) {
           .hsl()
           .round()
           .array();
-        resultObj["--sf"] =
+        resultObj["--secondary-focus"] =
           darkerHslArray[0] +
           " " +
           darkerHslArray[1] +
@@ -72,7 +72,7 @@ const convertToHsl = function (input) {
           .hsl()
           .round()
           .array();
-        resultObj["--af"] =
+        resultObj["--accent-focus"] =
           darkerHslArray[0] +
           " " +
           darkerHslArray[1] +
@@ -88,7 +88,7 @@ const convertToHsl = function (input) {
           .hsl()
           .round()
           .array();
-        resultObj["--nf"] =
+        resultObj["--neutral-focus"] =
           darkerHslArray[0] +
           " " +
           darkerHslArray[1] +
@@ -100,7 +100,7 @@ const convertToHsl = function (input) {
 
       // auto generate base colors
       if (!input.hasOwnProperty("base-100")) {
-        resultObj["--b1"] = 0 + " " + 0 + "%" + " " + 100 + "%";
+        resultObj["--base-100"] = 0 + " " + 0 + "%" + " " + 100 + "%";
       }
 
       if (!input.hasOwnProperty("base-200")) {
@@ -109,7 +109,7 @@ const convertToHsl = function (input) {
           .hsl()
           .round()
           .array();
-        resultObj["--b2"] =
+        resultObj["--base-200"] =
           darkerHslArray[0] +
           " " +
           darkerHslArray[1] +
@@ -126,7 +126,7 @@ const convertToHsl = function (input) {
             .hsl()
             .round()
             .array();
-          resultObj["--b3"] =
+          resultObj["--base-300"] =
             darkerHslArray[0] +
             " " +
             darkerHslArray[1] +
@@ -141,7 +141,7 @@ const convertToHsl = function (input) {
             .hsl()
             .round()
             .array();
-          resultObj["--b3"] =
+          resultObj["--base-300"] =
             darkerHslArray[0] +
             " " +
             darkerHslArray[1] +
@@ -154,67 +154,77 @@ const convertToHsl = function (input) {
 
       // auto generate state colors
       if (!input.hasOwnProperty("info")) {
-        resultObj["--in"] = 198 + " " + 93 + "%" + " " + 60 + "%";
+        resultObj["--info"] = 198 + " " + 93 + "%" + " " + 60 + "%";
       }
       if (!input.hasOwnProperty("success")) {
-        resultObj["--su"] = 158 + " " + 64 + "%" + " " + 52 + "%";
+        resultObj["--success"] = 158 + " " + 64 + "%" + " " + 52 + "%";
       }
       if (!input.hasOwnProperty("warning")) {
-        resultObj["--wa"] = 43 + " " + 96 + "%" + " " + 56 + "%";
+        resultObj["--warning"] = 43 + " " + 96 + "%" + " " + 56 + "%";
       }
-      if (!input.hasOwnProperty("error")) {
-        resultObj["--er"] = 0 + " " + 91 + "%" + " " + 71 + "%";
+      if (!input.hasOwnProperty("danger")) {
+        resultObj["--danger"] = 0 + " " + 91 + "%" + " " + 71 + "%";
       }
 
       // auto generate content colors
       if (!input.hasOwnProperty("base-content")) {
-        resultObj["--bc"] = generateForegorundColorFrom(input["base-100"]);
+        resultObj["--base-content"] = generateForegorundColorFrom(input["base-100"]);
       }
       if (!input.hasOwnProperty("primary-content")) {
-        resultObj["--pc"] = generateForegorundColorFrom(input["primary"]);
+        resultObj["--primary-content"] = generateForegorundColorFrom(
+          input["primary"]
+        );
       }
 
       if (!input.hasOwnProperty("secondary-content")) {
-        resultObj["--sc"] = generateForegorundColorFrom(input["secondary"]);
+        resultObj["--secondary-content"] = generateForegorundColorFrom(
+          input["secondary"]
+        );
       }
 
       if (!input.hasOwnProperty("accent-content")) {
-        resultObj["--ac"] = generateForegorundColorFrom(input["accent"]);
+        resultObj["--accent-content"] = generateForegorundColorFrom(
+          input["accent"]
+        );
       }
 
       if (!input.hasOwnProperty("neutral-content")) {
-        resultObj["--nc"] = generateForegorundColorFrom(input["neutral"]);
+        resultObj["--neutral-content"] = generateForegorundColorFrom(
+          input["neutral"]
+        );
       }
 
       if (!input.hasOwnProperty("info-content")) {
         if (input.hasOwnProperty("info")) {
-          resultObj["--inc"] = generateForegorundColorFrom(input["info"]);
+          resultObj["--info-content"] = generateForegorundColorFrom(input["info"]);
         } else {
-          resultObj["--inc"] = 198 + " " + 100 + "%" + " " + 12 + "%";
+          resultObj["--info-content"] = 198 + " " + 100 + "%" + " " + 12 + "%";
         }
       }
 
       if (!input.hasOwnProperty("success-content")) {
         if (input.hasOwnProperty("success")) {
-          resultObj["--suc"] = generateForegorundColorFrom(input["success"]);
+          resultObj["--success-content"] = generateForegorundColorFrom(input["success"]);
         } else {
-          resultObj["--suc"] = 158 + " " + 100 + "%" + " " + 10 + "%";
+          resultObj["--success-content"] = 158 + " " + 100 + "%" + " " + 10 + "%";
         }
       }
 
       if (!input.hasOwnProperty("warning-content")) {
         if (input.hasOwnProperty("warning")) {
-          resultObj["--wac"] = generateForegorundColorFrom(input["warning"]);
+          resultObj["--warning-content"] = generateForegorundColorFrom(input["warning"]);
         } else {
-          resultObj["--wac"] = 43 + " " + 100 + "%" + " " + 11 + "%";
+          resultObj["--warning-content"] = 43 + " " + 100 + "%" + " " + 11 + "%";
         }
       }
 
-      if (!input.hasOwnProperty("error-content")) {
-        if (input.hasOwnProperty("error")) {
-          resultObj["--erc"] = generateForegorundColorFrom(input["error"]);
+      if (!input.hasOwnProperty("danger-content")) {
+        if (input.hasOwnProperty("danger")) {
+          resultObj["--danger-content"] = generateForegorundColorFrom(
+            input["danger"]
+          );
         } else {
-          resultObj["--erc"] = 0 + " " + 100 + "%" + " " + 14 + "%";
+          resultObj["--danger-content"] = 0 + " " + 100 + "%" + " " + 14 + "%";
         }
       }
 
