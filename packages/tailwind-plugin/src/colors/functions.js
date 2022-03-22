@@ -298,37 +298,7 @@ export function injectThemes(addBase, config, themes) {
       }
     });
   } else if (config("daisyui.themes") != false) {
-    themeOrder = [
-      "light",
-      "dark",
-      "cupcake",
-      "bumblebee",
-      "emerald",
-      "corporate",
-      "synthwave",
-      "retro",
-      "cyberpunk",
-      "valentine",
-      "halloween",
-      "garden",
-      "forest",
-      "aqua",
-      "lofi",
-      "pastel",
-      "fantasy",
-      "wireframe",
-      "black",
-      "luxury",
-      "dracula",
-      "cmyk",
-      "autumn",
-      "business",
-      "acid",
-      "lemonade",
-      "night",
-      "coffee",
-      "winter",
-    ];
+    themeOrder = ["light", "dark"];
   } else if (config("daisyui.themes") == false) {
     themeOrder.push("light");
   }
