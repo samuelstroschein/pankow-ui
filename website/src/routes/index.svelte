@@ -8,3 +8,7 @@
 	<button class="button">first </button>
 	<button class="button">second</button>
 </div>
+
+<div class="badge badge-info">hello</div>
+
+<div class="badge badge-primary">hello</div>

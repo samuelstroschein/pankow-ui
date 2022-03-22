@@ -8,13 +8,29 @@ export function alert(args: { config: Config }) {
       > :where(*) {
         @apply flex items-center gap-2;
       }
+
+      &-sm {
+        @apply p-2;
+      }
+      &-info {
+        @apply bg-info text-info-content;
+      }
+      &-success {
+        @apply bg-success text-success-content;
+      }
+      &-warning {
+        @apply bg-warning text-warning-content;
+      }
+      &-error {
+        @apply bg-error text-error-content;
+      }
     }    
   `;
 
   const styled = `
-  .alert {
-    @apply bg-base-200 p-4 rounded-box;
-  }
+    .alert {
+      @apply bg-base-200 p-4 rounded-box;
+    }
   `;
   if (args.config.styled) {
     return css(unstyled + styled);
