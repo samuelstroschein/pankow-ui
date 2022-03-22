@@ -1,0 +1,26 @@
+{
+  "name": "pankow-ui",
+  "version": "1.0.0",
+  "description": "Tailwind CSS components.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup --config",
+    "dev": "rollup --config --watch"
+  },
+  "dependencies": {
+    "postcss": "^8.4.12",
+    "postcss-js": "^4.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.2",
+    "@rollup/plugin-typescript": "^8.3.1",
+    "rollup-plugin-copy": "^3.4.0",
+    "@types/tailwindcss": "^3.0.9",
+    "rollup": "^2.70.1",
+    "vite": "^2.8.6"
+  }
+}
