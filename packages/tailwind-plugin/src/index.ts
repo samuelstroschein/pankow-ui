@@ -1,9 +1,13 @@
 import type { TailwindPluginFn } from "tailwindcss/plugin";
-import { button } from "./components/button";
+import * as components from "./components/index";
 
 const plugin: TailwindPluginFn = ({ addComponents }) => {
   console.log("pankow ui is activating...");
-  addComponents(button());
+  for (const name of Object.keys(components)) {
+    addComponents(
+      components[name as keyof typeof components]({ config: { styled: true } })
+    );
+  }
   console.log("pankow ui setup complete");
 };
 
