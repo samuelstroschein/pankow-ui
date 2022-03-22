@@ -168,7 +168,9 @@ const convertToHsl = function (input) {
 
       // auto generate content colors
       if (!input.hasOwnProperty("base-content")) {
-        resultObj["--base-content"] = generateForegorundColorFrom(input["base-100"]);
+        resultObj["--base-content"] = generateForegorundColorFrom(
+          input["base-100"]
+        );
       }
       if (!input.hasOwnProperty("primary-content")) {
         resultObj["--primary-content"] = generateForegorundColorFrom(
@@ -196,7 +198,9 @@ const convertToHsl = function (input) {
 
       if (!input.hasOwnProperty("info-content")) {
         if (input.hasOwnProperty("info")) {
-          resultObj["--info-content"] = generateForegorundColorFrom(input["info"]);
+          resultObj["--info-content"] = generateForegorundColorFrom(
+            input["info"]
+          );
         } else {
           resultObj["--info-content"] = 198 + " " + 100 + "%" + " " + 12 + "%";
         }
@@ -204,17 +208,23 @@ const convertToHsl = function (input) {
 
       if (!input.hasOwnProperty("success-content")) {
         if (input.hasOwnProperty("success")) {
-          resultObj["--success-content"] = generateForegorundColorFrom(input["success"]);
+          resultObj["--success-content"] = generateForegorundColorFrom(
+            input["success"]
+          );
         } else {
-          resultObj["--success-content"] = 158 + " " + 100 + "%" + " " + 10 + "%";
+          resultObj["--success-content"] =
+            158 + " " + 100 + "%" + " " + 10 + "%";
         }
       }
 
       if (!input.hasOwnProperty("warning-content")) {
         if (input.hasOwnProperty("warning")) {
-          resultObj["--warning-content"] = generateForegorundColorFrom(input["warning"]);
+          resultObj["--warning-content"] = generateForegorundColorFrom(
+            input["warning"]
+          );
         } else {
-          resultObj["--warning-content"] = 43 + " " + 100 + "%" + " " + 11 + "%";
+          resultObj["--warning-content"] =
+            43 + " " + 100 + "%" + " " + 11 + "%";
         }
       }
 
@@ -243,9 +253,6 @@ const convertToHsl = function (input) {
       }
       if (!input.hasOwnProperty("--animation-input")) {
         resultObj["--animation-input"] = ".2s";
-      }
-      if (!input.hasOwnProperty("--btn-text-case")) {
-        resultObj["--btn-text-case"] = "uppercase";
       }
       if (!input.hasOwnProperty("--btn-focus-scale")) {
         resultObj["--btn-focus-scale"] = "0.95";
