@@ -6,7 +6,7 @@ import path from "path";
 import postcssJs from "postcss-js";
 
 const button = fs
-  .readFileSync(path.resolve(__dirname, "./css/button.pcss"))
+  .readFileSync(path.resolve(__dirname, "./components/button.pcss"))
   .toString();
 
 const root = postcss.parse(button);

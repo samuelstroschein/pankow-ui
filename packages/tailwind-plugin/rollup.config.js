@@ -22,6 +22,8 @@ export default {
     // enable typescript
     typescript(),
     // copy css files into the dist(tribution)
-    copy({ targets: [{ src: "src/css/**/*", dest: "dist/css" }] }),
+    copy({
+      targets: [{ src: "src/components/**/*", dest: "dist/components" }],
+    }),
   ],
 };
