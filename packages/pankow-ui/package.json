@@ -12,6 +12,7 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
+    "tailwindcss": "^3.0.0",
     "color": "^4.2",
     "postcss": "^8.4.12",
     "postcss-js": "^4.0.0"
