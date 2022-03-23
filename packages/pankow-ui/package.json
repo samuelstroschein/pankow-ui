@@ -1,0 +1,23 @@
+{
+  "name": "pankow-ui",
+  "version": "1.0.0",
+  "description": "Tailwind CSS components and design system.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "color": "^4.2",
+    "postcss": "^8.4.12",
+    "postcss-js": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/color": "^3.0.3",
+    "@types/tailwindcss": "^3.0.9"
+  }
+}

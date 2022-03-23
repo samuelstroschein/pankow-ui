@@ -1,7 +1,7 @@
 {
-  "name": "pankow-ui",
+  "name": "@pankow-ui/color-system",
   "version": "1.0.0",
-  "description": "Tailwind CSS components.",
+  "description": "Semantic color system for Tailwind CSS.",
   "main": "dist/index.js",
   "types": "dist/index.d.js",
   "files": [
@@ -11,13 +11,8 @@
     "build": "tsc",
     "dev": "tsc --watch"
   },
-  "dependencies": {
-    "color": "^4.2",
-    "postcss": "^8.4.12",
-    "postcss-js": "^4.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@types/color": "^3.0.3",
     "@types/tailwindcss": "^3.0.9"
   }
 }

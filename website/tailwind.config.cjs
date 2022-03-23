@@ -3,5 +3,5 @@ module.exports = {
 	theme: {
 		extend: {}
 	},
-	plugins: [require('../packages/tailwind-plugin/dist')]
+	plugins: [require('../packages/pankow-ui/dist')]
 };
