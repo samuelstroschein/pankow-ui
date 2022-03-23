@@ -1,3 +1,1 @@
-export type Config = {
-  styled: boolean;
-};
+export type Config = {};

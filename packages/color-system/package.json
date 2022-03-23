@@ -11,8 +11,10 @@
     "build": "tsc",
     "dev": "tsc --watch"
   },
-  "dependencies": {},
+  "dependencies": {
+    "tailwindcss": "^3.0.0"
+  },
   "devDependencies": {
-    "@types/tailwindcss": "^3.0.9"
+    "@types/tailwindcss": "^3.0.0"
   }
 }
