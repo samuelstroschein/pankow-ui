@@ -28,6 +28,7 @@
 		"svelte-preprocess": "^4.10.1",
 		"tslib": "^2.3.1",
 		"pankow-ui": "*",
+		"@pankow-ui/color-system": "*",
 		"tailwindcss": "^3.0.23"
 	},
 	"type": "module"

@@ -47,6 +47,25 @@ export function injectThemes(addBase, config, themes) {
     });
   }
 
+  let themeOrder = [];
+  if (Array.isArray(config("daisyui.themes"))) {
+    config("daisyui.themes").forEach((theme, index) => {
+      if (typeof theme === "object" && theme !== null) {
+        Object.entries(theme).forEach(([customThemeName, customThemevalue]) => {
+          themeOrder.push(customThemeName);
+        });
+      } else if (
+        includedThemesObj.hasOwnProperty("[data-theme=" + theme + "]")
+      ) {
+        themeOrder.push(theme);
+      }
+    });
+  } else if (config("daisyui.themes") != false) {
+    themeOrder = ["light", "dark"];
+  } else if (config("daisyui.themes") == false) {
+    themeOrder.push("light");
+  }
+
   // inject themes in order
   themeOrder.forEach((themeName, index) => {
     if (index === 0) {
