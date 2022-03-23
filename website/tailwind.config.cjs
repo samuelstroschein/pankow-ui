@@ -3,5 +3,5 @@ module.exports = {
 	theme: {
 		extend: {}
 	},
-	plugins: [require('../packages/pankow-ui/dist')]
+	plugins: [require('pankow-ui'), require('@pankow-ui/color-system')]
 };
