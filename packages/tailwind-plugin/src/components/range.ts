@@ -6,7 +6,7 @@ export function range(args: { config: Config }) {
   .range {
     -webkit-appearance: none;
     --range-shdw: var(--base-content);
-    @apply bg-transparent rounded-box overflow-hidden;
+    @apply bg-transparent rounded overflow-hidden;
     &:focus-visible::-webkit-slider-thumb {
       --focus-shadow: 0 0 0 6px hsl(var(--base-100)) inset, 0 0 0 2rem hsl(var(--range-shdw)) inset;
     }
@@ -14,16 +14,16 @@ export function range(args: { config: Config }) {
       --focus-shadow: 0 0 0 6px hsl(var(--base-100)) inset, 0 0 0 2rem hsl(var(--range-shdw)) inset;
     }
     &::-webkit-slider-runnable-track {
-      @apply h-2 w-full rounded-box;
+      @apply h-2 w-full rounded;
       background-color: hsla(var(--base-content) / 0.1);
     }
     &::-moz-range-track {
-      @apply h-2 w-full rounded-box;
+      @apply h-2 w-full rounded;
       background-color: hsla(var(--base-content) / 0.1);
     }
     &::-webkit-slider-thumb {
       background-color: hsl(var(--base-100));
-      @apply relative h-6 w-6 border-none transition-all duration-300 ease-in-out rounded-box;
+      @apply relative h-6 w-6 border-none transition-all duration-300 ease-in-out rounded;
       -webkit-appearance: none;
       top: 50%;
       color: hsl(var(--range-shdw));
@@ -34,7 +34,7 @@ export function range(args: { config: Config }) {
     }
     &::-moz-range-thumb {
       background-color: hsl(var(--base-100));
-      @apply relative h-6 w-6 border-none transition-all duration-300 ease-in-out rounded-box;
+      @apply relative h-6 w-6 border-none transition-all duration-300 ease-in-out rounded;
       top: 50%;
       color: hsl(var(--range-shdw));
       --filler-size: 100rem;

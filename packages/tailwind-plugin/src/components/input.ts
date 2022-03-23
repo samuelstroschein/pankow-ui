@@ -4,7 +4,7 @@ import { css } from "../css";
 export function input(args: { config: Config }) {
   const styled = `
   .input {
-    @apply border border-base-content border-opacity-0 bg-base-100 rounded-btn;
+    @apply border border-base-content border-opacity-0 bg-base-100 rounded;
     &-bordered {
       @apply border-opacity-20;
     }
@@ -112,30 +112,30 @@ export function input(args: { config: Config }) {
       @apply flex items-center bg-base-300 px-4;
     }
     :first-child {
-      border-top-left-radius: var(--rounded-btn, 0.5rem);
+      border-top-left-radius: var(--rounded, 0.5rem);
       border-top-right-radius: 0;
-      border-bottom-left-radius: var(--rounded-btn, 0.5rem);
+      border-bottom-left-radius: var(--rounded, 0.5rem);
       border-bottom-right-radius: 0;
     }
     :last-child {
       border-top-left-radius: 0;
-      border-top-right-radius: var(--rounded-btn, 0.5rem);
+      border-top-right-radius: var(--rounded, 0.5rem);
       border-bottom-left-radius: 0;
-      border-bottom-right-radius: var(--rounded-btn, 0.5rem);
+      border-bottom-right-radius: var(--rounded, 0.5rem);
     }
     &-vertical {
       @apply flex-col;
       :first-child {
-        border-top-left-radius: var(--rounded-btn, 0.5rem);
-        border-top-right-radius: var(--rounded-btn, 0.5rem);
-        border-bottom-left-radius: 0;
+        border-top-left-radius: var(--rounded, 0.5rem);
+        border-top-right-radius: var(--rounded, 0.5rem);
         border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
       }
       :last-child {
         border-top-left-radius: 0;
         border-top-right-radius: 0;
-        border-bottom-left-radius: var(--rounded-btn, 0.5rem);
-        border-bottom-right-radius: var(--rounded-btn, 0.5rem);
+        border-bottom-left-radius: var(--rounded, 0.5rem);
+        border-bottom-right-radius: var(--rounded, 0.5rem);
       }
     }
   }

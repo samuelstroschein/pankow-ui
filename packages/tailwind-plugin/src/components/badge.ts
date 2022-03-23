@@ -4,7 +4,7 @@ import { css } from "../css";
 export function badge(args: { config: Config }) {
   const styled = `
   .badge {
-    @apply border border-neutral bg-neutral text-neutral-content rounded-badge;
+    @apply border border-neutral bg-neutral text-neutral-content rounded;
 
     &-primary {
       @apply border-primary bg-primary text-primary-content;

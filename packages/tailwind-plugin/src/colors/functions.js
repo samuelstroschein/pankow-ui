@@ -237,35 +237,6 @@ const convertToHsl = function (input) {
           resultObj["--danger-content"] = 0 + " " + 100 + "%" + " " + 14 + "%";
         }
       }
-
-      // auto generate css variables
-      if (!input.hasOwnProperty("--rounded-box")) {
-        resultObj["--rounded-box"] = "1rem";
-      }
-      if (!input.hasOwnProperty("--rounded-btn")) {
-        resultObj["--rounded-btn"] = "0.5rem";
-      }
-      if (!input.hasOwnProperty("--rounded-badge")) {
-        resultObj["--rounded-badge"] = "1.9rem";
-      }
-      if (!input.hasOwnProperty("--animation-btn")) {
-        resultObj["--animation-btn"] = "0.25s";
-      }
-      if (!input.hasOwnProperty("--animation-input")) {
-        resultObj["--animation-input"] = ".2s";
-      }
-      if (!input.hasOwnProperty("--btn-focus-scale")) {
-        resultObj["--btn-focus-scale"] = "0.95";
-      }
-      if (!input.hasOwnProperty("--border-btn")) {
-        resultObj["--border-btn"] = "1px";
-      }
-      if (!input.hasOwnProperty("--tab-border")) {
-        resultObj["--tab-border"] = "1px";
-      }
-      if (!input.hasOwnProperty("--tab-radius")) {
-        resultObj["--tab-radius"] = "0.5rem";
-      }
     });
     return resultObj;
   }

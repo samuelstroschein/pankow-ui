@@ -4,7 +4,7 @@ import { css } from "../css";
 export function stat(args: { config: Config }) {
   const styled = `
   .stats {
-    @apply bg-base-100 text-base-content rounded-box;
+    @apply bg-base-100 text-base-content rounded;
   }
   :where(.stats) {
     @apply divide-x divide-y-0 overflow-x-auto;

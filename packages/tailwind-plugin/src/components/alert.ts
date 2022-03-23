@@ -4,7 +4,7 @@ import { css } from "../css";
 export function alert(args: { config: Config }) {
   const styled = `
     .alert {
-      @apply bg-base-200 p-4 rounded-box;  
+      @apply bg-base-200 p-4 rounded;  
      
       &-sm {
         @apply p-2;

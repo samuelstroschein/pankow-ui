@@ -4,7 +4,7 @@ import { css } from "../css";
 export function card(args: { config: Config }) {
   const styled = `
     .card {
-      @apply rounded-box;
+      @apply rounded;
       &:focus-visible {
         outline: 2px solid currentColor;
         outline-offset: 2px;
@@ -29,7 +29,7 @@ export function card(args: { config: Config }) {
       }
       &.image-full {
         &:before {
-          @apply z-10 bg-neutral opacity-75 rounded-box;
+          @apply z-10 bg-neutral opacity-75 rounded;
         }
       }
       &.image-full > &-body {
@@ -94,7 +94,7 @@ export function card(args: { config: Config }) {
         @apply relative;
       }
     }
-    
+
     .card-side {
       align-items: stretch;
       flex-direction: row;

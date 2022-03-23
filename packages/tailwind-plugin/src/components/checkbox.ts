@@ -6,7 +6,7 @@ export function checkbox(args: { config: Config }) {
     .checkbox {
       --chkbg: var(--base-content);
       --chkfg: var(--base-100);
-      @apply h-6 w-6 cursor-pointer appearance-none border border-base-content border-opacity-20 rounded-btn;
+      @apply h-6 w-6 cursor-pointer appearance-none border border-base-content border-opacity-20 rounded;
       &:focus-visible {
         outline: 2px solid hsl(var(--base-content));
         outline-offset: 2px;

@@ -20,12 +20,7 @@ export function variables(args: { config: Config }) {
     .tab-border-3 {
         --tab-border: 3px;
     }
-    .tab-rounded-none {
-        --tab-radius: 0;
-    }
-    .tab-rounded-lg {
-        --tab-radius: 0.5rem;
-    }
+  
   
   `);
 }

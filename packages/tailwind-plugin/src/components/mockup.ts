@@ -5,7 +5,7 @@ export function mockup(args: { config: Config }) {
   const styled = `
   .mockup {
     &-code {
-      @apply min-w-[18rem] bg-neutral py-5 text-neutral-content rounded-box;
+      @apply min-w-[18rem] bg-neutral py-5 text-neutral-content rounded;
       &:before {
         content: "";
         @apply mb-4 block h-3 w-3 rounded-full opacity-30;
@@ -26,7 +26,7 @@ export function mockup(args: { config: Config }) {
       }
     }
     &-window {
-      @apply pt-5 rounded-box;
+      @apply pt-5 rounded;
       &:before {
         content: "";
         @apply mb-4 block h-3 w-3 rounded-full opacity-30;

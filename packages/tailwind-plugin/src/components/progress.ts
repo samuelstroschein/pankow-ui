@@ -4,7 +4,7 @@ import { css } from "../css";
 export function progress(args: { config: Config }) {
   const styled = `
   .progress {
-    @apply h-2 rounded-box;
+    @apply h-2 rounded;
     &::-moz-progress-bar {
       @apply bg-neutral;
     }
@@ -56,10 +56,10 @@ export function progress(args: { config: Config }) {
     }
   
     &::-webkit-progress-bar {
-      @apply bg-neutral bg-opacity-20 rounded-box;
+      @apply bg-neutral bg-opacity-20 rounded;
     }
     &::-webkit-progress-value {
-      @apply bg-neutral-focus rounded-box;
+      @apply bg-neutral-focus rounded;
     }
     &-primary::-webkit-progress-value {
       @apply bg-primary;
@@ -86,7 +86,7 @@ export function progress(args: { config: Config }) {
   
   .progress:indeterminate::after {
     content: "";
-    @apply inset-y-0 -left-[40%] w-1/3 absolute rounded-box;
+    @apply inset-y-0 -left-[40%] w-1/3 absolute rounded;
     animation: progress-loading 5s infinite ease-in-out;
   }
   

@@ -20,10 +20,7 @@ export function tab(args: { config: Config }) {
     &:focus-visible {
       outline: 2px solid currentColor;
       outline-offset: -3px;
-      &.tab-lifted {
-        border-bottom-right-radius: var(--tab-radius, 0.5rem);
-        border-bottom-left-radius: var(--tab-radius, 0.5rem);
-      }
+    
     }
   }
   .tab-bordered {
@@ -34,8 +31,7 @@ export function tab(args: { config: Config }) {
   .tab-lifted {
     border: var(--tab-border, 1px) solid transparent;
     border-width: 0 0 var(--tab-border, 1px) 0;
-    border-top-left-radius: var(--tab-radius, 0.5rem);
-    border-top-right-radius: var(--tab-radius, 0.5rem);
+
     border-bottom-color: var(--tab-border-color);
     padding-left: var(--tab-padding, 1rem);
     padding-right: var(--tab-padding, 1rem);
@@ -56,14 +52,13 @@ export function tab(args: { config: Config }) {
         content: "";
         display: block;
         position: absolute;
-        width: var(--tab-radius, 0.5rem);
-        height: var(--tab-radius, 0.5rem);
+      
         bottom: 0;
         --tab-grad: calc(68% - var(--tab-border, 1px));
         --tab-corner-bg: radial-gradient(circle at var(--circle-pos), transparent var(--tab-grad), var(--tab-border-color) calc(var(--tab-grad) + 0.3px), var(--tab-border-color) calc(var(--tab-grad) + var(--tab-border, 1px)), var(--tab-bg) calc(var(--tab-grad) + var(--tab-border, 1px) + 0.3px));
       }
       &:before {
-        left: calc(var(--tab-radius, 0.5rem) * -1);
+       
         --circle-pos: top left;
         background-image: var(--tab-corner-bg);
   
@@ -73,7 +68,6 @@ export function tab(args: { config: Config }) {
         }
       }
       &:after {
-        right: calc(var(--tab-radius, 0.5rem) * -1);
         --circle-pos: top right;
         background-image: var(--tab-corner-bg);
   
@@ -96,9 +90,9 @@ export function tab(args: { config: Config }) {
     }
   }
   .tabs-boxed {
-    @apply bg-base-200 p-1 rounded-btn;
+    @apply bg-base-200 p-1 rounded;
     .tab-active {
-      @apply bg-primary text-primary-content rounded-btn hover:text-primary-content;
+      @apply bg-primary text-primary-content rounded hover:text-primary-content;
     }
   }
   

@@ -10,8 +10,8 @@ export function modal(args: { config: Config }) {
     overscroll-behavior: contain;
   }
   .modal-box {
-    @apply transform bg-base-100 p-6 transition duration-200 ease-in-out rounded-t-box;
-    @apply w-11/12 max-w-lg scale-90 rounded-b-box rounded-t-box;
+    @apply transform bg-base-100 p-6 transition duration-200 ease-in-out rounded-t;
+    @apply w-11/12 max-w-lg scale-90 rounded-b rounded-t;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     overflow-y: auto;
     overscroll-behavior: contain;
@@ -28,7 +28,7 @@ export function modal(args: { config: Config }) {
     @apply w-full max-w-none translate-y-10 scale-100 rounded-b-none;
   }
   .modal-middle :where(.modal-box){
-    @apply w-11/12 max-w-lg translate-y-0 scale-90 rounded-b-box;
+    @apply w-11/12 max-w-lg translate-y-0 scale-90 rounded-b;
   }
   
   `;

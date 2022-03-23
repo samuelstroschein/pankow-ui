@@ -16,7 +16,7 @@ export function menu(args: { config: Config }) {
       }
     }
     &[class*="p-"] li > * {
-      @apply rounded-btn;
+      @apply rounded;
     }
     :where(li.bordered > *) {
       @apply border-l-4 border-primary;

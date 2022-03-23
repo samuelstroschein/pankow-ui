@@ -4,7 +4,7 @@ import { css } from "../css";
 export function select(args: { config: Config }) {
   const styled = `
   .select {
-    @apply border border-base-content border-opacity-0 bg-base-100 pr-10 font-semibold transition duration-200 ease-in-out rounded-btn;
+    @apply border border-base-content border-opacity-0 bg-base-100 pr-10 font-semibold transition duration-200 ease-in-out rounded;
     &-bordered {
       @apply border-opacity-20;
     }

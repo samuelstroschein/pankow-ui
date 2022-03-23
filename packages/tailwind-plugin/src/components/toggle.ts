@@ -6,7 +6,7 @@ export function toggle(args: { config: Config }) {
   .toggle {
     --chkbg: hsla(var(--base-content) / 0.2);
     --handleoffset: 1.5rem;
-    @apply h-6 w-12 cursor-pointer appearance-none border border-base-content border-opacity-20 bg-base-content bg-opacity-20 duration-300 ease-in-out rounded-badge;
+    @apply h-6 w-12 cursor-pointer appearance-none border border-base-content border-opacity-20 bg-base-content bg-opacity-20 duration-300 ease-in-out rounded;
     transition: background, box-shadow var(--animation-input, 0.2s) ease-in-out;
     box-shadow: calc(var(--handleoffset) * -1) 0 0 2px hsl(var(--base-100)) inset, 0 0 0 2px hsl(var(--base-100)) inset;
     &:focus-visible {

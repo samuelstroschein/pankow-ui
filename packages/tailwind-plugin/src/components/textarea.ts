@@ -4,7 +4,7 @@ import { css } from "../css";
 export function textarea(args: { config: Config }) {
   const styled = `
   .textarea {
-    @apply border border-base-content border-opacity-0 bg-base-100 rounded-btn;
+    @apply border border-base-content border-opacity-0 bg-base-100 rounded;
     &-bordered {
       @apply border-opacity-20;
     }
