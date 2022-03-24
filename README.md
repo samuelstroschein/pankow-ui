@@ -31,3 +31,18 @@ Spacer:
 `$spacer-4` -> `{p,m}-6`
 `$spacer-5` -> `{p,m}-8`
 `$spacer-6` -> `{p,m}-10`
+
+Colors: 
+`fg.default` -> `on-background`
+`fg.muted` -> `surface-variant`
+`fg.subtle` -> `surface-variant`
+`fg.onEmphasis` -> `inverse-on-surface`
+`fg.accent` -> `primary`
+
+`bg.emphasis` -> `inverse-surface`
+`bg.default` -> `background`
+`bg.subtle` -> `surface`
+`bg.inset` -> `surface`
+
+`border.default` -> `outline`
+`border.muted` -> `surface-variant`

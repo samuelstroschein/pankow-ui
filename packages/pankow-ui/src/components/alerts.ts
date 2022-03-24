@@ -1,16 +1,16 @@
-import { Config } from "../config";
 import { css } from "../css";
+import { ParsedConfig } from "../types/parsedConfig";
 
-export function alerts(args: { config: Config }) {
-  const unstyled = `
+export function alerts({ config }: { config: ParsedConfig }) {
+  return css(`
     .alert {
-      @apply relative border border-solid rounded-md py-5 px-4
+      @apply relative border border-solid ${config.borderRadius(
+        "base"
+      )} py-5 px-4;
+
+      .icon {
+        @apply mr-6;
+      }
     }
-`;
-
-  const styled = `
-
-  `;
-
-  return css(unstyled + styled);
+`);
 }

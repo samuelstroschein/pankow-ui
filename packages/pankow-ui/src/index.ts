@@ -1,7 +1,9 @@
 import plugin from "tailwindcss/plugin";
 import * as components from "./components/index";
-import * as utilities from "./utilities/index";
+import { parseConfig } from "./config";
+// import * as utilities from "./utilities/index";
 import { css } from "./css";
+import { Config } from "./types/config";
 
 // tailwind requires commonjs
 // therefore, `module.exports` instead of `export plugin`
@@ -16,22 +18,28 @@ module.exports = plugin(({ addComponents, addUtilities, addBase, config }) => {
       }
     `)
   );
-
-  // add components
+  // iterating over all exported components
+  // to add the css to tailwind
   for (const name of Object.keys(components)) {
+    // TODO read config instead of hardcoded default config
+    const parsedConfig = parseConfig(defaultConfig);
     addComponents(
       components[name as keyof typeof components]({
-        config: { styled: true },
+        config: { borderRadius: () => "rounded" },
       })
     );
   }
   // add utilities
-  for (const name of Object.keys(utilities)) {
-    addUtilities(
-      utilities[name as keyof typeof utilities]({
-        config: { styled: true },
-      })
-    );
-  }
+  // for (const name of Object.keys(utilities)) {
+  //   addUtilities(
+  //     utilities[name as keyof typeof utilities]({
+  //       config: { styled: true },
+  //     })
+  //   );
+  // }
   console.log("pankow ui setup complete");
 });
+
+const defaultConfig: Config = {
+  borderRadiusBase: "rounded",
+};
