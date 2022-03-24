@@ -6,11 +6,11 @@ source: 'https://github.com/primer/css/tree/main/src/alerts'
 bundle: alerts
 ---
 
-alert messages, or alerts, inform users of successful or pending actions. Use them sparingly. Don't show more than one at a time.
+Alert messages, or alerts, inform users of successful or pending actions. Use them sparingly. Don't show more than one at a time.
 
 ## Default
 
-alert messages start off looking decently neutral—they're just light blue rounded rectangles.
+Alert messages start off looking decently neutral—they're just light blue rounded rectangles.
 
 <div class="alert">alert message goes here.</div>
 
