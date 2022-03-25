@@ -17,11 +17,10 @@ as base.
 ## Primer variables to Tailwind CSS
 
 Border radius:
-`border-radius`   -> `rounded-md` 
+`border-radius` -> `rounded-md`
 `border-radius-1` -> `rounded`
 `border-radius-2` -> `rounded-md`
 `border-radius-3` -> `rounded-lg`
-
 
 Spacer:
 `$spacer-0` -> `{p,m}-0`
@@ -32,7 +31,7 @@ Spacer:
 `$spacer-5` -> `{p,m}-8`
 `$spacer-6` -> `{p,m}-10`
 
-Colors: 
+Colors:
 `fg.default` -> `on-background`
 `fg.muted` -> `surface-variant`
 `fg.subtle` -> `surface-variant`
@@ -46,3 +45,29 @@ Colors:
 
 `border.default` -> `outline`
 `border.muted` -> `surface-variant`
+
+## Design Principles
+
+### Unstyled (no colors)
+
+Components have no color by default. Express colors with tailwind classes:
+
+**Don't**
+
+```html
+<div class="toast toast-warning">
+  <div class="toast-icon"></div>
+  <div class="toast-content">Toast message goes here</div>
+  <div></div>
+</div>
+```
+
+**Do**
+
+```html
+<div class="toast bg-surface-500 text-on-surface">
+  <div class="toast-icon bg-warning"></div>
+  <div class="toast-content text-on-surface">Toast message goes here</div>
+  <div></div>
+</div>
+```

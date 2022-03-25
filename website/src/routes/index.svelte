@@ -1,1 +1,1 @@
-<div class="bg-primary">paraggrpah x</div>
+<div class="bg-on-background text-background">paraggrpah x</div>
