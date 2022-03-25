@@ -1,7 +1,7 @@
 import plugin from "tailwindcss/plugin";
 import * as components from "./components/index";
-import { parseConfig } from "./config";
-// import * as utilities from "./utilities/index";
+import { parseConfig } from "./parseConfig";
+import { defaultConfig as defaultColorSystemConfig } from "@pankow-ui/color-system/parseConfig";
 import { css } from "./css";
 import { Config } from "./types/config";
 
@@ -22,12 +22,8 @@ module.exports = plugin(({ addComponents, addUtilities, addBase, config }) => {
   // to add the css to tailwind
   for (const name of Object.keys(components)) {
     // TODO read config instead of hardcoded default config
-    const parsedConfig = parseConfig(defaultConfig);
-    addComponents(
-      components[name as keyof typeof components]({
-        config: { borderRadius: () => "rounded" },
-      })
-    );
+    const config = parseConfig(defaultConfig);
+    addComponents(components[name as keyof typeof components]({ config }));
   }
   // add utilities
   // for (const name of Object.keys(utilities)) {
@@ -42,4 +38,5 @@ module.exports = plugin(({ addComponents, addUtilities, addBase, config }) => {
 
 const defaultConfig: Config = {
   borderRadiusBase: "rounded",
+  colorSystem: defaultColorSystemConfig,
 };

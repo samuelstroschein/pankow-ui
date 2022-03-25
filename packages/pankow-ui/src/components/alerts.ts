@@ -11,6 +11,10 @@ export function alerts({ config }: { config: ParsedConfig }) {
       .icon {
         @apply mr-6;
       }
+
+      .bg-primary {
+        @apply text-on-primary;
+      }
     }
 `);
 }

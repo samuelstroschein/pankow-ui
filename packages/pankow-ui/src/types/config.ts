@@ -1,4 +1,5 @@
 import type { Tailwind } from "../tailwind";
+import type { Config as ColorSystemConfig } from "@pankow-ui/color-system";
 
 export type Config = {
   /**
@@ -11,4 +12,5 @@ export type Config = {
     typeof Tailwind["borderRadius"],
     "rounded-sm" | "rounded-full"
   >[number];
+  colorSystem: ColorSystemConfig;
 };

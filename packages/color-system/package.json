@@ -2,8 +2,17 @@
   "name": "@pankow-ui/color-system",
   "version": "1.0.0",
   "description": "Semantic color system for Tailwind CSS.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./plugin": "./dist/plugin.js"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*"
+      ]
+    }
+  },
   "files": [
     "dist"
   ],

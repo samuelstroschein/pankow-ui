@@ -1,12 +1,6 @@
-import plugin from "tailwindcss/plugin";
-import { defaultColors } from "./config";
-
-// tailwind requires commonjs
-// therefore, `module.exports` instead of `export plugin`
-module.exports = plugin(() => null, {
-  theme: {
-    extend: {
-      colors: defaultColors,
-    },
-  },
-});
+// types
+export * from "./types/color";
+export * from "./types/config";
+export * from "./types/parsedConfig";
+// functions
+export * from "./parseConfig";
