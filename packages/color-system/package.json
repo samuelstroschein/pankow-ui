@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Semantic color system for Tailwind CSS.",
   "exports": {
-    ".": "./dist/index.js",
-    "./plugin": "./dist/plugin.js"
+    ".": "./dist/index.js"
   },
   "typesVersions": {
     "*": {

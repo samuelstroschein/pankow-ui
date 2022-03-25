@@ -1,6 +1,14 @@
-// types
-export * from "./types/color";
-export * from "./types/config";
-export * from "./types/parsedConfig";
-// functions
-export * from "./parseConfig";
+import plugin from "tailwindcss/plugin";
+import { defaultConfig, parseConfig } from "./parseConfig";
+
+const config = parseConfig(defaultConfig);
+
+// tailwind requires commonjs
+// therefore, `module.exports` instead of `export plugin`
+module.exports = plugin(() => null, {
+  theme: {
+    extend: {
+      colors: config.colors,
+    },
+  },
+});
