@@ -41,7 +41,7 @@ function generateColors(config: Config) {
   // ---- HELPER VARIABLES -----
   // Some tokens are always white.
   // See https://m3.material.io/styles/color/the-color-system/key-colors-tones
-  const white = "#fffffff";
+  const white = "#ffffff";
   // regular colors refer to accent and semantic colors.
   // like primary, secondary, error etc.
   const regular = 400;
