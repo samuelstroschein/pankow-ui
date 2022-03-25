@@ -38,7 +38,9 @@ function mapBorderRadius(args: {
   if (args.base === "rounded-none") {
     return "rounded-none";
   }
-  const indexOfBase = Tailwind["borderRadius"].findIndex(args.base as any);
+  const indexOfBase = Tailwind["borderRadius"].findIndex(
+    (value) => value === args.base
+  );
   switch (args.size) {
     case "sm":
       return Tailwind["borderRadius"][indexOfBase - 1];

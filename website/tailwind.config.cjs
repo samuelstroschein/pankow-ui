@@ -3,9 +3,5 @@ module.exports = {
 	theme: {
 		extend: {}
 	},
-	plugins: [
-		require('pankow-ui'),
-		require('@pankow-ui/color-system'),
-		require('@tailwindcss/typography')
-	]
+	plugins: [require('pankow-ui'), require('@tailwindcss/typography')]
 };
