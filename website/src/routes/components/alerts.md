@@ -32,7 +32,11 @@ You can put multiple paragraphs of text in a alert message—the last paragraph'
 
 ## Colors
 
-TODO adjust to tailwind colors e.g. instead of `alert-warn` -> `alert bg-warn`
+## TODO
+
+```
+adjust to tailwind colors e.g. instead of `alert-warn` -> `alert bg-warn`
+```
 
 <!-- Add `.alert-warn`, `.alert-error`, or `.alert-success` to the alert message to make it yellow, red, or green, respectively. -->
 
@@ -50,8 +54,8 @@ TODO adjust to tailwind colors e.g. instead of `alert-warn` -> `alert bg-warn`
 
 Add an icon to the left of the alert message to give it some funky fresh attention.
 
-<div class="not-prose">
-	<div class="alert">
+<div class="not-prose space-y-3">
+	<div class="alert bg-surface">
 		<!-- <%= octicon "info" %> -->
 		<svg
 			class="icon w-4 h-4"
@@ -66,7 +70,7 @@ Add an icon to the left of the alert message to give it some funky fresh attenti
 		Alert message with an icon
 	</div>
 
-    <div class="alert mt-3 bg-error-container">
+    <div class="alert bg-error-container">
     	<!-- <%= octicon "stop" %> -->
     	<svg
     		class="icon text-on-error-container h-4 w-4"
