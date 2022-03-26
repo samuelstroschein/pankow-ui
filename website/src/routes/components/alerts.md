@@ -12,33 +12,31 @@ Alert messages, or alerts, inform users of successful or pending actions. Use th
 
 Alert messages start off looking decently neutral—they're just light blue rounded rectangles.
 
-<div class="alert">alert message goes here.</div>
+<!-- not-prose means dont apply typhograhpy styles https://tailwindcss.com/docs/typography-plugin -->
+<div class="not-prose">
+	<div class="alert">alert message goes here.</div>
+</div>
 
 You can put multiple paragraphs of text in a alert message—the last paragraph's bottom `margin` will be automatically override.
 
-```html live
-<div class="alert">
-	<p>
-		This is a longer alert message in it's own paragraph. It ends up looking something
-		like this. If we keep adding more text, it'll eventually wrap to a new line.
-	</p>
-	<p>And this is another paragraph.</p>
+<!-- not-prose means dont apply typhograhpy styles https://tailwindcss.com/docs/typography-plugin -->
+<div class="not-prose">
+	<div class="alert">
+		<p>
+			This is a longer alert message in it's own paragraph. It ends up looking something
+			like this. If we keep adding more text, it'll eventually wrap to a new line.
+		</p>
+		<p>And this is another paragraph.</p>
+	</div>
 </div>
-```
-
-Should the need arise, you can quickly space out your alert message from surrounding content with a `.alert-messages` wrapper. _Note the extra top and bottom margin in the example below._
-
-```html live
-<div class="alert-messages">
-	<div class="alert">alert message goes here.</div>
-</div>
-```
 
 ## Colors
 
-Add `.alert-warn`, `.alert-error`, or `.alert-success` to the alert message to make it yellow, red, or green, respectively.
+TODO adjust to tailwind colors e.g. instead of `alert-warn` -> `alert bg-warn`
 
-```html live
+<!-- Add `.alert-warn`, `.alert-error`, or `.alert-success` to the alert message to make it yellow, red, or green, respectively. -->
+
+<!-- ```html live
 <div class="alert">alert message goes here.</div>
 
 <div class="alert mt-3 alert-warn">alert message goes here.</div>
@@ -46,103 +44,44 @@ Add `.alert-warn`, `.alert-error`, or `.alert-success` to the alert message to m
 <div class="alert mt-3 alert-error">alert message goes here.</div>
 
 <div class="alert mt-3 alert-success">alert message goes here.</div>
-```
+``` -->
 
 ## With icon
 
 Add an icon to the left of the alert message to give it some funky fresh attention.
 
-```html live
-<div class="alert">
-	<!-- <%= octicon "info" %> -->
-	<svg
-		class="octicon"
-		xmlns="http://www.w3.org/2000/svg"
-		viewBox="0 0 16 16"
-		width="16"
-		height="16"
-	>
-		<path
-			fill-rule="evenodd"
-			d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"
-		></path>
-	</svg>
-	alert message with an icon
-</div>
+<div class="not-prose">
+	<div class="alert">
+		<!-- <%= octicon "info" %> -->
+		<svg
+			class="icon w-4 h-4"
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 16 16"
+		>
+			<path
+				fill-rule="evenodd"
+				d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"
+			></path>
+		</svg>
+		Alert message with an icon
+	</div>
 
-<div class="alert mt-3 alert-warn">
-	<!-- <%= octicon "alert" %> -->
-	<svg
-		class="octicon"
-		xmlns="http://www.w3.org/2000/svg"
-		viewBox="0 0 16 16"
-		width="16"
-		height="16"
-	>
-		<path
-			fill-rule="evenodd"
-			d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"
-		></path>
-	</svg>
-	alert message with an icon
-</div>
+    <div class="alert mt-3 bg-error-container">
+    	<!-- <%= octicon "stop" %> -->
+    	<svg
+    		class="icon text-on-error-container h-4 w-4"
+    		xmlns="http://www.w3.org/2000/svg"
+    		viewBox="0 0 16 16"
+    	>
+    		<path
+    			fill-rule="evenodd"
+    			d="M4.47.22A.75.75 0 015 0h6a.75.75 0 01.53.22l4.25 4.25c.141.14.22.331.22.53v6a.75.75 0 01-.22.53l-4.25 4.25A.75.75 0 0111 16H5a.75.75 0 01-.53-.22L.22 11.53A.75.75 0 010 11V5a.75.75 0 01.22-.53L4.47.22zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5H5.31zM8 4a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 4zm0 8a1 1 0 100-2 1 1 0 000 2z"
+    		></path>
+    	</svg>
+    	Alert message with an icon and semantic colors.
+    </div>
 
-<div class="alert mt-3 alert-error">
-	<!-- <%= octicon "stop" %> -->
-	<svg
-		class="octicon"
-		xmlns="http://www.w3.org/2000/svg"
-		viewBox="0 0 16 16"
-		width="16"
-		height="16"
-	>
-		<path
-			fill-rule="evenodd"
-			d="M4.47.22A.75.75 0 015 0h6a.75.75 0 01.53.22l4.25 4.25c.141.14.22.331.22.53v6a.75.75 0 01-.22.53l-4.25 4.25A.75.75 0 0111 16H5a.75.75 0 01-.53-.22L.22 11.53A.75.75 0 010 11V5a.75.75 0 01.22-.53L4.47.22zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5H5.31zM8 4a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 4zm0 8a1 1 0 100-2 1 1 0 000 2z"
-		></path>
-	</svg>
-	alert message with an icon
 </div>
-
-<div class="alert mt-3 alert-success">
-	<!-- <%= octicon "check" %> -->
-	<svg
-		class="octicon"
-		xmlns="http://www.w3.org/2000/svg"
-		viewBox="0 0 16 16"
-		width="16"
-		height="16"
-	>
-		<path
-			fill-rule="evenodd"
-			d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"
-		></path>
-	</svg>
-	alert message with an icon
-</div>
-```
-
-When using a `24px` icon, add a `.v-align-bottom` class and increase the font-size with `.f4` for a more balanced alignment.
-
-```html live
-<div class="alert alert-success f4">
-	<!-- <%= octicon "shield-check" %> -->
-	<svg
-		class="octicon octicon-shield-check v-align-bottom"
-		xmlns="http://www.w3.org/2000/svg"
-		viewBox="0 0 24 24"
-		width="24"
-		height="24"
-	>
-		<path
-			fill-rule="evenodd"
-			clip-rule="evenodd"
-			d="M11.9275 3.55567C11.9748 3.54134 12.0252 3.54134 12.0725 3.55567L19.3225 5.75264C19.4292 5.78497 19.5 5.88157 19.5 5.99039V11C19.5 13.4031 18.7773 15.3203 17.5164 16.847C16.246 18.3853 14.3925 19.5706 12.0703 20.4278C12.0253 20.4444 11.9746 20.4444 11.9297 20.4278C9.60747 19.5706 7.75398 18.3853 6.48358 16.847C5.2227 15.3203 4.5 13.4031 4.5 11L4.5 5.9904C4.5 5.88158 4.57082 5.78496 4.6775 5.75264L11.9275 3.55567ZM12.5075 2.12013C12.1766 2.01985 11.8234 2.01985 11.4925 2.12013L4.24249 4.3171C3.50587 4.54032 3 5.21807 3 5.9904L3 11C3 13.7306 3.83104 15.9908 5.32701 17.8022C6.81347 19.6021 8.91996 20.9157 11.4102 21.835C11.7904 21.9753 12.2095 21.9753 12.5897 21.835C15.08 20.9157 17.1865 19.6021 18.673 17.8022C20.169 15.9908 21 13.7306 21 11V5.99039C21 5.21804 20.4941 4.54031 19.7575 4.3171L12.5075 2.12013ZM16.2803 9.78033C16.5732 9.48744 16.5732 9.01256 16.2803 8.71967C15.9874 8.42678 15.5126 8.42678 15.2197 8.71967L11 12.9393L9.28033 11.2197C8.98744 10.9268 8.51256 10.9268 8.21967 11.2197C7.92678 11.5126 7.92678 11.9874 8.21967 12.2803L10.4697 14.5303C10.7626 14.8232 11.2374 14.8232 11.5303 14.5303L16.2803 9.78033Z"
-		></path>
-	</svg>
-	alert message with a larger icon
-</div>
-```
 
 ## With dismiss
 

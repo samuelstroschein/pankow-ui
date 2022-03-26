@@ -6,15 +6,12 @@ export function alerts({ config }: { config: ParsedConfig }) {
     .alert {
       @apply relative border border-solid ${config.borderRadius(
         "base"
-      )} py-5 px-4;
+      )} py-5 px-4 space-y-2;
 
       .icon {
-        @apply mr-6;
+        @apply mr-2 mb-1;
       }
 
-      .bg-primary {
-        @apply text-on-primary;
-      }
     }
 `);
 }

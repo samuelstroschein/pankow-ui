@@ -1,5 +1,6 @@
 import plugin from "tailwindcss/plugin";
 import * as components from "./components/index";
+import * as utilities from "./utilities/index";
 import { parseConfig } from "./parseConfig";
 import { css } from "./css";
 import { Config } from "./types/config";
@@ -30,13 +31,13 @@ module.exports = plugin(({ addComponents, addUtilities, addBase, config }) => {
     );
   }
   // add utilities
-  // for (const name of Object.keys(utilities)) {
-  //   addUtilities(
-  //     utilities[name as keyof typeof utilities]({
-  //       config: { styled: true },
-  //     })
-  //   );
-  // }
+  for (const name of Object.keys(utilities)) {
+    addUtilities(
+      utilities[name as keyof typeof utilities]({
+        config: parsedConfig,
+      })
+    );
+  }
   console.log("pankow ui setup complete");
 });
 

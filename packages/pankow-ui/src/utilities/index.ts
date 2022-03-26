@@ -1,1 +1,1 @@
-export { variables } from "./variables";
+export { icon } from "./icon";
