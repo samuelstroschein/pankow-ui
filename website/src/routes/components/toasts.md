@@ -13,7 +13,7 @@ Toasts are used to show live, time-sensitive feedback to users.
 
 To create a default toast, use `.Toast`. Always use the `info` icon for default messages.
 
-<div class="p-1">
+<div class="p-1 not-prose">
 	<div class="toast bg-surface">
 		<span class="toast-icon bg-primary">
 			<!-- <%= octicon "info" %>-->
@@ -21,7 +21,7 @@ To create a default toast, use `.Toast`. Always use the `info` icon for default 
 				width="14"
 				height="16"
 				viewBox="0 0 14 16"
-				class="color-inherit"
+				class="icon text-on-primary"
 				aria-hidden="true"
 			>
 				<path
@@ -30,7 +30,7 @@ To create a default toast, use `.Toast`. Always use the `info` icon for default 
 				/>
 			</svg>
 		</span>
-		<span class="Toast-content ">Toast message goes here</span>
+		<span class="toast-content text-on-surface">Toast messagToast message goes hereToast message goes hereToast message goes heree goes here</span>
 	</div>
 </div>
 
