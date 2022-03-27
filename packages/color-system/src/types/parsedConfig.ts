@@ -22,7 +22,12 @@ export type ParsedConfig = Config & {
 
     background: string;
     "on-background": string;
-    surface: string;
+
+    "surface-100": string;
+    "surface-200": string;
+    "surface-300": string;
+    "surface-400": string;
+    "surface-500": string;
     "on-surface": string;
 
     "surface-variant": string;
