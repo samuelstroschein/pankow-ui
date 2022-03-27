@@ -14,21 +14,14 @@ module.exports = plugin(({ addComponents, addUtilities, addBase, config }) => {
   console.log("pankow ui is activating...");
   const parsedConfig = parseConfig(defaultConfig);
 
-  // iterating over all exported components
-  // to add the css to tailwind
-  for (const name of Object.keys(components)) {
+  // add components
+  for (const component of Object.values(components)) {
     // TODO read config instead of hardcoded default config
-    addComponents(
-      components[name as keyof typeof components]({ config: parsedConfig })
-    );
+    addComponents(component({ config: parsedConfig }));
   }
   // add utilities
-  for (const name of Object.keys(utilities)) {
-    addUtilities(
-      utilities[name as keyof typeof utilities]({
-        config: parsedConfig,
-      })
-    );
+  for (const utility of Object.values(utilities)) {
+    addUtilities(utility({ config: parsedConfig }));
   }
   console.log("pankow ui setup complete");
 });
