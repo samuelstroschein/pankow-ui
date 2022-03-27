@@ -1,6 +1,4 @@
 import { Config } from "./types/config";
-import tailwindColors from "tailwindcss/colors";
-import { Color } from "./types/color";
 import { ParsedConfig } from "./types/parsedConfig";
 
 export function parseConfig(config: Config): ParsedConfig {
@@ -11,23 +9,6 @@ export function parseConfig(config: Config): ParsedConfig {
     colors,
   };
 }
-
-// todos:
-//  - better default colors?
-export const defaultConfig: Config = {
-  accentColors: {
-    primary: tailwindColors.blue as Color,
-    secondary: tailwindColors.indigo as Color,
-    tertiary: tailwindColors.teal as Color,
-  },
-  neutralColors: {
-    neutral: tailwindColors.stone as Color,
-    neutralVariant: tailwindColors.neutral as Color,
-  },
-  semanticColors: {
-    error: tailwindColors.red as Color,
-  },
-};
 
 // todos:
 // - support surface levels (100,200,300,400,500)
@@ -66,7 +47,15 @@ function generateColors(config: Config) {
 
     background: white,
     "on-background": neutralColors.neutral[900],
-    surface: white,
+
+    // appending the opacity value to the on-surface color.
+    //
+    // opacity values are from https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
+    "surface-100": neutralColors.neutral[900] + "0D",
+    "surface-200": neutralColors.neutral[900] + "14",
+    "surface-300": neutralColors.neutral[900] + "1C",
+    "surface-400": neutralColors.neutral[900] + "1F",
+    "surface-500": neutralColors.neutral[900] + "24",
     "on-surface": neutralColors.neutral[900],
 
     "surface-variant": neutralColors.neutralVariant[100],
