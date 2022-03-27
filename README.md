@@ -2,11 +2,31 @@
 
 ## TODOS
 
-#### [ ] Use variables for color-system.
+#### [ ] Use variables for color-system
 
 Otherwise, dark/light mode etc. is hard to implement.
 Read https://tailwindcss.com/docs/customizing-colors#using-css-variables
 for further an implementation instruction.
+
+#### [ ] Use variables for config variables
+
+Instead of applying tailwind classes in components, apply css variables.
+
+Makes implementing different themes easier and dynamic. Users can switch
+the theme directly on the website without rebuilding, and re-deploying
+the app.
+
+Don't:
+
+```
+@apply ${config.borderRadius}
+```
+
+Do:
+
+```
+border-radius: var(--theme-border-radius)
+```
 
 #### [ ] Specify `rounded` variable in config.
 
