@@ -14,14 +14,14 @@ Alert messages start off looking decently neutral—they're just light blue roun
 
 <!-- not-prose means dont apply typhograhpy styles https://tailwindcss.com/docs/typography-plugin -->
 <div class="not-prose">
-	<div class="alert">alert message goes here.</div>
+	<div class="alert bg-surface-100">alert message goes here.</div>
 </div>
 
 You can put multiple paragraphs of text in a alert message—the last paragraph's bottom `margin` will be automatically override.
 
 <!-- not-prose means dont apply typhograhpy styles https://tailwindcss.com/docs/typography-plugin -->
 <div class="not-prose">
-	<div class="alert">
+	<div class="alert bg-surface-100">
 		<p>
 			This is a longer alert message in it's own paragraph. It ends up looking something
 			like this. If we keep adding more text, it'll eventually wrap to a new line.
@@ -55,7 +55,7 @@ adjust to tailwind colors e.g. instead of `alert-warn` -> `alert bg-warn`
 Add an icon to the left of the alert message to give it some funky fresh attention.
 
 <div class="not-prose space-y-3">
-	<div class="alert bg-surface">
+	<div class="alert bg-surface-100">
 		<!-- <%= octicon "info" %> -->
 		<svg
 			class="icon w-4 h-4"

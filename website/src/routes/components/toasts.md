@@ -14,7 +14,7 @@ Toasts are used to show live, time-sensitive feedback to users.
 To create a default toast, use `.Toast`. Always use the `info` icon for default messages.
 
 <div class="p-1 not-prose">
-	<div class="toast bg-surface">
+	<div class="toast bg-surface-100">
 		<span class="toast-icon bg-primary">
 			<!-- <%= octicon "info" %>-->
 			<svg
