@@ -12,4 +12,5 @@ export type Config = {
     "rounded-sm" | "rounded-full"
   >[number];
   borderWith: typeof Tailwind["borderWidth"][number];
+  borderStyle: typeof Tailwind["borderStyle"][number];
 };

@@ -16,11 +16,14 @@ as base.
 
 ## Primer variables to Tailwind CSS
 
-Border radius:
+Border:
 `border-radius` -> `rounded-md`
 `border-radius-1` -> `rounded`
 `border-radius-2` -> `rounded-md`
 `border-radius-3` -> `rounded-lg`
+
+`border-width` -> `border`
+`border-syle` -> `border-solid`
 
 Spacer:
 `$spacer-0` -> `{p,m}-0`
@@ -45,6 +48,9 @@ Colors:
 
 `border.default` -> `outline`
 `border.muted` -> `surface-variant`
+
+Typhography:
+`$body-font-size`: `text-base`
 
 ## Design Principles
 
