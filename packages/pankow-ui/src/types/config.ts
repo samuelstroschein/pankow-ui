@@ -11,4 +11,5 @@ export type Config = {
     typeof Tailwind["borderRadius"],
     "rounded-sm" | "rounded-full"
   >[number];
+  borderWith: typeof Tailwind["borderWidth"][number];
 };

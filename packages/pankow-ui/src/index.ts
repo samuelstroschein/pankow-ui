@@ -43,4 +43,5 @@ module.exports = plugin(({ addComponents, addUtilities, addBase, config }) => {
 
 const defaultConfig: Config = {
   borderRadiusBase: "rounded",
+  borderWith: "border",
 };

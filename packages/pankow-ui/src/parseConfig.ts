@@ -9,6 +9,7 @@ export function parseConfig(config: Config): ParsedConfig {
   return {
     borderRadius: (size) =>
       mapBorderRadius({ size, base: config.borderRadiusBase }),
+    borderWidth: () => config.borderWith,
   };
 }
 
