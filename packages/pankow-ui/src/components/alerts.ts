@@ -13,5 +13,21 @@ export function alerts({ config }: { config: ParsedConfig }) {
       }
 
     }
+
+  .alert-close-button {
+    @apply float-right p-4 -m-4 text-center cursor-pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+
+    .icon {
+      margin-right: 0;
+    }
+  }
 `);
 }
