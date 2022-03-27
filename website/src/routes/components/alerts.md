@@ -14,14 +14,16 @@ Alert messages start off looking decently neutral—they're just light blue roun
 
 <!-- not-prose means dont apply typhograhpy styles https://tailwindcss.com/docs/typography-plugin -->
 <div class="not-prose">
-	<div class="alert bg-surface-100">alert message goes here.</div>
+	<div class="alert bg-surface-100 text-on-surface">
+		Alert message goes here.
+	</div>
 </div>
 
 You can put multiple paragraphs of text in a alert message—the last paragraph's bottom `margin` will be automatically override.
 
 <!-- not-prose means dont apply typhograhpy styles https://tailwindcss.com/docs/typography-plugin -->
 <div class="not-prose">
-	<div class="alert bg-surface-100">
+	<div class="alert bg-surface-100 text-on-surface">
 		<p>
 			This is a longer alert message in it's own paragraph. It ends up looking something
 			like this. If we keep adding more text, it'll eventually wrap to a new line.
@@ -55,7 +57,7 @@ adjust to tailwind colors e.g. instead of `alert-warn` -> `alert bg-warn`
 Add an icon to the left of the alert message to give it some funky fresh attention.
 
 <div class="not-prose space-y-3">
-	<div class="alert bg-surface-100">
+	<div class="alert bg-surface-100 text-on-surface">
 		<!-- <%= octicon "info" %> -->
 		<svg
 			class="icon w-4 h-4"
@@ -70,10 +72,10 @@ Add an icon to the left of the alert message to give it some funky fresh attenti
 		Alert message with an icon
 	</div>
 
-    <div class="alert bg-error-container">
+    <div class="alert bg-error-container text-on-error-container">
     	<!-- <%= octicon "stop" %> -->
     	<svg
-    		class="icon text-on-error-container h-4 w-4"
+    		class="icon h-4 w-4"
     		xmlns="http://www.w3.org/2000/svg"
     		viewBox="0 0 16 16"
     	>
