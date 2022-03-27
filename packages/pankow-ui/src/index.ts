@@ -13,15 +13,7 @@ import { Config } from "./types/config";
 module.exports = plugin(({ addComponents, addUtilities, addBase, config }) => {
   console.log("pankow ui is activating...");
   const parsedConfig = parseConfig(defaultConfig);
-  // adding base style
-  addBase(
-    css(`
-      :root {
-        background-color: hsla(var(--base-content) / var(--tw-bg-opacity, 1));
-        color: hsla(var(--base-content) / var(--tw-text-opacity, 1));
-      }
-    `)
-  );
+
   // iterating over all exported components
   // to add the css to tailwind
   for (const name of Object.keys(components)) {
