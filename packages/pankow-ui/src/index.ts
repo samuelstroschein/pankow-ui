@@ -1,7 +1,7 @@
 import plugin from "tailwindcss/plugin";
 import * as components from "./components/index";
 import * as utilities from "./utilities/index";
-import { parseConfig } from "./parseConfig";
+import { parseConfig } from "./functions/parseConfig";
 import { defaultConfig } from "./defaultConfig";
 
 // defining the default config and parsedConfig outside

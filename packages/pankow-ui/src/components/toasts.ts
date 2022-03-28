@@ -1,5 +1,5 @@
 import { ParsedConfig } from "../types/parsedConfig";
-import { css } from "../css";
+import { css } from "../functions/css";
 //TODO change the hard coded Box shoadow color
 // warum funktioneirt fill-current nicht ?
 export function toasts({ config }: { config: ParsedConfig }) {

@@ -1,6 +1,6 @@
-import type { Config } from "./types/config";
-import type { ParsedConfig } from "./types/parsedConfig";
-import { Tailwind } from "./tailwind";
+import type { Config } from "../types/config";
+import type { ParsedConfig } from "../types/parsedConfig";
+import { Tailwind } from "../tailwind";
 import { parseConfig as parseColorSystemConfig } from "@pankow-ui/color-system";
 
 /**

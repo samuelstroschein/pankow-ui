@@ -1,4 +1,4 @@
-import { css } from "../css";
+import { css } from "../functions/css";
 import { ParsedConfig } from "../types/parsedConfig";
 
 export function alerts({ config }: { config: ParsedConfig }) {
