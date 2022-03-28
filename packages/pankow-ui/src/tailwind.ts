@@ -1,5 +1,5 @@
 /**
- * Tailwind possiblities.
+ * Tailwind CSS classes.
  *
  * Use this variable to derive types.
  *
