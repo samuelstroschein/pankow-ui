@@ -1,4 +1,5 @@
 import type { Tailwind } from "../tailwind";
+import type { ParsedConfig as ParsedColorSystemConfig } from "@pankow-ui/color-system";
 
 export type ParsedConfig = {
   borderRadius: (
@@ -6,4 +7,5 @@ export type ParsedConfig = {
   ) => typeof Tailwind["borderRadius"][number];
   borderWidth: () => typeof Tailwind["borderWidth"][number];
   borderStyle: () => typeof Tailwind["borderStyle"][number];
+  colorSystem: ParsedColorSystemConfig;
 };

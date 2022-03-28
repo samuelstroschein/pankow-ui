@@ -1,6 +1,7 @@
 import type { Config } from "./types/config";
 import type { ParsedConfig } from "./types/parsedConfig";
 import { Tailwind } from "./tailwind";
+import { parseConfig as parseColorSystemConfig } from "@pankow-ui/color-system";
 
 /**
  * Parses the config.
@@ -11,6 +12,7 @@ export function parseConfig(config: Config): ParsedConfig {
       mapBorderRadius({ size, base: config.borderRadiusBase }),
     borderWidth: () => config.borderWith,
     borderStyle: () => config.borderStyle,
+    colorSystem: parseColorSystemConfig(config.colorSystem),
   };
 }
 

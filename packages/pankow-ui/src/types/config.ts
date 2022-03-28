@@ -1,4 +1,5 @@
 import type { Tailwind } from "../tailwind";
+import type { Config as ColorSystemConfig } from "@pankow-ui/color-system";
 
 export type Config = {
   /**
@@ -13,4 +14,5 @@ export type Config = {
   >[number];
   borderWith: typeof Tailwind["borderWidth"][number];
   borderStyle: typeof Tailwind["borderStyle"][number];
+  colorSystem: ColorSystemConfig;
 };

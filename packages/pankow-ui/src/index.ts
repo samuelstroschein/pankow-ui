@@ -2,8 +2,7 @@ import plugin from "tailwindcss/plugin";
 import * as components from "./components/index";
 import * as utilities from "./utilities/index";
 import { parseConfig } from "./parseConfig";
-import { css } from "./css";
-import { Config } from "./types/config";
+import { defaultConfig } from "./defaultConfig";
 
 // defining the default config and parsedConfig outside
 // of the module.exports because we need it to extend the theme
@@ -25,9 +24,3 @@ module.exports = plugin(({ addComponents, addUtilities, addBase, config }) => {
   }
   console.log("pankow ui setup complete");
 });
-
-const defaultConfig: Config = {
-  borderRadiusBase: "rounded",
-  borderWith: "border",
-  borderStyle: "border-solid",
-};
