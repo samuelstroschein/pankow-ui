@@ -1,8 +1,8 @@
 import type { Config } from "./config";
 
-// todo:
-// - remove Config union?
-//   When would the user defined values be required?
+/**
+ * Union of Config and generated hex colors.
+ */
 export type ParsedConfig = Config & {
   colors: {
     primary: string;
@@ -32,11 +32,14 @@ export type ParsedConfig = Config & {
 
     "surface-variant": string;
     "on-surface-variant": string;
+
     outline: string;
 
     error: string;
     "on-error": string;
     "error-container": string;
     "on-error-container": string;
+
+    [dynamic: string]: string;
   };
 };
