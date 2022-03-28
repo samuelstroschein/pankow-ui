@@ -11,12 +11,11 @@ Toasts are used to show live, time-sensitive feedback to users.
 
 ## Default
 
-To create a default toast, use `.Toast`. Always use the `info` icon for default messages.
+To create a default toast, use `.toast`. Always use the `info` icon for default messages.
 
 <div class="p-1 not-prose">
-	<div class="toast bg-surface-100">
+	<div class="toast  bg-surface-100">
 		<span class="toast-icon bg-primary">
-			<!-- <%= octicon "info" %>-->
 			<svg
 				width="14"
 				height="16"
@@ -69,10 +68,9 @@ Use the success, warning, and error modifiers to communicate different states.
 
 Always use the `check` octicon for success states.
 
-```html live
 <div class="p-1">
-	<div class="Toast Toast--success">
-		<span class="Toast-icon">
+	<div class="toast ">
+		<span class="toast-icon toast-success">
 			<!-- <%= octicon "check" %> -->
 			<svg
 				width="12"
@@ -84,10 +82,9 @@ Always use the `check` octicon for success states.
 				<path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
 			</svg>
 		</span>
-		<span class="Toast-content">Success message goes here.</span>
+		<span class="toast-content">Success message goes here.</span>
 	</div>
 </div>
-```
 
 Always use the `alert` octicon for warning states.
 
@@ -143,10 +140,9 @@ Always use the `stop` octicon for error states.
 
 Use `.Toast-dismissButton` to allow a user to explicitly dismiss a Toast.
 
-```html live
 <div class="p-1">
-	<div class="Toast">
-		<span class="Toast-icon">
+	<div class="toast">
+		<span class="toast-icon bg-green-400">
 			<!-- <%= octicon "info" %> -->
 			<svg
 				width="14"
@@ -161,14 +157,13 @@ Use `.Toast-dismissButton` to allow a user to explicitly dismiss a Toast.
 				/>
 			</svg>
 		</span>
-		<span class="Toast-content">This toast is dismissable.</span>
-		<button class="Toast-dismissButton">
-			<!-- <%= octicon "x" %> -->
+		<span class="toast-content">This toast is dismissable.</span>
+		<button class=" toast-close-button">
 			<svg
 				width="12"
 				height="16"
 				viewBox="0 0 12 16"
-				class="octicon octicon-x"
+				class="icon"
 				aria-hidden="true"
 			>
 				<path
@@ -179,7 +174,6 @@ Use `.Toast-dismissButton` to allow a user to explicitly dismiss a Toast.
 		</button>
 	</div>
 </div>
-```
 
 ## Toast with link
 
