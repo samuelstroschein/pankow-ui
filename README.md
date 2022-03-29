@@ -70,7 +70,11 @@ Colors:
 `border.muted` -> `surface-variant`
 
 Typhography:
+`$font-size-small`: `text-xs`
 `$body-font-size`: `text-base`
+
+Line height:
+`$lh-default`: `leading-6`
 
 ## Design Principles
 

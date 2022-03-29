@@ -13,6 +13,7 @@ export function parseConfig(config: Config): ParsedConfig {
     borderWidth: () => config.borderWith,
     borderStyle: () => config.borderStyle,
     colorSystem: parseColorSystemConfig(config.colorSystem),
+    fontSize: (size) => mapFontSize({ size, base: config.fontSizeBase }),
   };
 }
 
@@ -50,5 +51,37 @@ function mapBorderRadius(args: {
       return Tailwind["borderRadius"][indexOfBase];
     case "lg":
       return Tailwind["borderRadius"][indexOfBase + 1];
+  }
+}
+
+/**
+ * Maps the size based on the defined "base size".
+ *
+ * @example
+ *    const baseSize = "text-lg"
+
+ *    mapSize("sm")
+ *    >> "text-base"
+ *
+ *    mapSize("base")
+ *    >> "text-lg"
+ *
+ *    mapSize("lg")
+ *    >> "text-xl"
+ */
+function mapFontSize(args: {
+  size: "sm" | "base" | "lg";
+  base: Config["fontSizeBase"];
+}): typeof Tailwind["fontSize"][number] {
+  const indexOfBase = Tailwind["fontSize"].findIndex(
+    (value) => value === args.base
+  );
+  switch (args.size) {
+    case "sm":
+      return Tailwind["fontSize"][indexOfBase - 1];
+    case "base":
+      return Tailwind["fontSize"][indexOfBase];
+    case "lg":
+      return Tailwind["fontSize"][indexOfBase + 1];
   }
 }

@@ -6,7 +6,9 @@ export function button({ config }: { config: ParsedConfig }) {
   return css(`
 
     .button {
-        @apply relative inline-block px-4 py-1.5 text-sm font-semibold
+        @apply relative inline-block px-4 py-1.5 ${config.fontSize(
+          "base"
+        )} font-semibold
         leading-5 whitespace-nowrap align-middle
         select-none ${config.borderWidth()} ${config.borderRadius("base")}
         hover:no-underline;
@@ -33,6 +35,26 @@ export function button({ config }: { config: ParsedConfig }) {
         .dropdown-caret {
           @apply pl-1 opacity-80;
         }
+      }
+
+      .button-sm {
+        @apply 
+          py-0.5 
+          px-3 
+          ${config.fontSize("sm")} 
+          leading-5 ;
+      
+        .icon {
+          vertical-align: text-top;
+        }
+      }
+
+      .button-lg {
+        @apply 
+          ${config.fontSize("lg")} 
+          leading-6;
+        padding: 0.75em 1.5em;
+        border-radius: 0.25em;
       }
 
       .button-outline {
@@ -85,6 +107,8 @@ export function button({ config }: { config: ParsedConfig }) {
           color: var(--color-btn-primary-icon);
         }
       }
+
+    
     
     ${forEachColorVariant(config.colorSystem, ({ name }) => {
       return `

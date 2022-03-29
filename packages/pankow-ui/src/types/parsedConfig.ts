@@ -8,4 +8,5 @@ export type ParsedConfig = {
   borderWidth: () => typeof Tailwind["borderWidth"][number];
   borderStyle: () => typeof Tailwind["borderStyle"][number];
   colorSystem: ParsedColorSystemConfig;
+  fontSize: (size: "sm" | "base" | "lg") => typeof Tailwind["fontSize"][number];
 };

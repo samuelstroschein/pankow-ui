@@ -6,4 +6,5 @@ export const defaultConfig: Config = {
   borderWith: "border",
   borderStyle: "border-solid",
   colorSystem: defaultColorSystemConfig,
+  fontSizeBase: "text-sm",
 };
