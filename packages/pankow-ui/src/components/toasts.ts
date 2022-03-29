@@ -1,6 +1,8 @@
 import { ParsedConfig } from "../types/parsedConfig";
 import { css } from "../functions/css";
 //TODO change the hard coded Box shoadow color
+
+//TODO close-button is not on the right side in the dismiss function
 // warum funktioneirt fill-current nicht ?
 export function toasts({ config }: { config: ParsedConfig }) {
   return css(`
@@ -22,7 +24,24 @@ export function toasts({ config }: { config: ParsedConfig }) {
       border-bottom-left-radius: inherit;
     }
    .toast-content{
-     @apply p-4;
+     @apply p-4 ;
    }
+   .toast-close-button{
+    @apply max-h-14	 p-4  border-0 float-right	;
+
+    &:hover {
+      opacity: 0.7;
+      outline: none;
+
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+
+    .icon {
+      margin-right: 0;
+    }
+  }
 `);
 }
