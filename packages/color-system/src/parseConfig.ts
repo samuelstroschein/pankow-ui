@@ -73,6 +73,9 @@ function generateColors(config: Config) {
     "on-surface-500": accentColors.primary[900],
     "surface-500-container": accentColors.primary[900] + "24",
     "on-surface-500-container": neutralColors.neutral[900],
+    // utility on-surface color. avoids the need to reference
+    // on-surface-100, on-surface-200, etc.
+    "on-surface": neutralColors.neutral[900],
 
     "surface-variant": neutralColors.neutralVariant[100],
     "on-surface-variant": neutralColors.neutralVariant[600],
