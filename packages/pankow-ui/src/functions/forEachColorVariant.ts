@@ -40,7 +40,8 @@ export function forEachColorVariant(
     .map((name) => {
       const result = callback({ name });
       const applies = css(result)["@apply"];
-      
+      // TODO postprocess the applies.
+      // to modify the css surfaces
 
       // "text-on-surface-100" etc. do not exist.
       // therefore, need to manually interfer with the color
