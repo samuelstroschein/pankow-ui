@@ -125,24 +125,14 @@ Make any button full-width by adding tailwinds `.w-full` class.
 	<button class="button button-surface-100 button-sm w-full" type="button">Small block button</button>
 </div>
 
-### Link button
-
-Create a button that looks like a link with `.button-link`. Rather than using an `<a>` to trigger JS, this style on a `<button>` should be used for better accessibility.
-
-**The `.button-link` class is not designed to be used with `.button`; the overlapping styles are not compatible.**
-
-```html live
-<button class="button-link" type="button">Link button</button>
-```
-
-### Invisible button
+### Text button
 
 When you want a link, but you want it padded and line heightened like a button best for "cancel" actions on forms.
 
-```html live
-<button class="button button-invisible" type="button">Cancel</button>
-<button class="button" type="button">Submit</button>
-```
+<div class="not-prose">
+	<button class="button button-text" type="button">Cancel</button>
+	<button class="button button-surface-100" type="button">Submit</button>
+</div>
 
 ### Hidden text button
 

@@ -54,7 +54,43 @@ export function button({ config }: { config: ParsedConfig }) {
           ${config.fontSize("lg")} 
           leading-6;
         padding: 0.75em 1.5em;
-        border-radius: 0.25em;
+      }
+
+      .button-text {
+        @apply 
+          bg-transparent
+          text-primary
+          border-0
+          shadow-none;
+      
+        &:hover {
+          @apply bg-hover-surface-100;
+          @apply text-on-primary;
+          outline: none;
+          box-shadow: none;
+        }
+      
+        &:active,
+        &:focus,
+        &.selected,
+        &[aria-selected='true'] {
+          @apply 
+            text-primary
+            bg-surface-variant 
+            border-surface-variant;
+          
+          background-color: none;
+          outline: none;
+        }
+      
+        &:disabled,
+        &.disabled,
+        &[aria-disabled='true'] {
+          @apply 
+            bg-disabled-container
+            text-disabled-content
+            border-disabled-container; 
+        }
       }
 
       .button-outline {
@@ -126,12 +162,13 @@ export function button({ config }: { config: ParsedConfig }) {
             text-on-${name.includes("surface") ? "primary" : name}
             border-hover-${name};
         }
-      
+
         &:active,
         &.selected,
         &[aria-selected='true'] {
           @apply 
             bg-surface-variant 
+            text-on-surface-variant
             border-surface-variant;
         }
       
