@@ -11,6 +11,7 @@ export function button({ config }: { config: ParsedConfig }) {
         )} font-semibold
         leading-5 whitespace-nowrap align-middle
         select-none ${config.borderWidth()} ${config.borderRadius("base")}
+        space-x-1
         hover:no-underline;
     
 
@@ -21,7 +22,6 @@ export function button({ config }: { config: ParsedConfig }) {
         }
 
         .icon {
-          @apply mr-1;
           vertical-align: text-bottom;
         }
 
@@ -96,7 +96,7 @@ export function button({ config }: { config: ParsedConfig }) {
       .button-outline {
         @apply 
           bg-transparent
-          text-on-surface 
+          text-primary 
           border-outline;
       
         &:hover,
