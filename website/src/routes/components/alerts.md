@@ -10,15 +10,6 @@ Alert messages, or alerts, inform users of successful or pending actions. Use th
 
 ## Default
 
-Alert messages start off looking decently neutral—they're just light blue rounded rectangles.
-
-<!-- not-prose means dont apply typhograhpy styles https://tailwindcss.com/docs/typography-plugin -->
-<div class="not-prose">
-	<div class="alert">
-		This is an unstyled (no colors) alert.
-	</div>
-</div>
-
 If you want a "neutral" styled alert, use `alert alert-surface-xxx`.
 
 <div class="not-prose">
@@ -42,23 +33,15 @@ You can put multiple paragraphs of text in a alert message—the last paragraph'
 
 ## Colors
 
-## TODO
+<div class="not-prose space-y-3">
 
-```
-adjust to tailwind colors e.g. instead of `alert-warn` -> `alert bg-warn`
-```
+    <div class="alert alert-primary">alert message goes here.</div>
 
-<!-- Add `.alert-warn`, `.alert-error`, or `.alert-success` to the alert message to make it yellow, red, or green, respectively. -->
+    <div class="alert alert-secondary">alert message goes here.</div>
 
-<!-- ```html live
-<div class="alert">alert message goes here.</div>
+    <div class="alert alert-error">alert message goes here.</div>
 
-<div class="alert mt-3 alert-warn">alert message goes here.</div>
-
-<div class="alert mt-3 alert-error">alert message goes here.</div>
-
-<div class="alert mt-3 alert-success">alert message goes here.</div>
-``` -->
+</div>
 
 ## With icon
 
@@ -80,7 +63,7 @@ Add an icon to the left of the alert message to give it some funky fresh attenti
 		Alert message with an icon
 	</div>
 
-    <div class="alert">
+    <div class="alert alert-error">
     	<!-- <%= octicon "stop" %> -->
     	<svg
     		class="icon h-4 w-4"
