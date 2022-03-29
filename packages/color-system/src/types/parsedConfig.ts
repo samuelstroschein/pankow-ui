@@ -50,6 +50,10 @@ export type ParsedConfig = Config & {
     "error-container": string;
     "on-error-container": string;
 
+    /**
+     * Contains state colors like "hover-${colorName}" and 
+     * user defined colors.
+     */
     [dynamic: string]: string;
   };
 };
