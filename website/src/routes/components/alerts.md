@@ -14,8 +14,16 @@ Alert messages start off looking decently neutral—they're just light blue roun
 
 <!-- not-prose means dont apply typhograhpy styles https://tailwindcss.com/docs/typography-plugin -->
 <div class="not-prose">
-	<div class="alert bg-surface-100 text-on-surface">
-		Alert message goes here.
+	<div class="alert">
+		This is an unstyled (no colors) alert.
+	</div>
+</div>
+
+If you want a "neutral" styled alert, use `alert alert-surface-xxx`.
+
+<div class="not-prose">
+	<div class="alert alert-surface-100">
+		This is a styled (neutral) alert. 
 	</div>
 </div>
 
@@ -23,7 +31,7 @@ You can put multiple paragraphs of text in a alert message—the last paragraph'
 
 <!-- not-prose means dont apply typhograhpy styles https://tailwindcss.com/docs/typography-plugin -->
 <div class="not-prose">
-	<div class="alert bg-surface-100 text-on-surface">
+	<div class="alert alert-surface-100">
 		<p>
 			This is a longer alert message in it's own paragraph. It ends up looking something
 			like this. If we keep adding more text, it'll eventually wrap to a new line.
@@ -57,7 +65,7 @@ adjust to tailwind colors e.g. instead of `alert-warn` -> `alert bg-warn`
 Add an icon to the left of the alert message to give it some funky fresh attention.
 
 <div class="not-prose space-y-3">
-	<div class="alert bg-surface-100 text-on-surface">
+	<div class="alert alert-surface-100">
 		<!-- <%= octicon "info" %> -->
 		<svg
 			class="icon w-4 h-4"
@@ -72,7 +80,7 @@ Add an icon to the left of the alert message to give it some funky fresh attenti
 		Alert message with an icon
 	</div>
 
-    <div class="alert bg-error-container text-on-error-container">
+    <div class="alert">
     	<!-- <%= octicon "stop" %> -->
     	<svg
     		class="icon h-4 w-4"
@@ -94,7 +102,7 @@ Add an icon to the left of the alert message to give it some funky fresh attenti
 Add a close icon on the right to allow users to dismiss a alert message.
 
 <div class="not-prose space-y-3">
-	<div class="alert">
+	<div class="alert alert-surface-100">
 		Dismissable alert message goes here.
 		<button class="alert-close-button" type="button" aria-label="Close">
 			<!-- <%= octicon "x" %> -->
@@ -112,7 +120,7 @@ Add a close icon on the right to allow users to dismiss a alert message.
 		</button>
 	</div>
 
-<div class="alert bg-error-container text-on-error-container">
+<div class="alert alert-error">
 	Dismissable alert message goes here.
 	<button class="alert-close-button" type="button" aria-label="Close">
 		<!-- <%= octicon "x" %> -->

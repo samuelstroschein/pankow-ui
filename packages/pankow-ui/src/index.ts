@@ -3,6 +3,7 @@ import * as components from "./components/index";
 import * as utilities from "./utilities/index";
 import { parseConfig } from "./functions/parseConfig";
 import { defaultConfig } from "./defaultConfig";
+import { forEachColorVariant } from "./functions/forEachColorVariant";
 
 // defining the default config and parsedConfig outside
 // of the module.exports because we need it to extend the theme
@@ -11,6 +12,7 @@ import { defaultConfig } from "./defaultConfig";
 // therefore, `module.exports` instead of `export plugin`
 module.exports = plugin(({ addComponents, addUtilities, addBase, config }) => {
   console.log("pankow ui is activating...");
+
   const parsedConfig = parseConfig(defaultConfig);
 
   // add components

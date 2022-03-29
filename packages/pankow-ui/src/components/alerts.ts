@@ -1,4 +1,5 @@
 import { css } from "../functions/css";
+import { forEachColorVariant } from "../functions/forEachColorVariant";
 import { ParsedConfig } from "../types/parsedConfig";
 
 export function alerts({ config }: { config: ParsedConfig }) {
@@ -12,6 +13,16 @@ export function alerts({ config }: { config: ParsedConfig }) {
       }
 
     }
+
+    ${forEachColorVariant(
+      config.colorSystem,
+      ({ name }) => `
+      .alert-${name} {
+          @apply bg-${name}-container text-on-${name}-container;
+        }      
+      `
+    )}
+
 
   .alert-close-button {
     @apply float-right p-4 -m-4 text-center cursor-pointer;
