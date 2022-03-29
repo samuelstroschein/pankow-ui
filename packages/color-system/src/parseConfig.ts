@@ -49,16 +49,28 @@ function generateColors(config: Config) {
     "on-background": neutralColors.neutral[900],
 
     // appending the opacity value to the on-surface color.
-    //
     // opacity values are from https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
+    //
+    // Futhermore, in order to follow the semantics of the other colors,
+    // the "container" colors are added although they are the same color.
+    "surface-100": accentColors.primary[900] + "0D",
+    "on-surface-100": accentColors.primary[900],
     "surface-100-container": accentColors.primary[900] + "0D",
     "on-surface-100-container": neutralColors.neutral[900],
+    "surface-200": accentColors.primary[900] + "14",
+    "on-surface-200": accentColors.primary[900],
     "surface-200-container": accentColors.primary[900] + "14",
     "on-surface-200-container": neutralColors.neutral[900],
+    "surface-300": accentColors.primary[900] + "1C",
+    "on-surface-300": accentColors.primary[900],
     "surface-300-container": accentColors.primary[900] + "1C",
     "on-surface-300-container": neutralColors.neutral[900],
+    "surface-400": accentColors.primary[900] + "1F",
+    "on-surface-400": accentColors.primary[900],
     "surface-400-container": accentColors.primary[900] + "1F",
     "on-surface-400-container": neutralColors.neutral[900],
+    "surface-500": accentColors.primary[900] + "24",
+    "on-surface-500": accentColors.primary[900],
     "surface-500-container": accentColors.primary[900] + "24",
     "on-surface-500-container": neutralColors.neutral[900],
 
@@ -79,7 +91,26 @@ function generateColors(config: Config) {
     colors[`focus-${name}`] = colorShade(hex, 12);
     colors[`press-${name}`] = colorShade(hex, 12);
     colors[`drag-${name}`] = colorShade(hex, 16);
+    // no selected or activated colors because:
+    //   "Unlike hover, focus, pressed, and dragged states
+    //    that use state layers, components using the activated
+    //    or selected states change the container and content
+    //    color directly".
+    // colors[`selected-${name}`] = colorShade(hex, 16);
+    // colors[`activated-${name}`] = colorShade(hex, 16);
   }
+  // "single" interaction states.
+  // see https://m3.material.io/foundations/interaction-states
+  // disabled states always use the on-surface color but with
+  // different opacity values
+  colors[`disabled-content`] = colorShade(
+    colors["on-surface-100-container"],
+    38
+  );
+  colors[`disabled-container`] = colorShade(
+    colors["on-surface-100-container"],
+    12
+  );
 
   return colors;
 }
