@@ -36,19 +36,5 @@ export function forEachColorVariant(
       "surface-500",
     ]
   );
-  return colors
-    .map((name) => {
-      const result = callback({ name });
-      const applies = css(result)["@apply"];
-      // TODO postprocess the applies.
-      // to modify the css surfaces
-
-      // "text-on-surface-100" etc. do not exist.
-      // therefore, need to manually interfer with the color
-      if (name.includes("surface")) {
-        return callback({ name, bgColor: name, textColor: "surface" });
-      }
-      return callback({ name, bgColor: name, textColor: name });
-    })
-    .join("\n");
+  return colors.map((name) => callback({ name })).join("\n");
 }

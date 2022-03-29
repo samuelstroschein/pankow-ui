@@ -51,12 +51,16 @@ function generateColors(config: Config) {
     // appending the opacity value to the on-surface color.
     //
     // opacity values are from https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
-    "surface-100": accentColors.primary[900] + "0D",
-    "surface-200": accentColors.primary[900] + "14",
-    "surface-300": accentColors.primary[900] + "1C",
-    "surface-400": accentColors.primary[900] + "1F",
-    "surface-500": accentColors.primary[900] + "24",
-    "on-surface": neutralColors.neutral[900],
+    "surface-100-container": accentColors.primary[900] + "0D",
+    "on-surface-100-container": neutralColors.neutral[900],
+    "surface-200-container": accentColors.primary[900] + "14",
+    "on-surface-200-container": neutralColors.neutral[900],
+    "surface-300-container": accentColors.primary[900] + "1C",
+    "on-surface-300-container": neutralColors.neutral[900],
+    "surface-400-container": accentColors.primary[900] + "1F",
+    "on-surface-400-container": neutralColors.neutral[900],
+    "surface-500-container": accentColors.primary[900] + "24",
+    "on-surface-500-container": neutralColors.neutral[900],
 
     "surface-variant": neutralColors.neutralVariant[100],
     "on-surface-variant": neutralColors.neutralVariant[600],
