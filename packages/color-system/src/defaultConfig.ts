@@ -6,7 +6,7 @@ import tailwindColors from "tailwindcss/colors";
 export const defaultConfig: Config = {
   accentColors: {
     primary: tailwindColors.blue as Color,
-    secondary: tailwindColors.indigo as Color,
+    secondary: tailwindColors.fuchsia as Color,
     tertiary: tailwindColors.teal as Color,
   },
   neutralColors: {
