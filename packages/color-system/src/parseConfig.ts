@@ -25,7 +25,7 @@ function generateColors(config: Config) {
   const white = "#ffffff";
   // regular colors refer to accent and semantic colors.
   // like primary, secondary, error etc.
-  const regular = 400;
+  const regular = 600;
   const container = 100;
   const onContainer = 900;
 
