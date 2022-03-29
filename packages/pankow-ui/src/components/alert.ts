@@ -2,7 +2,7 @@ import { css } from "../functions/css";
 import { forEachColorVariant } from "../functions/forEachColorVariant";
 import { ParsedConfig } from "../types/parsedConfig";
 
-export function alerts({ config }: { config: ParsedConfig }) {
+export function alert({ config }: { config: ParsedConfig }) {
   return css(`
     .alert {
       @apply relative ${config.borderWidth()} ${config.borderStyle()} 

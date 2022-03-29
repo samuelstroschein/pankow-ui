@@ -9,24 +9,32 @@ bundle: buttons
 Buttons are used for **actions**, like in forms, while textual hyperlinks are used for **destinations**, or moving from one page to another.
 
 <div class="not-prose">
-  <button class="button bg-surface-100 hover:bg-hover-surface-100" type="button">Button</button>
+  <button class="button button-surface-100" type="button">Button</button>
 </div>
 
 Note: When using a `<button>` element, **always specify a `type`**. When using a `<a>` element, **always add `role="button"` for accessibility**.
 
-<div class="not-prose">
-  <button class="button mr-2 bg-surface-100 hover:bg-hover-primary" type="button">Button button</button>
-  <a class="button" href="#url" role="button">Link button</a>
+<div class="not-prose space-x-2">
+  <button class="button button-surface-100" type="button">Button button</button>
+  <a class="button button-surface-100" href="#url" role="button">Link button</a>
 </div>
 
 ## Button types
 
-### Default
+### Unstyled
 
-Use the standard — yet classy — `.button` for form actions and general page actions. These are used extensively around the site.
+Use the unstyled `.button` for customization..
 
 <div class="not-prose">
-  <button class="button" type="button">Default</button>
+  <button class="button" type="button">Unstyled</button>
+</div>
+
+### Surface
+
+Use the surface `.button .button-surface-{level}` for the default button. Read more about surface variantes [here](TODO).
+
+<div class="not-prose">
+  <button class="button button-surface-100" type="button">Surface</button>
 </div>
 
 ### Primary
@@ -45,12 +53,12 @@ Outline buttons downplay an action as they appear like boxy links. Just add `.bu
   <button class="button button-outline" type="button">Outline</button>
 </div>
 
-### Danger
+### Error
 
-Danger buttons are red. They help reiterate that the intended action is important or potentially dangerous (e.g., deleting a repo or transferring ownership). Similar to the primary buttons, just add `.button-danger`.
+Error buttons are red.
 
 <div class="not-prose"> 
-  <button class="button button-danger" type="button">Danger</button>
+  <button class="button button-error" type="button">Error</button>
 </div>
 
 ## Button states

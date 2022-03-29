@@ -4,7 +4,7 @@ import { css } from "../functions/css";
 
 //TODO close-button is not on the right side in the dismiss function
 // warum funktioneirt fill-current nicht ?
-export function toasts({ config }: { config: ParsedConfig }) {
+export function toast({ config }: { config: ParsedConfig }) {
   return css(`
     .toast {
       @apply flex m-2  ${config.borderRadius(
