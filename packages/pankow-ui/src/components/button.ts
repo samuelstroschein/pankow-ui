@@ -6,7 +6,7 @@ export function button({ config }: { config: ParsedConfig }) {
   return css(`
 
     .button {
-        @apply relative inline-block px-4 py-1.5 ${config.fontSize(
+        @apply relative inline-block px-3 py-1.5 ${config.fontSize(
           "base"
         )} font-semibold
         leading-5 whitespace-nowrap align-middle
