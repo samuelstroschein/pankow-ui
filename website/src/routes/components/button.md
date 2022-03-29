@@ -65,27 +65,27 @@ Error buttons are red.
 
 ### Selected
 
-Adding an `aria-selected="true"` attribute will keep the button in a selected state. Typically used for [`buttonGroups`](#button-groups).
+Adding an `aria-selected="true"` attribute will keep the button in a selected state. Typically used for [`button-group`](#button-groups).
 
 <div class="not-prose">
-  <div class="buttonGroup d-block mb-2">
-    <button class="buttonGroup-item button" type="button">Button</button>
-    <button class="buttonGroup-item button" type="button" aria-selected="true">
+  <div class="button-group d-block mb-2">
+    <button class="button-group-item button" type="button">Button</button>
+    <button class="button-group-item button" type="button" aria-selected="true">
       Button
     </button>
-    <button class="buttonGroup-item button button-danger" type="button">Danger</button>
+    <button class="button-group-item button button-danger" type="button">Danger</button>
   </div>
 
-  <div class="buttonGroup d-block mb-2 ml-0">
-    <button class="buttonGroup-item button button-outline" type="button">Button</button>
+  <div class="button-group d-block mb-2 ml-0">
+    <button class="button-group-item button button-outline" type="button">Button</button>
     <button
-      class="buttonGroup-item button button-outline"
+      class="button-group-item button button-outline"
       type="button"
       aria-selected="true"
     >
       Button
     </button>
-    <button class="buttonGroup-item button button-outline" type="button">Button</button>
+    <button class="button-group-item button button-outline" type="button">Button</button>
   </div>
 </div>
 
@@ -108,35 +108,22 @@ Disable `<button>` and `<a>` elements with the `aria-disabled="true"` attribute.
 
 ### Sizes
 
-Next to the default size there is also a `.button-sm` (small) and `.button-large` option. Use them to decrease or increase the button size. This is useful for fitting a button next to an input or turning a button into a prominent call to action in hero sections.
+Next to the default size there is also a `.button-sm` (small) and `.button-lg` option. Use them to decrease or increase the button size. This is useful for fitting a button next to an input or turning a button into a prominent call to action in hero sections.
 
-[Type scale utilities](/support/typography#type-scale) can be used to alter the font-size if needed. Padding is applied in em's so that it scales proportionally with the font-size.
-
-<div class="not-prose">
-  <button class="button button-sm mr-2" type="button">Small</button>
-  <button class="button mr-2" type="button">Default</button>
-  <button class="button button-large" type="button">Large</button>
-</div>
-
-Use `.button-large` with a type scale utility to transform the text to a bigger size.
-
-<div class="not-prose">
-  <div class="f3">
-    <button class="button button-large button-outline mr-2" type="button">
-      Large button button
-    </button>
-    <a class="button button-large" href="#url" role="button">Large link button</a>
-  </div>
+<div class="not-prose space-x-2">
+  <button class="button button-surface-100 button-sm" type="button">Small</button>
+  <button class="button button-surface-100" type="button">Default</button>
+  <button class="button button-surface-100 button-lg" type="button">Large</button>
 </div>
 
 ### Block button
 
-Make any button full-width by adding `.button-block`. It adds `width: 100%;`, changes the `display` from `inline-block` to `block`, and centers the button text.
+Make any button full-width by adding tailwinds `.w-full` class.
 
-```html live
-<button class="button button-block mb-2" type="button">Block button</button>
-<button class="button button-sm button-block" type="button">Small block button</button>
-```
+<div class="not-prose">
+	<button class="button button-surface-100 w-full mb-2" type="button">Block button</button>
+	<button class="button button-surface-100 button-sm w-full" type="button">Small block button</button>
+</div>
 
 ### Link button
 
@@ -398,45 +385,4 @@ You can also use the [counter](./labels#counters) component within buttons:
 <button class="button button-outline" type="button">
 	Button <span class="counter">12</span>
 </button>
-```
-
-## Button groups
-
-Have a hankering for a series of buttons that are attached to one another? Wrap them in a `.buttonGroup` and the buttons will be rounded and spaced automatically.
-
-```html live
-<div class="buttonGroup d-block mb-2">
-	<button class="buttonGroup-item button" type="button">Button</button>
-	<button class="buttonGroup-item button" type="button">Button</button>
-	<button class="buttonGroup-item button button-danger" type="button">Danger</button>
-</div>
-
-<div class="buttonGroup d-block mb-2 ml-0">
-	<button class="buttonGroup-item button button-outline" type="button">Button</button>
-	<button class="buttonGroup-item button button-outline" type="button">Button</button>
-	<button class="buttonGroup-item button button-outline" type="button">Button</button>
-</div>
-```
-
-Use `buttonGroup-item button button-sm` for a smaller buttonGroup items.
-
-```html live
-<div class="buttonGroup">
-	<button class="buttonGroup-item button button-sm" type="button">Button</button>
-	<button class="buttonGroup-item button button-sm" type="button">Button</button>
-	<button class="buttonGroup-item button button-sm" type="button">Button</button>
-</div>
-```
-
-Add `.buttonGroup-parent` to parent elements, like `<form>`s or `<details>`s, within `.buttonGroup`s for proper spacing and rounded corners.
-
-```html live
-<div class="buttonGroup">
-	<button class="button buttonGroup-item" type="button">Button</button>
-	<form class="buttonGroup-parent">
-		<button class="button buttonGroup-item" type="button">Button in a form</button>
-	</form>
-	<button class="button buttonGroup-item" type="button">Button</button>
-	<button class="button buttonGroup-item" type="button">Button</button>
-</div>
 ```
