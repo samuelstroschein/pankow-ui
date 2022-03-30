@@ -40,6 +40,10 @@ export type ParsedConfig = Config & {
     "surface-500-container": string;
     "on-surface-500-container": string;
 
+    // utility on-surface color. avoids the need to reference
+    // on-surface-100, on-surface-200, etc.
+    "on-surface": string;
+
     "surface-variant": string;
     "on-surface-variant": string;
 
@@ -51,7 +55,7 @@ export type ParsedConfig = Config & {
     "on-error-container": string;
 
     /**
-     * Contains state colors like "hover-${colorName}" and 
+     * Contains state colors like "hover-${colorName}" and
      * user defined colors.
      */
     [dynamic: string]: string;

@@ -30,7 +30,7 @@ function generateColors(config: Config) {
   const container = 100;
   const onContainer = 900;
 
-  const colors: ParsedConfig["colors"] = {
+  const colors: Partial<ParsedConfig["colors"]> = {
     primary: accentColors.primary[regular],
     "on-primary": white,
     "primary-container": accentColors.primary[container],
@@ -49,33 +49,6 @@ function generateColors(config: Config) {
     background: white,
     "on-background": neutralColors.neutral[900],
 
-    // appending the opacity value to the on-surface color.
-    // opacity values are from https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
-    //
-    // Futhermore, in order to follow the semantics of the other colors,
-    // the "container" colors are added although they are the same color.
-    "surface-100": accentColors.primary[900] + "0D",
-    "on-surface-100": accentColors.primary[900],
-    "surface-100-container": accentColors.primary[900] + "0D",
-    "on-surface-100-container": neutralColors.neutral[900],
-    "surface-200": accentColors.primary[900] + "14",
-    "on-surface-200": accentColors.primary[900],
-    "surface-200-container": accentColors.primary[900] + "14",
-    "on-surface-200-container": neutralColors.neutral[900],
-    "surface-300": accentColors.primary[900] + "1C",
-    "on-surface-300": accentColors.primary[900],
-    "surface-300-container": accentColors.primary[900] + "1C",
-    "on-surface-300-container": neutralColors.neutral[900],
-    "surface-400": accentColors.primary[900] + "1F",
-    "on-surface-400": accentColors.primary[900],
-    "surface-400-container": accentColors.primary[900] + "1F",
-    "on-surface-400-container": neutralColors.neutral[900],
-    "surface-500": accentColors.primary[900] + "24",
-    "on-surface-500": accentColors.primary[900],
-    "surface-500-container": accentColors.primary[900] + "24",
-    "on-surface-500-container": neutralColors.neutral[900],
-    // utility on-surface color. avoids the need to reference
-    // on-surface-100, on-surface-200, etc.
     "on-surface": neutralColors.neutral[900],
 
     "surface-variant": neutralColors.neutralVariant[100],
@@ -88,6 +61,29 @@ function generateColors(config: Config) {
     "on-error-container": semanticColors.error[onContainer],
   };
 
+  // adding surface level colors
+  // [level, opacity]
+  for (const [level, opacity] of [
+    [100, 5],
+    [200, 8],
+    [300, 11],
+    [400, 12],
+    [500, 14],
+  ]) {
+    // To follow the semantics of the other colors,
+    // the "container" colors are added although they are the same color.
+    colors[`surface-${level}`] = new TinyColor(accentColors.primary[900])
+      .setAlpha(opacity)
+      .toHexString();
+    colors[`on-surface-${level}`] = colors["on-surface"];
+    colors[`surface-${level}-container`] = new TinyColor(
+      accentColors.primary[900]
+    )
+      .setAlpha(opacity)
+      .toHexString();
+    colors[`on-surface-${level}-container`] = colors[`on-surface`];
+  }
+
   // add interaction state colors
   // see https://m3.material.io/foundations/interaction-states
   for (const [name, hex] of Object.entries(colors)) {
@@ -95,6 +91,8 @@ function generateColors(config: Config) {
     colors[`focus-${name}`] = new TinyColor(hex).darken(12).toHexString();
     colors[`press-${name}`] = new TinyColor(hex).darken(12).toHexString();
     colors[`drag-${name}`] = new TinyColor(hex).darken(16).toHexString();
+
+    new TinyColor(hex).setAlpha();
     // no selected or activated colors because:
     //   "Unlike hover, focus, pressed, and dragged states
     //    that use state layers, components using the activated
@@ -116,5 +114,5 @@ function generateColors(config: Config) {
     .darken(12)
     .toHexString();
 
-  return colors;
+  return colors as ParsedConfig["colors"];
 }
