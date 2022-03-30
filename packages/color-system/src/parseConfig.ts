@@ -92,7 +92,6 @@ function generateColors(config: Config) {
     colors[`press-${name}`] = new TinyColor(hex).darken(12).toHexString();
     colors[`drag-${name}`] = new TinyColor(hex).darken(16).toHexString();
 
-    new TinyColor(hex).setAlpha();
     // no selected or activated colors because:
     //   "Unlike hover, focus, pressed, and dragged states
     //    that use state layers, components using the activated
