@@ -88,10 +88,25 @@ function generateColors(config: Config) {
   // add interaction state colors
   // see https://m3.material.io/foundations/interaction-states
   for (const [name, hex] of Object.entries(colors)) {
-    colors[`hover-${name}`] = new TinyColor(hex).darken(8).toHex8String();
-    colors[`focus-${name}`] = new TinyColor(hex).darken(12).toHex8String();
-    colors[`press-${name}`] = new TinyColor(hex).darken(12).toHex8String();
-    colors[`drag-${name}`] = new TinyColor(hex).darken(16).toHex8String();
+    // the surface colors have a low opacity. darken them
+    // has close to no effect. Therefore, the opacity must be incereased.
+    const withSurfaceFix = (color: TinyColor) => {
+      // Since surface opacities are dynamic, the current alpha value is
+      // multiplied instead of setting a fixed alpha value.
+      return color.setAlpha(color.getAlpha() * 2);
+    };
+    colors[`hover-${name}`] = withSurfaceFix(
+      new TinyColor(hex).darken(8)
+    ).toHex8String();
+    colors[`focus-${name}`] = withSurfaceFix(
+      new TinyColor(hex).darken(12)
+    ).toHex8String();
+    colors[`press-${name}`] = withSurfaceFix(
+      new TinyColor(hex).darken(12)
+    ).toHex8String();
+    colors[`drag-${name}`] = withSurfaceFix(
+      new TinyColor(hex).darken(16)
+    ).toHex8String();
 
     // no selected or activated colors because:
     //   "Unlike hover, focus, pressed, and dragged states
