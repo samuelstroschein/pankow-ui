@@ -45,6 +45,9 @@ Border:
 `border-width` -> `border`
 `border-syle` -> `border-solid`
 
+Size:
+`$size-2` -> `{p,m}-5`
+
 Spacer:
 `$spacer-0` -> `{p,m}-0`
 `$spacer-1` -> `{p,m}-1`

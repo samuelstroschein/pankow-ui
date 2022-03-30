@@ -26,15 +26,11 @@ export function button({ config }: { config: ParsedConfig }) {
         }
 
         .counter {
-          @apply ml-0.5;
-          color: inherit;
-          text-shadow: none;
-          vertical-align: top;
+          @apply 
+            ml-0.5
+            font-medium;
         }
       
-        .dropdown-caret {
-          @apply pl-1 opacity-80;
-        }
       }
 
       .button-sm {
@@ -42,7 +38,7 @@ export function button({ config }: { config: ParsedConfig }) {
           py-0.5 
           px-3 
           ${config.fontSize("sm")} 
-          leading-5 ;
+          leading-5;
       
         .icon {
           vertical-align: text-top;
@@ -134,11 +130,6 @@ export function button({ config }: { config: ParsedConfig }) {
             border-focus-primary;
         }
       
-        .counter {
-          color: inherit;
-          background-color: var(--color-btn-primary-counter-bg);
-        }
-      
         .icon {
           color: var(--color-btn-primary-icon);
         }
@@ -158,8 +149,8 @@ export function button({ config }: { config: ParsedConfig }) {
         &.hover,
         [open] > & {
           @apply 
-            bg-hover-${name} 
-            text-on-${name.includes("surface") ? "primary" : name}
+            bg-hover-${name}
+            text-on-${name}
             border-hover-${name};
         }
 
@@ -190,11 +181,6 @@ export function button({ config }: { config: ParsedConfig }) {
           @apply 
             bg-focus-${name} 
             border-focus-${name};
-        }
-      
-        .counter {
-          color: inherit;
-          background-color: var(--color-btn-primary-counter-bg);
         }
       
         .icon {
