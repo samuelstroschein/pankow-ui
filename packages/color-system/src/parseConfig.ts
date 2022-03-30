@@ -105,13 +105,14 @@ function generateColors(config: Config) {
   // see https://m3.material.io/foundations/interaction-states
   // disabled states always use the on-surface color but with
   // different opacity values
-  colors[`disabled-content`] = new TinyColor(colors["on-surface-100-container"])
-    .darken(38)
+  // colors[`disabled-content`] = new TinyColor(colors["on-surface-100-container"])
+  //   .setAlpha(38)
+  //   .toHex8String();
+  colors[`disabled-content`] = new TinyColor(colors["on-surface"])
+    .setAlpha(0.38)
     .toHex8String();
-  colors[`disabled-container`] = new TinyColor(
-    colors["on-surface-100-container"]
-  )
-    .darken(12)
+  colors[`disabled-container`] = new TinyColor(colors["on-surface"])
+    .setAlpha(0.12)
     .toHex8String();
 
   return colors as ParsedConfig["colors"];
