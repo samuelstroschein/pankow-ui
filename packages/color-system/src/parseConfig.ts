@@ -1,5 +1,6 @@
 import { Config } from "./types/config";
 import { ParsedConfig } from "./types/parsedConfig";
+import { TinyColor } from "@ctrl/tinycolor";
 
 export function parseConfig(config: Config): ParsedConfig {
   const colors = generateColors(config);
@@ -90,10 +91,10 @@ function generateColors(config: Config) {
   // add interaction state colors
   // see https://m3.material.io/foundations/interaction-states
   for (const [name, hex] of Object.entries(colors)) {
-    colors[`hover-${name}`] = colorShade(hex, 8);
-    colors[`focus-${name}`] = colorShade(hex, 12);
-    colors[`press-${name}`] = colorShade(hex, 12);
-    colors[`drag-${name}`] = colorShade(hex, 16);
+    colors[`hover-${name}`] = new TinyColor(hex).darken(8).toHexString();
+    colors[`focus-${name}`] = new TinyColor(hex).darken(12).toHexString();
+    colors[`press-${name}`] = new TinyColor(hex).darken(12).toHexString();
+    colors[`drag-${name}`] = new TinyColor(hex).darken(16).toHexString();
     // no selected or activated colors because:
     //   "Unlike hover, focus, pressed, and dragged states
     //    that use state layers, components using the activated
@@ -106,42 +107,14 @@ function generateColors(config: Config) {
   // see https://m3.material.io/foundations/interaction-states
   // disabled states always use the on-surface color but with
   // different opacity values
-  colors[`disabled-content`] = colorShade(
-    colors["on-surface-100-container"],
-    38
-  );
-  colors[`disabled-container`] = colorShade(
-    colors["on-surface-100-container"],
-    12
-  );
+  colors[`disabled-content`] = new TinyColor(colors["on-surface-100-container"])
+    .darken(38)
+    .toHexString();
+  colors[`disabled-container`] = new TinyColor(
+    colors["on-surface-100-container"]
+  )
+    .darken(12)
+    .toHexString();
 
   return colors;
 }
-
-/**
- * Darkens or lightens a hex color.
- */
-// @ts-ignore
-// taken from https://stackoverflow.com/a/62640342/16690118
-const colorShade = (col, amt) => {
-  col = col.replace(/^#/, "");
-  if (col.length === 3)
-    col = col[0] + col[0] + col[1] + col[1] + col[2] + col[2];
-
-  let [r, g, b] = col.match(/.{2}/g);
-  [r, g, b] = [
-    parseInt(r, 16) + amt,
-    parseInt(g, 16) + amt,
-    parseInt(b, 16) + amt,
-  ];
-
-  r = Math.max(Math.min(255, r), 0).toString(16);
-  g = Math.max(Math.min(255, g), 0).toString(16);
-  b = Math.max(Math.min(255, b), 0).toString(16);
-
-  const rr = (r.length < 2 ? "0" : "") + r;
-  const gg = (g.length < 2 ? "0" : "") + g;
-  const bb = (b.length < 2 ? "0" : "") + b;
-
-  return `#${rr}${gg}${bb}`;
-};
