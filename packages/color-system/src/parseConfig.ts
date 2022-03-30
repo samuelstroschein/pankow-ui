@@ -90,21 +90,28 @@ function generateColors(config: Config) {
   for (const [name, hex] of Object.entries(colors)) {
     // the surface colors have a low opacity. darken them
     // has close to no effect. Therefore, the opacity must be incereased.
-    const withSurfaceFix = (color: TinyColor) => {
+    const withSurfaceFix = (name: string, color: TinyColor) => {
+      if (name.includes("surface") === false) {
+        return color;
+      }
       // Since surface opacities are dynamic, the current alpha value is
       // multiplied instead of setting a fixed alpha value.
       return color.setAlpha(color.getAlpha() * 2);
     };
     colors[`hover-${name}`] = withSurfaceFix(
+      name,
       new TinyColor(hex).darken(8)
     ).toHex8String();
     colors[`focus-${name}`] = withSurfaceFix(
+      name,
       new TinyColor(hex).darken(12)
     ).toHex8String();
     colors[`press-${name}`] = withSurfaceFix(
+      name,
       new TinyColor(hex).darken(12)
     ).toHex8String();
     colors[`drag-${name}`] = withSurfaceFix(
+      name,
       new TinyColor(hex).darken(16)
     ).toHex8String();
 
