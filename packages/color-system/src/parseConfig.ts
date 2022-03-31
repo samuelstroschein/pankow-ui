@@ -27,7 +27,7 @@ function generateColors(config: Config) {
   // regular colors refer to accent and semantic colors.
   // like primary, secondary, error etc.
   const regular = 700;
-  const container = 100;
+  const container = 200;
   const onContainer = 900;
 
   const colors: Partial<ParsedConfig["colors"]> = {
