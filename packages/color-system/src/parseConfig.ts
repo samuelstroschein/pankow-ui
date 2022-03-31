@@ -76,30 +76,6 @@ function generateColors(config: Config) {
     "on-error-container": semanticColors.error[onContainer],
   };
 
-  // adding surface level colors
-  // [level, opacity]
-  for (const [level, opacity] of [
-    [100, 0.05],
-    [200, 0.08],
-    [300, 0.11],
-    [400, 0.12],
-    [500, 0.14],
-  ]) {
-    // To follow the semantics of the other colors,
-    // the "container" colors are added although they are the same color.
-    // using hex8 string to include alpha channel
-    colors[`surface-${level}`] = new TinyColor(accentColors.primary[900])
-      .setAlpha(opacity)
-      .toHex8String();
-    colors[`on-surface-${level}`] = colors["on-surface"];
-    colors[`surface-${level}-container`] = new TinyColor(
-      accentColors.primary[900]
-    )
-      .setAlpha(opacity)
-      .toHex8String();
-    colors[`on-surface-${level}-container`] = colors[`on-surface`];
-  }
-
   // add interaction state colors
   // see https://m3.material.io/foundations/interaction-states
   for (const [name, hex] of Object.entries(colors)) {
