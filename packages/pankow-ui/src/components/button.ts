@@ -4,190 +4,61 @@ import { forEachColorVariant } from "../functions/forEachColorVariant";
 
 export function button({ config }: { config: ParsedConfig }) {
   return css(`
+   .button {
+     @apply focus:ring-4 font-medium  ${config.borderRadius(
+       "base"
+     )} focus:outline-none text-center inline-flex items-center
+     button-base;
+   }
 
-    .button {
-        @apply relative inline-block px-3 py-1.5 ${config.fontSize(
-          "base"
-        )} font-semibold
-        leading-5 whitespace-nowrap align-middle
-        select-none ${config.borderWidth()} ${config.borderRadius("base")}
-        space-x-1
-        hover:no-underline;
-    
+   .button-outline {
+      @apply focus:ring-4 font-medium  ${config.borderRadius(
+        "base"
+      )} focus:outline-none text-center inline-flex items-center
+      button-base
+      focus:z-10 
+      ${config.borderWidth()};
+     
+    }
 
-        &:disabled,
-        &.disabled,
-        &[aria-disabled='true'] {
-          cursor: default;
-        }
+    .button-sm {
+      @apply !${config.fontSize("sm")} px-4 py-2;
+    }
 
-        .icon {
-          vertical-align: text-bottom;
-        }
+    .button-base {
+      @apply !${config.fontSize("base")} px-5 py-2.5;
+    }
 
-        .counter {
-          @apply 
-            ml-0.5
-            font-medium;
-        }
-      
+    .button-lg {
+      @apply !${config.fontSize("lg")} px-6 py-3;
+    }
+
+  
+  
+
+   ${forEachColorVariant(
+     {
+       ...config.colorSystem.accentColors,
+       ...config.colorSystem.semanticColors,
+     },
+     ({ name }) => `
+      .button-${name} { 
+        @apply
+          bg-${name}
+          text-on-${name}
+          hover:bg-hover-${name} hover:text-hover-on-${name}
+          focus:ring-focus-${name}
       }
 
-      .button-sm {
+      .button-outline-${name} {
         @apply 
-          py-0.5 
-          px-3 
-          ${config.fontSize("sm")} 
-          leading-5;
-      
-        .icon {
-          vertical-align: text-top;
-        }
+          text-${name}
+          bg-background
+          border-${name} 
+          hover:bg-hover-${name} hover:text-hover-on-${name}
+          focus:ring-focus-${name};
       }
-
-      .button-lg {
-        @apply 
-          ${config.fontSize("lg")} 
-          leading-6;
-        padding: 0.75em 1.5em;
-      }
-
-      .button-text {
-        @apply 
-          bg-transparent
-          text-primary
-          border-0
-          shadow-none;
-      
-        &:hover {
-          @apply bg-hover-surface-100;
-          @apply text-on-primary;
-          outline: none;
-          box-shadow: none;
-        }
-      
-        &:active,
-        &:focus,
-        &.selected,
-        &[aria-selected='true'] {
-          @apply 
-            text-primary
-            bg-surface-variant 
-            border-surface-variant;
-          
-          background-color: none;
-          outline: none;
-        }
-      
-        &:disabled,
-        &.disabled,
-        &[aria-disabled='true'] {
-          @apply 
-            bg-disabled-container
-            text-disabled-content
-            border-disabled-container; 
-        }
-      }
-
-      .button-outline {
-        @apply 
-          bg-transparent
-          text-primary 
-          border-outline;
-      
-        &:hover,
-        &.hover,
-        [open] > & {
-          @apply 
-            bg-hover-primary 
-            border-hover-primary 
-            text-on-primary;
-        }
-      
-        &:active,
-        &.selected,
-        &[aria-selected='true'] {
-          @apply bg-surface-variant border-surface-variant;
-        }
-      
-        &:disabled,
-        &.disabled,
-        &[aria-disabled='true'] {
-          @apply 
-            bg-disabled-container
-            text-disabled-content
-            border-disabled-container; 
-      
-          .icon {
-            @apply text-disabled-content;
-          }
-        }
-      
-        &:focus,
-        &.focus {
-          @apply 
-            bg-focus-primary 
-            border-focus-primary;
-        }
-      
-        .icon {
-          color: var(--color-btn-primary-icon);
-        }
-      }
-
-    
-    
-    ${forEachColorVariant(config.colorSystem, ({ name }) => {
-      return `
-      .button-${name} {
-        @apply 
-          bg-${name} 
-          text-on-${name};
-          
-      
-        &:hover,
-        &.hover,
-        [open] > & {
-          @apply 
-            bg-hover-${name}
-            text-on-${name}
-            border-hover-${name};
-        }
-
-        &:active,
-        &.selected,
-        &[aria-selected='true'] {
-          @apply 
-            bg-surface-variant 
-            text-on-surface-variant
-            border-surface-variant;
-        }
-      
-        &:disabled,
-        &.disabled,
-        &[aria-disabled='true'] {
-          @apply 
-            bg-disabled-container
-            text-disabled-content
-            border-disabled-container; 
-      
-          .icon {
-            @apply text-disabled-content;
-          }
-        }
-      
-        &:focus,
-        &.focus {
-          @apply 
-            bg-focus-${name} 
-            border-focus-${name};
-        }
-      
-        .icon {
-          color: var(--color-btn-primary-icon);
-        }
-      }
-      `;
-    })}
+  `
+   )}
 `);
 }

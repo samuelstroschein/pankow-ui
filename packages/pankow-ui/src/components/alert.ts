@@ -3,41 +3,24 @@ import { forEachColorVariant } from "../functions/forEachColorVariant";
 import { ParsedConfig } from "../types/parsedConfig";
 
 export function alert({ config }: { config: ParsedConfig }) {
-  return css(`
+  const x = `
     .alert {
-      @apply relative ${config.borderWidth()} ${config.borderStyle()} 
-      ${config.borderRadius("base")} py-5 px-4 space-y-2;
-
-      .icon {
-        @apply mr-2 mb-1;
-      }
-
+      @apply 
+        p-4 
+        ${config.borderRadius("base")};
     }
 
     ${forEachColorVariant(
-      config.colorSystem,
+      config.colorSystem.semanticColors,
       ({ name }) => `
-      .alert-${name} {
-          @apply bg-${name}-container text-on-${name}-container;
-        }      
-      `
+        .alert-${name} {
+          @apply
+            bg-${name}-container
+            text-on-${name}-container;
+        }
+    `
     )}
+  `;
 
-
-  .alert-close-button {
-    @apply float-right p-4 -m-4 text-center cursor-pointer;
-
-    &:hover {
-      opacity: 0.7;
-    }
-
-    &:active {
-      opacity: 0.5;
-    }
-
-    .icon {
-      margin-right: 0;
-    }
-  }
-`);
+  return css(x);
 }

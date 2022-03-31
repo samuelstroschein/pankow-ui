@@ -9,14 +9,7 @@ bundle: buttons
 Buttons are used for **actions**, like in forms, while textual hyperlinks are used for **destinations**, or moving from one page to another.
 
 <div class="not-prose">
-  <button class="button button-surface-100" type="button">Button</button>
-</div>
-
-Note: When using a `<button>` element, **always specify a `type`**. When using a `<a>` element, **always add `role="button"` for accessibility**.
-
-<div class="not-prose space-x-2">
-  <button class="button button-surface-100" type="button">Button button</button>
-  <a class="button button-surface-100" href="#url" role="button">Link button</a>
+  <button class="button border" type="button">Button</button>
 </div>
 
 ## Button styles
@@ -26,31 +19,28 @@ Note: When using a `<button>` element, **always specify a `type`**. When using a
 Use the unstyled `.button` for customization..
 
 <div class="not-prose">
-  <button class="button" type="button">Unstyled</button>
-</div>
-
-### Surface
-
-Use the surface `.button .button-surface-{level}` for the default button. Read more about surface variantes [here](TODO).
-
-<div class="not-prose">
-  <button class="button button-surface-100" type="button">Surface</button>
+  <button class="button border" type="button">Unstyled</button>
 </div>
 
 ### Primary
 
 Primary buttons are green and are used to indicate the _primary_ action on a page. When you need your buttons to stand out, use `.button.button-primary`. You can use it with both button sizes—just add `.button-primary`.
 
-<div class="not-prose">
-  <button class="button button-primary" type="button">Primary</button>
+<div class="not-prose space-x-2">
+  <button class="button button-primary button-sm" type="button">sm Primary</button>
+  <button class="button button-error " type="button">base Primary</button>
+<button class="button-outline button-outline-primary" type="button">base Primary</button>
+
+<button class="button button-primary button-lg" type="button">lg Primary</button>
+
 </div>
 
 ### Outline
 
-Outline buttons downplay an action as they appear like boxy links. Just add `.button-outline` and go.
+Outline buttons downplay an action as they appear like boxy links. Replace `.button` tJu.`button-outline` anddd ` a button state like .button-outline` -primaryand go.
 
 <div class="not-prose">
-  <button class="button button-outline" type="button">Outline</button>
+  <button class="button-outline button-outline-primary " type="button">Outline</button>
 </div>
 
 ### Error
@@ -58,12 +48,12 @@ Outline buttons downplay an action as they appear like boxy links. Just add `.bu
 Error buttons are red.
 
 <div class="not-prose"> 
-  <button class="button button-error" type="button">Error</button>
+  <button class="button button-error " type="button">Error</button>
 </div>
 
 ## Button states
 
-### Selected
+<!-- ### Selected
 
 Adding an `aria-selected="true"` attribute will keep the button in a selected state. Typically used for [`button-group`](#button-groups).
 
@@ -73,7 +63,7 @@ Adding an `aria-selected="true"` attribute will keep the button in a selected st
     <button class="button-group-item button" type="button" aria-selected="true">
       Button
     </button>
-    <button class="button-group-item button button-danger" type="button">Danger</button>
+    <button class="button-group-item button button-error" type="button">Error		</button>
   </div>
 
   <div class="button-group d-block mb-2 ml-0">
@@ -87,26 +77,26 @@ Adding an `aria-selected="true"` attribute will keep the button in a selected st
     </button>
     <button class="button-group-item button button-outline" type="button">Button</button>
   </div>
-</div>
+</div> -->
 
 ### Disabled
 
-Disable `<button>` and `<a>` elements with the `aria-disabled="true"` attribute.
+Disable `<button>` use `. cursor-not-allowed`& the disabled attribute.
 
 <div class="not-prose space-x-2">
-  <button class="button button-surface-100" type="button" aria-disabled="true">Disabled</button>
+  <button class="button button-primary cursor-not-allowed	" type="button" disabled>Disabled</button>
 </div>
 
 ## Button variations
 
 ### Sizes
 
-Next to the default size there is also a `.button-sm` (small) and `.button-lg` option. Use them to decrease or increase the button size. This is useful for fitting a button next to an input or turning a button into a prominent call to action in hero sections.
+Next to the default size there is also a Button Base `.text-base` (base) and `.text-lg` option. Use them to decrease or increase the button size. This is useful for fitting a button next to an input or turning a button into a prominent call to action in hero sections.
 
 <div class="not-prose space-x-2">
-  <button class="button button-surface-100 button-sm" type="button">Small</button>
-  <button class="button button-surface-100" type="button">Default</button>
-  <button class="button button-surface-100 button-lg" type="button">Large</button>
+  <button class="button  text-sm" type="button">Small</button>
+  <button class="button text-base" type="button">Default</button>
+  <button class="button  text-lg " type="button">Large</button>
 </div>
 
 ### Block button
@@ -114,8 +104,8 @@ Next to the default size there is also a `.button-sm` (small) and `.button-lg` o
 Make any button full-width by adding tailwinds `.w-full` class.
 
 <div class="not-prose">
-	<button class="button button-surface-100 w-full mb-2" type="button">Block button</button>
-	<button class="button button-surface-100 button-sm w-full" type="button">Small block button</button>
+	<button class="button  w-full mb-2" type="button">Block button</button>
+	<button class="button  button-sm w-full" type="button">Small block button</button>
 </div>
 
 ### Text button
@@ -124,7 +114,7 @@ When you want a link, but you want it padded and line heightened like a button b
 
 <div class="not-prose">
 	<button class="button button-text" type="button">Cancel</button>
-	<button class="button button-surface-100" type="button">Submit</button>
+	<button class="button " type="button">Submit</button>
 </div>
 
 ## Button with icons
@@ -132,7 +122,7 @@ When you want a link, but you want it padded and line heightened like a button b
 Icons can be added to any button.
 
 <div class="not-prose space-x-2">
-	<button class="button button-surface-100" type="button">
+	<button class="button button-primary" type="button">
 		<!-- <%= octicon "search" %> -->
 		<svg
 			class="icon"
@@ -199,7 +189,7 @@ Icons can be added to any button.
     	<span>Open in Desktop</span>
     </button>
 
-    <button class="button button-surface-100" type="button" aria-label="Pencil icon">
+    <button class="button " type="button" aria-label="Pencil icon">
     	<!-- <%= octicon "pencil" %> -->
     	<svg
     		class="icon"
@@ -248,8 +238,8 @@ You can easily append a count to a **small button**. Add the `.button-with-count
 You can also use the [counter](./labels#counters) component within buttons:
 
 <div class="not-prose space-x-2">
-	<button class="button button-surface-100" type="button">
-		Button <span class="counter counter-surface-200">12</span>
+	<button class="button " type="button">
+		Button <span class="counter ">12</span>
 	</button>
 
     <button class="button button-primary" type="button">
