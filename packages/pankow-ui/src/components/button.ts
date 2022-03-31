@@ -9,6 +9,18 @@ export function button({ config }: { config: ParsedConfig }) {
        "base"
      )} focus:outline-none text-center inline-flex items-center
      button-base;
+
+     &-sm {
+      @apply ${config.fontSize("sm")} px-4 py-2;
+    }
+
+      &-base {
+        @apply ${config.fontSize("base")} px-5 py-2.5;
+      }
+
+      &-lg {
+        @apply ${config.fontSize("lg")} px-6 py-3;
+      }
    }
 
    .button-outline {
@@ -16,25 +28,22 @@ export function button({ config }: { config: ParsedConfig }) {
         "base"
       )} focus:outline-none text-center inline-flex items-center
       button-base
-      focus:z-10 
+      focus:z-10
       ${config.borderWidth()};
-     
-    }
+      
 
-    .button-sm {
-      @apply !${config.fontSize("sm")} px-4 py-2;
-    }
+      &-sm {
+        @apply ${config.fontSize("sm")} px-4 py-2;
+      }
 
-    .button-base {
-      @apply !${config.fontSize("base")} px-5 py-2.5;
-    }
+      &-base {
+        @apply ${config.fontSize("base")} px-5 py-2.5;
+      }
 
-    .button-lg {
-      @apply !${config.fontSize("lg")} px-6 py-3;
+      &-lg {
+        @apply ${config.fontSize("lg")} px-6 py-3;
+      }
     }
-
-  
-  
 
    ${forEachColorVariant(
      {

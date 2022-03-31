@@ -29,7 +29,7 @@ Primary buttons are green and are used to indicate the _primary_ action on a pag
 <div class="not-prose space-x-2">
   <button class="button button-primary button-sm" type="button">sm Primary</button>
   <button class="button button-error " type="button">base Primary</button>
-<button class="button-outline button-outline-primary" type="button">base Primary</button>
+<button class="button-outline button-outline-primary button-outline-sm" type="button">base Primary</button>
 
 <button class="button button-primary button-lg" type="button">lg Primary</button>
 
