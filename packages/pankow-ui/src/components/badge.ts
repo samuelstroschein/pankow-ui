@@ -3,7 +3,7 @@ import { forEachColorVariant } from "../functions/forEachColorVariant";
 import { ParsedConfig } from "../types/parsedConfig";
 
 export function badge({ config }: { config: ParsedConfig }) {
-  const x = `
+  return css(`
     .badge {
       @apply 
         font-semibold
@@ -22,7 +22,5 @@ export function badge({ config }: { config: ParsedConfig }) {
         }
     `
     )}
-  `;
-
-  return css(x);
+  `);
 }
