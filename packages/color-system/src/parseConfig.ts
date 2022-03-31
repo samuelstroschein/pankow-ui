@@ -49,6 +49,21 @@ function generateColors(config: Config) {
     background: white,
     "on-background": neutralColors.neutral[900],
 
+    "surface-100": new TinyColor(accentColors.primary[900])
+      .setAlpha(0.05)
+      .toHex8String(),
+    "surface-200": new TinyColor(accentColors.primary[900])
+      .setAlpha(0.08)
+      .toHex8String(),
+    "surface-300": new TinyColor(accentColors.primary[900])
+      .setAlpha(0.11)
+      .toHex8String(),
+    "surface-400": new TinyColor(accentColors.primary[900])
+      .setAlpha(0.12)
+      .toHex8String(),
+    "surface-500": new TinyColor(accentColors.primary[900])
+      .setAlpha(0.14)
+      .toHex8String(),
     "on-surface": neutralColors.neutral[900],
 
     "surface-variant": neutralColors.neutralVariant[100],
@@ -88,32 +103,10 @@ function generateColors(config: Config) {
   // add interaction state colors
   // see https://m3.material.io/foundations/interaction-states
   for (const [name, hex] of Object.entries(colors)) {
-    // the surface colors have a low opacity. darken them
-    // has close to no effect. Therefore, the opacity must be incereased.
-    const withSurfaceFix = (name: string, color: TinyColor) => {
-      if (name.includes("surface") === false) {
-        return color;
-      }
-      // Since surface opacities are dynamic, the current alpha value is
-      // multiplied instead of setting a fixed alpha value.
-      return color.setAlpha(color.getAlpha() * 2);
-    };
-    colors[`hover-${name}`] = withSurfaceFix(
-      name,
-      new TinyColor(hex).darken(8)
-    ).toHex8String();
-    colors[`focus-${name}`] = withSurfaceFix(
-      name,
-      new TinyColor(hex).darken(12)
-    ).toHex8String();
-    colors[`press-${name}`] = withSurfaceFix(
-      name,
-      new TinyColor(hex).darken(12)
-    ).toHex8String();
-    colors[`drag-${name}`] = withSurfaceFix(
-      name,
-      new TinyColor(hex).darken(16)
-    ).toHex8String();
+    colors[`hover-${name}`] = new TinyColor(hex).darken(8).toHex8String();
+    colors[`focus-${name}`] = new TinyColor(hex).darken(12).toHex8String();
+    colors[`press-${name}`] = new TinyColor(hex).darken(12).toHex8String();
+    colors[`drag-${name}`] = new TinyColor(hex).darken(16).toHex8String();
 
     // no selected or activated colors because:
     //   "Unlike hover, focus, pressed, and dragged states
