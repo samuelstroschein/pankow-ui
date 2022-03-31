@@ -29,7 +29,7 @@ Primary buttons are green and are used to indicate the _primary_ action on a pag
 <div class="not-prose space-x-2">
   <button class="button button-primary button-sm" type="button">sm Primary</button>
   <button class="button button-error " type="button">base Primary</button>
-<button class="button-outline button-outline-primary button-outline-sm" type="button">base Primary</button>
+<button class="button-outline button-outline-primary  " type="button">base Primary</button>
 
 <button class="button button-primary button-lg" type="button">lg Primary</button>
 
@@ -91,12 +91,12 @@ Disable `<button>` use `. cursor-not-allowed`& the disabled attribute.
 
 ### Sizes
 
-Next to the default size there is also a Button Base `.text-base` (base) and `.text-lg` option. Use them to decrease or increase the button size. This is useful for fitting a button next to an input or turning a button into a prominent call to action in hero sections.
+Next to the default size there is also a Button small `.button-small` (small) and `.button-lg` option. Use them to decrease or increase the button size. This is useful for fitting a button next to an input or turning a button into a prominent call to action in hero sections.
 
 <div class="not-prose space-x-2">
-  <button class="button  text-sm" type="button">Small</button>
-  <button class="button text-base" type="button">Default</button>
-  <button class="button  text-lg " type="button">Large</button>
+  <button class="button button-primary button-sm" type="button">Small</button>
+  <button class="button button-primary " type="button">base</button>
+  <button class="button button-primary button-lg " type="button">Large</button>
 </div>
 
 ### Block button
@@ -104,8 +104,8 @@ Next to the default size there is also a Button Base `.text-base` (base) and `.t
 Make any button full-width by adding tailwinds `.w-full` class.
 
 <div class="not-prose">
-	<button class="button  w-full mb-2" type="button">Block button</button>
-	<button class="button  button-sm w-full" type="button">Small block button</button>
+	<button class="button button-primary  w-full mb-2" type="button">Block button</button>
+	<button class="button button-primary button-sm w-full" type="button">Small block button</button>
 </div>
 
 ### Text button
@@ -113,8 +113,10 @@ Make any button full-width by adding tailwinds `.w-full` class.
 When you want a link, but you want it padded and line heightened like a button best for "cancel" actions on forms.
 
 <div class="not-prose">
-	<button class="button button-text" type="button">Cancel</button>
-	<button class="button " type="button">Submit</button>
+	<button class="button-text button-text-primary button-text-sm " type="button">small</button>
+	<button class="button-text button-text-secondary  " type="button">Base</button>
+	<button class="button-text button-text-tertiary button-text-lg " type="button">Large</button>
+	
 </div>
 
 ## Button with icons
@@ -122,11 +124,10 @@ When you want a link, but you want it padded and line heightened like a button b
 Icons can be added to any button.
 
 <div class="not-prose space-x-2">
-	<button class="button button-primary" type="button">
+	<button class="button button-primary " type="button">
 		<!-- <%= octicon "search" %> -->
 		<svg
 			class="icon"
-			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 16 16"
 			width="16"
 			height="16"
@@ -138,11 +139,10 @@ Icons can be added to any button.
 		</svg>
 	</button>
 
-    <button class="button button-primary" type="button">
+    <button class="button button-primary button-sm" type="button">
     	<!-- <%= octicon "download" %> -->
     	<svg
     		class="icon"
-    		xmlns="http://www.w3.org/2000/svg"
     		viewBox="0 0 16 16"
     		width="16"
     		height="16"
@@ -152,14 +152,13 @@ Icons can be added to any button.
     			d="M7.47 10.78a.75.75 0 001.06 0l3.75-3.75a.75.75 0 00-1.06-1.06L8.75 8.44V1.75a.75.75 0 00-1.5 0v6.69L4.78 5.97a.75.75 0 00-1.06 1.06l3.75 3.75zM3.75 13a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5z"
     		></path>
     	</svg>
-    	<span>Clone</span>
+    	<span>Delet</span>
     </button>
 
-    <button class="button button-error" type="button">
+    <button class="button button-error " type="button">
     	<!-- <%= octicon "trashcan" %> -->
     	<svg
     		class="icon"
-    		xmlns="http://www.w3.org/2000/svg"
     		viewBox="0 0 16 16"
     		width="16"
     		height="16"
@@ -172,11 +171,10 @@ Icons can be added to any button.
     	<span>Delete</span>
     </button>
 
-    <button class="button button-outline" type="button">
+    <button class="button-outline button-outline-secondary" type="button">
     	<!-- <%= octicon "device-desktop" %> -->
     	<svg
     		class="icon"
-    		xmlns="http://www.w3.org/2000/svg"
     		viewBox="0 0 16 16"
     		width="16"
     		height="16"
@@ -203,55 +201,6 @@ Icons can be added to any button.
     			d="M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z"
     		></path>
     	</svg>
-    </button>
-
-</div>
-
-## Button with counts
-
-You can easily append a count to a **small button**. Add the `.button-with-count` class to the `.button-sm` and then add the `.social-count` after the button.
-
-**Be sure to clear the float added by the additional class.**
-
-```html live
-<div class="clearfix">
-	<a class="button button-sm button-with-count" href="#url" role="button">
-		<!-- <%= octicon "eye" %> -->
-		<svg
-			class="octicon"
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 16 16"
-			width="16"
-			height="16"
-		>
-			<path
-				fill-rule="evenodd"
-				d="M1.679 7.932c.412-.621 1.242-1.75 2.366-2.717C5.175 4.242 6.527 3.5 8 3.5c1.473 0 2.824.742 3.955 1.715 1.124.967 1.954 2.096 2.366 2.717a.119.119 0 010 .136c-.412.621-1.242 1.75-2.366 2.717C10.825 11.758 9.473 12.5 8 12.5c-1.473 0-2.824-.742-3.955-1.715C2.92 9.818 2.09 8.69 1.679 8.068a.119.119 0 010-.136zM8 2c-1.981 0-3.67.992-4.933 2.078C1.797 5.169.88 6.423.43 7.1a1.619 1.619 0 000 1.798c.45.678 1.367 1.932 2.637 3.024C4.329 13.008 6.019 14 8 14c1.981 0 3.67-.992 4.933-2.078 1.27-1.091 2.187-2.345 2.637-3.023a1.619 1.619 0 000-1.798c-.45-.678-1.367-1.932-2.637-3.023C11.671 2.992 9.981 2 8 2zm0 8a2 2 0 100-4 2 2 0 000 4z"
-			></path>
-		</svg>
-		<span>Watch</span>
-	</a>
-	<a class="social-count" href="#url">6</a>
-</div>
-```
-
-You can also use the [counter](./labels#counters) component within buttons:
-
-<div class="not-prose space-x-2">
-	<button class="button " type="button">
-		Button <span class="counter ">12</span>
-	</button>
-
-    <button class="button button-primary" type="button">
-    	Button <span class="counter counter-primary">12</span>
-    </button>
-
-    <button class="button button-error" type="button">
-    	Button <span class="counter counter-error">12</span>
-    </button>
-
-    <button class="button button-outline" type="button">
-    	Button <span class="counter counter-outline">12</span>
     </button>
 
 </div>
