@@ -41,11 +41,11 @@ Alert messages, or alerts, inform users of successful or pending actions. Use th
 			More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
 		</div>
 		<div class="flex space-x-2">
-			<button type="button" class="button button-error text-xs">
+			<button type="button" class="button button-error button-sm">
 			<svg class="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>
 			View more
 			</button>
-			<button type="button" class="button button-error text-xs" data-dismiss-target="#alert-additional-content-1" aria-label="Close">
+			<button type="button" class="button-outline button-outline-error button-outline-sm" data-dismiss-target="#alert-additional-content-1" aria-label="Close">
 			Dismiss
 			</button>
 		</div>
