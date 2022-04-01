@@ -10,7 +10,7 @@ export function parseConfig(config: Config): ParsedConfig {
   return {
     borderRadius: (size) =>
       mapBorderRadius({ size, base: config.borderRadiusBase }),
-    borderWidth: () => config.borderWith,
+    borderWidth: () => config.borderWidth,
     borderStyle: () => config.borderStyle,
     colorSystem: parseColorSystemConfig(config.colorSystem),
     fontSize: (size) => mapFontSize({ size, base: config.fontSizeBase }),

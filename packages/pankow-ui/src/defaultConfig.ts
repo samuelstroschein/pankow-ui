@@ -3,7 +3,7 @@ import { defaultConfig as defaultColorSystemConfig } from "@pankow-ui/color-syst
 
 export const defaultConfig: Config = {
   borderRadiusBase: "rounded-lg",
-  borderWith: "border",
+  borderWidth: "border",
   borderStyle: "border-solid",
   colorSystem: defaultColorSystemConfig,
   fontSizeBase: "text-sm",

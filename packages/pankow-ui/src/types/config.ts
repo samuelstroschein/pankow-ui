@@ -12,7 +12,7 @@ export type Config = {
     typeof Tailwind["borderRadius"],
     "rounded-sm" | "rounded-full"
   >[number];
-  borderWith: typeof Tailwind["borderWidth"][number];
+  borderWidth: typeof Tailwind["borderWidth"][number];
   borderStyle: typeof Tailwind["borderStyle"][number];
   colorSystem: ColorSystemConfig;
   /**
