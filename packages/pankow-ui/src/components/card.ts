@@ -4,11 +4,6 @@ import { ParsedConfig } from "../types/parsedConfig";
 
 export function card({ config }: { config: ParsedConfig }) {
   return css(`
-    .card {
-      @apply 
-        p-4
-        ${config.borderRadius("base")};
-    }
 
     .card-outline {
         @apply 

@@ -1,28 +1,51 @@
-import plugin from "tailwindcss/plugin";
-import * as components from "./components/index";
-import * as utilities from "./utilities/index";
+import plugin, { TailwindPlugin } from "tailwindcss/plugin";
+import { merge } from "lodash";
 import { parseConfig } from "./functions/parseConfig";
 import { defaultConfig } from "./defaultConfig";
-import { forEachColorVariant } from "./functions/forEachColorVariant";
+import { Config } from "./types/config";
+import * as components from "./components/index";
+import * as utilities from "./utilities/index";
 
-// defining the default config and parsedConfig outside
-// of the module.exports because we need it to extend the theme
-
-// tailwind requires commonjs
-// therefore, `module.exports` instead of `export plugin`
-module.exports = plugin(({ addComponents, addUtilities, addBase, config }) => {
-  console.log("pankow ui is activating...");
-
+/**
+ * Pankow UI TailwindCSS plugin.
+ *
+ * The defined config will be merged with the default config.
+ * All provided values will over-write the default values.
+ *
+ * @example
+ *    --- tailwind.config.js ---
+ *    const pankowUi = require("pankow-ui");
+ *
+ *    module.exports = {
+ *       plugins: [
+ *          pankowUi.withConfig({})
+ *       ]
+ *    }
+ *
+ */
+export function withConfig(config: Partial<Config>): TailwindPlugin {
+  // merge mutates default config
+  merge(defaultConfig, config);
   const parsedConfig = parseConfig(defaultConfig);
-
-  // add components
-  for (const component of Object.values(components)) {
-    // TODO read config instead of hardcoded default config
-    addComponents(component({ config: parsedConfig }));
-  }
-  // add utilities
-  for (const utility of Object.values(utilities)) {
-    addUtilities(utility({ config: parsedConfig }));
-  }
-  console.log("pankow ui setup complete");
-});
+  return plugin(
+    ({ addComponents, addUtilities }) => {
+      console.log("pankow ui is activating...");
+      // add components
+      for (const component of Object.values(components)) {
+        addComponents(component({ config: parsedConfig }));
+      }
+      // add utilities
+      for (const utility of Object.values(utilities)) {
+        addUtilities(utility({ config: parsedConfig }));
+      }
+      console.log("pankow ui setup complete");
+    },
+    {
+      theme: {
+        extend: {
+          colors: parsedConfig.colorSystem.colors,
+        },
+      },
+    }
+  );
+}

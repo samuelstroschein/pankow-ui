@@ -30,25 +30,10 @@ function generateColors(config: Config) {
   const container = 200;
   const onContainer = 900;
 
+  // initlize the color system with neutral colors
   const colors: Partial<ParsedConfig["colors"]> = {
-    primary: accentColors.primary[regular],
-    "on-primary": white,
-    "primary-container": accentColors.primary[container],
-    "on-primary-container": accentColors.primary[onContainer],
-
-    secondary: accentColors.secondary[regular],
-    "on-secondary": white,
-    "secondary-container": accentColors.secondary[container],
-    "on-secondary-container": accentColors.secondary[onContainer],
-
-    tertiary: accentColors.tertiary[regular],
-    "on-tertiary": white,
-    "tertiary-container": accentColors.tertiary[container],
-    "on-tertiary-container": accentColors.tertiary[onContainer],
-
     background: white,
     "on-background": neutralColors.neutral[900],
-
     "surface-100": new TinyColor(accentColors.primary[900])
       .setAlpha(0.05)
       .toHex8String(),
@@ -65,16 +50,21 @@ function generateColors(config: Config) {
       .setAlpha(0.14)
       .toHex8String(),
     "on-surface": neutralColors.neutral[900],
-
     "surface-variant": neutralColors.neutralVariant[100],
     "on-surface-variant": neutralColors.neutralVariant[600],
     outline: neutralColors.neutralVariant[400],
-
-    error: semanticColors.error[regular],
-    "on-error": white,
-    "error-container": semanticColors.error[container],
-    "on-error-container": semanticColors.error[onContainer],
   };
+
+  // add accent and semantic colors
+  for (const [name, color] of Object.entries({
+    ...accentColors,
+    ...semanticColors,
+  })) {
+    colors[name] = color[regular];
+    colors[`on-${name}`] = white;
+    colors[`${name}-container`] = color[container];
+    colors[`on-${name}-container`] = color[onContainer];
+  }
 
   // add interaction state colors
   // see https://m3.material.io/foundations/interaction-states
@@ -83,17 +73,16 @@ function generateColors(config: Config) {
     colors[`focus-${name}`] = new TinyColor(hex).darken(12).toHex8String();
     colors[`press-${name}`] = new TinyColor(hex).darken(12).toHex8String();
     colors[`drag-${name}`] = new TinyColor(hex).darken(16).toHex8String();
-
     // no selected or activated colors because:
+    //
     //   "Unlike hover, focus, pressed, and dragged states
     //    that use state layers, components using the activated
     //    or selected states change the container and content
     //    color directly".
-    // colors[`selected-${name}`] = colorShade(hex, 16);
-    // colors[`activated-${name}`] = colorShade(hex, 16);
   }
   // "single" interaction states.
   // see https://m3.material.io/foundations/interaction-states
+  //
   // disabled states always use the on-surface color but with
   // different opacity values
   // colors[`disabled-content`] = new TinyColor(colors["on-surface-100-container"])
