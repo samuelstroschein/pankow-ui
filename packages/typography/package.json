@@ -1,0 +1,29 @@
+{
+  "name": "@pankow-ui/typography",
+  "version": "1.0.0",
+  "description": "Semantic typography system for Tailwind CSS based on Material 3.",
+  "exports": {
+    ".": "./dist/index.js",
+    "./tailwind-plugin": "./dist/tailwindPlugin.js"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/tailwindcss": "^3.0.0"
+  }
+}

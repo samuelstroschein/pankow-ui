@@ -5,6 +5,7 @@ import { defaultConfig } from "./defaultConfig";
 import { Config } from "./types/config";
 import * as components from "./components/index";
 import * as utilities from "./utilities/index";
+import * as typography from "@pankow-ui/typography";
 
 /**
  * Pankow UI TailwindCSS plugin.
@@ -37,6 +38,10 @@ export function withConfig(config: Partial<Config>): TailwindPlugin {
       // add utilities
       for (const utility of Object.values(utilities)) {
         addUtilities(utility({ config: parsedConfig }));
+      }
+      // add typography utilities
+      for (const utility of Object.values(typography.utilities)) {
+        addUtilities(utility);
       }
       console.log("pankow ui setup complete");
     },
