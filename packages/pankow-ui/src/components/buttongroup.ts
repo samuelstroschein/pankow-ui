@@ -4,7 +4,7 @@ import { forEachColorVariant } from "../functions/forEachColorVariant";
 
 export function button({ config }: { config: ParsedConfig }) {
   return css(`
-   .button {
+   .buttongroup {
      @apply focus:ring-4 font-medium  ${config.borderRadius(
        "base"
      )} focus:outline-none text-center inline-flex items-center

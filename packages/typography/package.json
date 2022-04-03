@@ -1,7 +1,7 @@
 {
-  "name": "@pankow-ui/color-system",
+  "name": "@pankow-ui/typography",
   "version": "1.0.0",
-  "description": "Semantic color system for Tailwind CSS.",
+  "description": "Semantic typography system for Tailwind CSS based on Material 3.",
   "exports": {
     ".": "./dist/index.js",
     "./tailwind-plugin": "./dist/tailwindPlugin.js"
@@ -21,7 +21,6 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@ctrl/tinycolor": "^3.4.0",
     "tailwindcss": "^3.0.0"
   },
   "devDependencies": {

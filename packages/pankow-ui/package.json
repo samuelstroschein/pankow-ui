@@ -12,12 +12,15 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "tailwindcss": "^3.0.0",
+    "@pankow-ui/color-system": "*",
+    "@pankow-ui/typography": "*",
+    "lodash": "^4.17.21",
     "postcss": "^8.4.12",
     "postcss-js": "^4.0.0",
-    "@pankow-ui/color-system": "*"
+    "tailwindcss": "^3.0.0"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.181",
     "@types/tailwindcss": "^3.0.9"
   }
 }

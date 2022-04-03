@@ -1,37 +1,56 @@
-import plugin from "tailwindcss/plugin";
+import plugin, { TailwindPlugin } from "tailwindcss/plugin";
+import { merge } from "lodash";
+import { parseConfig } from "./functions/parseConfig";
+import { defaultConfig } from "./defaultConfig";
+import { Config } from "./types/config";
 import * as components from "./components/index";
 import * as utilities from "./utilities/index";
-import { css } from "./css";
+import * as typography from "@pankow-ui/typography";
 
-// tailwind requires commonjs
-// therefore, `module.exports` instead of `export plugin`
-module.exports = plugin(({ addComponents, addUtilities, addBase, config }) => {
-  console.log("pankow ui is activating...");
-  // adding base style
-  addBase(
-    css(`
-      :root {
-        background-color: hsla(var(--base-content) / var(--tw-bg-opacity, 1));
-        color: hsla(var(--base-content) / var(--tw-text-opacity, 1));
+/**
+ * Pankow UI TailwindCSS plugin.
+ *
+ * The defined config will be merged with the default config.
+ * All provided values will over-write the default values.
+ *
+ * @example
+ *    --- tailwind.config.js ---
+ *    const pankowUi = require("pankow-ui");
+ *
+ *    module.exports = {
+ *       plugins: [
+ *          pankowUi.withConfig({})
+ *       ]
+ *    }
+ *
+ */
+export function withConfig(config: Partial<Config>): TailwindPlugin {
+  // merge mutates default config
+  merge(defaultConfig, config);
+  const parsedConfig = parseConfig(defaultConfig);
+  return plugin(
+    ({ addComponents, addUtilities }) => {
+      console.log("pankow ui is activating...");
+      // add components
+      for (const component of Object.values(components)) {
+        addComponents(component({ config: parsedConfig }));
       }
-    `)
+      // add utilities
+      for (const utility of Object.values(utilities)) {
+        addUtilities(utility({ config: parsedConfig }));
+      }
+      // add typography utilities
+      for (const utility of Object.values(typography.utilities)) {
+        addUtilities(utility);
+      }
+      console.log("pankow ui setup complete");
+    },
+    {
+      theme: {
+        extend: {
+          colors: parsedConfig.colorSystem.colors,
+        },
+      },
+    }
   );
-
-  // add components
-  for (const name of Object.keys(components)) {
-    addComponents(
-      components[name as keyof typeof components]({
-        config: { styled: true },
-      })
-    );
-  }
-  // add utilities
-  for (const name of Object.keys(utilities)) {
-    addUtilities(
-      utilities[name as keyof typeof utilities]({
-        config: { styled: true },
-      })
-    );
-  }
-  console.log("pankow ui setup complete");
-});
+}
