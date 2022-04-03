@@ -1,5 +1,6 @@
 {
 	"name": "website",
+	"private": "true",
 	"scripts": {
 		"dev": "concurrently \"svelte-kit dev\" \"npm run minify-tailwind -- --watch\"",
 		"build": "npm run minify-tailwind && svelte-kit build",
