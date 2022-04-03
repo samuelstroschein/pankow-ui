@@ -1,5 +1,4 @@
 {
-  "name": "pankow-ui",
   "type": "module",
   "private": true,
   "workspaces": [

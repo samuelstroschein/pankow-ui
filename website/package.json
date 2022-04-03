@@ -13,7 +13,6 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
-		"@pankow-ui/color-system": "*",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"@tailwindcss/typography": "^0.5.2",
@@ -24,7 +23,7 @@
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^3.2.1",
 		"mdsvex": "^0.10.5",
-		"pankow-ui": "*",
+		"@pankow/pankow-ui": "*",
 		"prettier": "^2.5.1",
 		"prettier-plugin-svelte": "^2.5.0",
 		"svelte": "^3.44.0",

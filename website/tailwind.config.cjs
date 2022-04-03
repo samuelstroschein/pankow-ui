@@ -1,5 +1,5 @@
 const colors = require('tailwindcss/colors');
-const pankowUi = require('pankow-ui');
+const pankowUi = require('@pankow/pankow-ui');
 
 module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts,md}'],
@@ -8,7 +8,6 @@ module.exports = {
 	},
 	plugins: [
 		pankowUi.withConfig({ colorSystem: { semanticColors: { info: colors.blue } } }),
-		require('@pankow-ui/color-system/tailwind-plugin'),
 		require('@tailwindcss/typography')
 	]
 };
