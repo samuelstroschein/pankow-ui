@@ -26,8 +26,14 @@ jobs:
       - name: Install Dependencies
         run: npm i
 
-      - name: Build
-        run: npm run build
+      - name: Build @pankow/color-system
+        run: npm run build -w @pankow/color-system
+
+      - name: Build @pankow/typography
+        run: npm run build -w @pankow/typography
+
+      - name: Build @pankow/pankow-ui
+        run: npm run build -w @pankow/pankow-ui
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
