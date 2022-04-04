@@ -1,3 +1,3 @@
-<div class="container mx-auto my-6">
+<article class="container mx-auto my-6 prose">
 	<slot />
-</div>
+</article>
