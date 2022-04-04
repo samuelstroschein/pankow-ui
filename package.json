@@ -12,9 +12,9 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "@changesets/cli": "^2.22.0",
     "turbo": "*",
     "typescript": "~4.6.2",
-    "@changesets/cli": "^2.22.0",
     "yarn": "^1.22.18"
   },
   "turbo": {
@@ -35,5 +35,10 @@
         "cache": false
       }
     }
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.4",
+    "postcss": "^8.4.12",
+    "tailwindcss": "^3.0.23"
   }
 }
