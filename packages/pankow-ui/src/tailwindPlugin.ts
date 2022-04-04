@@ -43,6 +43,10 @@ export function withConfig(config: Partial<Config>): TailwindPlugin {
       for (const utility of Object.values(typography.utilities)) {
         addUtilities(utility);
       }
+      // add typography components
+      for (const component of Object.values(typography.components)) {
+        addComponents(component);
+      }
       console.log("pankow ui setup complete");
     },
     {
