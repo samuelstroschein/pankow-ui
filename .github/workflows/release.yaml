@@ -27,7 +27,7 @@ jobs:
         run: npm i
 
       - name: Build
-        run: npm run build --workspaces
+        run: npm run build
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
