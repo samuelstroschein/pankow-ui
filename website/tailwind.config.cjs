@@ -1,5 +1,5 @@
 const colors = require('tailwindcss/colors');
-const pankowUi = require('@pankow/pankow-ui');
+const pankowUi = require('@pankow-ui/pankow-ui');
 
 module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts,md}'],

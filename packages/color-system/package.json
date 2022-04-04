@@ -1,5 +1,5 @@
 {
-  "name": "@pankow/color-system",
+  "name": "@pankow-ui/color-system",
   "version": "1.0.1",
   "description": "Semantic color system for Tailwind CSS.",
   "main": "./dist/tailwindPlugin.js",

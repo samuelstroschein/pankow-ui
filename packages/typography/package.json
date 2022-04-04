@@ -1,5 +1,5 @@
 {
-  "name": "@pankow/typography",
+  "name": "@pankow-ui/typography",
   "version": "1.0.1",
   "description": "Semantic typography system for Tailwind CSS based on Material 3.",
   "main": "./dist/tailwindPlugin.js",

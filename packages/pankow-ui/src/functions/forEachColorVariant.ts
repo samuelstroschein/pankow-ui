@@ -1,4 +1,4 @@
-import { Color } from "@pankow/color-system/lib";
+import { Color } from "@pankow-ui/color-system/lib";
 import { ParsedConfig } from "../types/parsedConfig";
 
 // function overloads

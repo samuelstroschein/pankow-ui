@@ -5,7 +5,7 @@ import { defaultConfig } from "./defaultConfig";
 import { Config } from "./types/config";
 import * as components from "./components/index";
 import * as utilities from "./utilities/index";
-import * as typography from "@pankow/typography/lib";
+import * as typography from "@pankow-ui/typography/lib";
 
 /**
  * Pankow UI TailwindCSS plugin.

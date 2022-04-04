@@ -1,5 +1,5 @@
 import { Config } from "./types/config";
-import { defaultConfig as defaultColorSystemConfig } from "@pankow/color-system/lib";
+import { defaultConfig as defaultColorSystemConfig } from "@pankow-ui/color-system/lib";
 
 export const defaultConfig: Config = {
   borderRadiusBase: "rounded-lg",
