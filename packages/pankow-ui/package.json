@@ -1,6 +1,6 @@
 {
   "name": "@pankow-ui/pankow-ui",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "description": "Tailwind CSS components and design system.",
   "main": "./dist/tailwindPlugin.js",
   "types": "./dist/tailwindPlugin.d.js",
@@ -12,8 +12,8 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@pankow-ui/color-system": "*",
-    "@pankow-ui/typography": "*",
+    "@pankow-ui/color-system": "^1.1.0",
+    "@pankow-ui/typography": "^1.1.0",
     "lodash": "^4.17.21",
     "postcss": "^8.4.12",
     "postcss-js": "^4.0.0",
