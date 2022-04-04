@@ -5,4 +5,4 @@
 "website": minor
 ---
 
-wtf
+init
