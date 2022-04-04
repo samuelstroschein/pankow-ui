@@ -33,7 +33,7 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: npm publish --workspaces
+          publish: npm publish --access public --workspaces
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
