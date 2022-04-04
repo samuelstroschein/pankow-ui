@@ -33,5 +33,6 @@
 		"tailwindcss": "^3.0.23",
 		"tslib": "^2.3.1"
 	},
-	"type": "module"
+	"type": "module",
+	"version": null
 }
