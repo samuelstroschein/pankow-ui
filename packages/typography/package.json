@@ -4,7 +4,7 @@
   "description": "Semantic typography system for Tailwind CSS based on Material 3.",
   "main": "./dist/tailwindPlugin.js",
   "exports": {
-    "./lib": "./dist/index.js"
+    "./lib": "./dist/lib.js"
   },
   "typesVersions": {
     "*": {
