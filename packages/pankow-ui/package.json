@@ -2,8 +2,8 @@
   "name": "@pankow-ui/pankow-ui",
   "version": "0.1.0",
   "description": "Tailwind CSS components and design system.",
-  "main": "dist/tailwindPlugin.js",
-  "types": "dist/tailwindPlugin.d.js",
+  "main": "./dist/tailwindPlugin.js",
+  "types": "./dist/tailwindPlugin.d.js",
   "files": [
     "dist"
   ],
