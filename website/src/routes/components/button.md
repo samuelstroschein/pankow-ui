@@ -81,10 +81,10 @@ Adding an `aria-selected="true"` attribute will keep the button in a selected st
 
 ### Disabled
 
-Disable `<button>` use `. cursor-not-allowed`& the disabled attribute.
+Disable `<button>` use the `disabled` modifier.
 
 <div class="not-prose space-x-2">
-  <button class="button button-primary cursor-not-allowed	" type="button" disabled>Disabled</button>
+  <button class="button button-primary" disabled type="button">Disabled</button>
 </div>
 
 ## Button variations

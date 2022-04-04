@@ -77,6 +77,10 @@ export function button({ config }: { config: ParsedConfig }) {
           text-on-${name}
           hover:bg-hover-${name} hover:text-hover-on-${name}
           focus:ring-focus-${name};
+        
+        &:disabled {
+          @apply cursor-not-allowed bg-on-surface/[.12] text-on-surface/[.36];
+        }
       }
 
       .button-outline-${name} {
@@ -86,12 +90,20 @@ export function button({ config }: { config: ParsedConfig }) {
           border-${name} 
           hover:bg-hover-${name} hover:text-hover-on-${name}
           focus:ring-focus-${name};
+
+        &:disabled {
+          @apply cursor-not-allowed bg-on-surface/[.12] text-on-surface/[.36];
+        }
       }
       .button-text-${name} {
         @apply 
           text-${name}
           bg-transparent
           hover:bg-hover-${name} hover:text-hover-on-${name};
+        
+        &:disabled {
+          @apply cursor-not-allowed bg-on-surface/[.12] text-on-surface/[.36];
+        }
       }
   `
    )}
