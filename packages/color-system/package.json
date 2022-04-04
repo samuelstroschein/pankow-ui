@@ -2,9 +2,9 @@
   "name": "@pankow/color-system",
   "version": "1.0.1",
   "description": "Semantic color system for Tailwind CSS.",
+  "main": "./dist/tailwindPlugin.js",
   "exports": {
-    ".": "./dist/tailwindPlugin.js",
-    "./index": "./dist/index.js"
+    "./lib": "./dist/index.js"
   },
   "typesVersions": {
     "*": {

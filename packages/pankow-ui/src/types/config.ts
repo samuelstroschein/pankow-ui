@@ -1,5 +1,5 @@
 import type { Tailwind } from "../tailwind";
-import type { Config as ColorSystemConfig } from "@pankow/color-system";
+import type { Config as ColorSystemConfig } from "@pankow/color-system/lib";
 
 export type Config = {
   /**

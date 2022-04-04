@@ -1,5 +1,5 @@
 import type { Tailwind } from "../tailwind";
-import type { ParsedConfig as ParsedColorSystemConfig } from "@pankow/color-system";
+import type { ParsedConfig as ParsedColorSystemConfig } from "@pankow/color-system/lib";
 
 export type ParsedConfig = {
   borderRadius: (
