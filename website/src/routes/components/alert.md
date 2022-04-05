@@ -25,7 +25,7 @@ Alert messages, or alerts, inform users of successful or pending actions. Use th
 <div class="alert alert-error" role="alert">
 	<h2 class="alert-title">
 		<svg
-			class="alert-title-icon"
+			class="w-4 h-4 mr-2"
 			fill="currentColor"
 			viewBox="0 0 20 20"
 			xmlns="http://www.w3.org/2000/svg"

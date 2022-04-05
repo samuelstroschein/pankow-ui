@@ -10,10 +10,6 @@ export function alert({ config }: { config: ParsedConfig }) {
         space-y-2
         ${config.borderRadius("base")};
 
-      &-title-icon {
-        @apply w-4 h-4 mr-2;
-      }
-
       &-title {
         @apply flex items-center space-x-2 text-title-md font-title-md;
       }
