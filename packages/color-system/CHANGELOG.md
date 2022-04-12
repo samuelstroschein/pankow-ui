@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/samuelstroschein/pankow-ui/compare/@pankow-ui/color-system@1.1.1...@pankow-ui/color-system@1.1.2) (2022-04-12)
+
+**Note:** Version bump only for package @pankow-ui/color-system
+
+
+
+
+
 ## 1.1.1 (2022-04-04)
 
 
