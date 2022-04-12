@@ -16,4 +16,9 @@ export const defaultConfig: Config = {
   semanticColors: {
     error: tailwindColors.red as Color,
   },
+  colorLevels: {
+    base: 600,
+    container: 200,
+    onContainer: 900,
+  },
 };

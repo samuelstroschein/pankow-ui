@@ -60,10 +60,10 @@ function generateColors(config: Config) {
     ...accentColors,
     ...semanticColors,
   })) {
-    colors[name] = color[regular];
+    colors[name] = color[config.colorLevels.base];
     colors[`on-${name}`] = white;
-    colors[`${name}-container`] = color[container];
-    colors[`on-${name}-container`] = color[onContainer];
+    colors[`${name}-container`] = color[config.colorLevels.container];
+    colors[`on-${name}-container`] = color[config.colorLevels.onContainer];
   }
 
   // add interaction state colors

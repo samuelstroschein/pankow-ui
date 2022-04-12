@@ -56,4 +56,15 @@ export type Config = {
     error: Color;
     [custom: string]: Color;
   };
+  /**
+   * The color levels of the color system.
+   *
+   * Base colors refer to accent and semantic colors
+   * like primary, secondary, error etc.
+   */
+  colorLevels: {
+    base: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+    container: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+    onContainer: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+  };
 };
