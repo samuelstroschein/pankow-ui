@@ -1,6 +1,38 @@
 # pankow-ui
 
-WIP.
+Semantic typography, color-system and component classes for TailwindCSS based on [Material3](https://m3.material.io/styles/color/overview).
+
+## @pankow-ui/typography
+
+Either use the utility classes consisting of `text-{typography}-{size}` and `font-{typography}-size`, or
+use the component classes directly e.g. `{typography}-{size}`.
+
+<div class="not-prose">
+    <div class="display-lg">display lg</div>
+    <div class="display-md">display md</div>
+    <div class="text-display-sm font-display-sm">display sm</div>
+    <div class="my-4 bg-surface-variant h-0.5"></div>
+    <div class="headline-lg">headline lg</div>
+    <div class="headline-md">headline md</div>
+    <div class="headline-sm">headline sm</div>
+    <div class="my-4 bg-surface-variant h-0.5"></div>
+    <div class="title-lg">title lg</div>
+    <div class="title-md">title md</div>
+    <div class="title-sm">title sm</div>
+    <div class="my-4 bg-surface-variant h-0.5"></div>
+    <div class="label-lg">label lg</div>
+    <div class="label-md">label md</div>
+    <div class="label-sm">label sm</div>
+    <div class="my-4 bg-surface-variant h-0.5"></div>
+    <div class="body-lg">body lg</div>
+    <div class="body-md">body md</div>
+    <div class="body-sm">body sm</div>
+</div>
+
+## @pankow-ui/color-system
+
+Read the following https://m3.material.io/styles/color/the-color-system/key-colors-tones. All colors can
+be configured with the config.
 
 ## TODOS
 
@@ -35,74 +67,3 @@ border-radius: var(--theme-border-radius)
 By default, all components use `rounded-md` as base. A user
 should be able to specify in the config `rounded-sm`, `rounded-md`, `rounded-lg`
 as base.
-
-## Primer variables to Tailwind CSS
-
-Border:
-`border-radius` -> `rounded-md`
-`border-radius-1` -> `rounded`
-`border-radius-2` -> `rounded-md`
-`border-radius-3` -> `rounded-lg`
-
-`border-width` -> `border`
-`border-syle` -> `border-solid`
-
-Size:
-`$size-2` -> `{p,m}-5`
-
-Spacer:
-`$spacer-0` -> `{p,m}-0`
-`$spacer-1` -> `{p,m}-1`
-`$spacer-2` -> `{p,m}-2`
-`$spacer-3` -> `{p,m}-4`
-`$spacer-4` -> `{p,m}-6`
-`$spacer-5` -> `{p,m}-8`
-`$spacer-6` -> `{p,m}-10`
-
-Colors:
-`fg.default` -> `on-background`
-`fg.muted` -> `surface-variant`
-`fg.subtle` -> `surface-variant`
-`fg.onEmphasis` -> `inverse-on-surface`
-`fg.accent` -> `primary`
-
-`bg.emphasis` -> `inverse-surface`
-`bg.default` -> `background`
-`bg.subtle` -> `surface`
-`bg.inset` -> `surface`
-
-`border.default` -> `outline`
-`border.muted` -> `surface-variant`
-
-Typhography:
-`$font-size-small`: `text-xs`
-`$body-font-size`: `text-base`
-
-Line height:
-`$lh-default`: `leading-6`
-
-## Design Principles
-
-### Unstyled (no colors)
-
-Components have no color by default. Express colors with tailwind classes:
-
-**Don't**
-
-```html
-<div class="toast toast-warning">
-  <div class="toast-icon"></div>
-  <div class="toast-content">Toast message goes here</div>
-  <div></div>
-</div>
-```
-
-**Do**
-
-```html
-<div class="toast bg-surface-500 text-on-surface">
-  <div class="toast-icon bg-warning"></div>
-  <div class="toast-content text-on-surface">Toast message goes here</div>
-  <div></div>
-</div>
-```
