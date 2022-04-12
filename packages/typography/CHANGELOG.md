@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/samuelstroschein/pankow-ui/compare/@pankow-ui/typography@1.1.2...@pankow-ui/typography@1.1.3) (2022-04-12)
+
+
+### Bug Fixes
+
+* exports ([7f6880b](https://github.com/samuelstroschein/pankow-ui/commit/7f6880b86ec14b8bdb238139667036d1b3661b92))
+
+
+
+
+
 ## [1.1.2](https://github.com/samuelstroschein/pankow-ui/compare/@pankow-ui/typography@1.1.1...@pankow-ui/typography@1.1.2) (2022-04-12)
 
 **Note:** Version bump only for package @pankow-ui/typography
