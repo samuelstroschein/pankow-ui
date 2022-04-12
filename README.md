@@ -2,6 +2,32 @@
 
 Semantic typography, color-system and component classes for TailwindCSS based on [Material3](https://m3.material.io/styles/color/overview).
 
+**tailwind.config.js**
+
+```ts
+const colorSystem = require("@pankow-ui/color-system");
+const typography = require("@pankow-ui/typography");
+const colors = require("tailwindcss/colors");
+
+module.exports = {
+  content: ["./src/**/*.{html,js,svelte,ts,md}"],
+  theme: {},
+  plugins: [
+    typography,
+    // any color you don't provide will use default values.
+    colorSystem.withConfig({
+      accentColors: { primary: colors.sky },
+      neutralColors: {},
+      semanticColors: {
+        success: colors.green,
+        warning: colors.amber,
+        danger: colors.red,
+      },
+    }),
+  ],
+};
+```
+
 ## @pankow-ui/typography
 
 Either use the utility classes consisting of `text-{typography}-{size}` and `font-{typography}-size`, or
