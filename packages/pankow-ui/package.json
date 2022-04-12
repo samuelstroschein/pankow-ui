@@ -1,6 +1,7 @@
 {
   "name": "@pankow-ui/pankow-ui",
   "version": "1.1.1",
+  "private": true,
   "description": "Tailwind CSS components and design system.",
   "main": "./dist/tailwindPlugin.js",
   "types": "./dist/tailwindPlugin.d.js",
